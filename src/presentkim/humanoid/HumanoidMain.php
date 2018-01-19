@@ -2,8 +2,10 @@
 
 namespace presentkim\humanoid;
 
+use pocketmine\entity\Entity;
 use pocketmine\plugin\PluginBase;
 use presentkim\humanoid\listener\PlayerEventListener;
+use presentkim\humanoid\entity\Humanoid;
 
 class HumanoidMain extends PluginBase{
 
@@ -19,6 +21,8 @@ class HumanoidMain extends PluginBase{
         if (self::$instance === null) {
             self::$instance = $this;
             $this->getServer()->getLoader()->loadClass('presentkim\humanoid\util\Utils');
+
+            Entity::registerEntity(Humanoid::class, true, ['Humanoid', 'presentkim:humanoid']);
         }
     }
 
