@@ -5,6 +5,7 @@ namespace presentkim\humanoid\event;
 use pocketmine\event\{
   Cancellable, player\PlayerEvent
 };
+use pocketmine\network\mcpe\protocol\InventoryTransactionPacket;
 use pocketmine\Player;
 use presentkim\humanoid\entity\Humanoid;
 
@@ -12,9 +13,9 @@ class PlayerClickHumanoidEvent extends PlayerEvent implements Cancellable{
 
     public static $handlerList = null;
 
-    public const LEFT_CLICK = 0;
+    public const LEFT_CLICK = InventoryTransactionPacket::USE_ITEM_ON_ENTITY_ACTION_ATTACK;
 
-    public const RIGHT_CLICK = 1;
+    public const RIGHT_CLICK = InventoryTransactionPacket::USE_ITEM_ON_ENTITY_ACTION_INTERACT;
 
     /** @var Humanoid */
     protected $humanoid;
