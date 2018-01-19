@@ -40,10 +40,9 @@ class Humanoid extends Entity{
 
         $this->uuid = UUID::fromRandom();
 
-        $this->setHeldItem(Item::nbtDeserialize($this->namedtag->getCompoundTag("HeldItem")));
-
-        $skinData = $this->namedtag->getString("SkinData");
-        $geometryName = $this->namedtag->getString("GeometryName");
+        $this->setHeldItem(Item::nbtDeserialize($this->namedtag->getCompoundTag('HeldItem')));
+        $skinData = $this->namedtag->getString('SkinData');
+        $geometryName = $this->namedtag->getString('GeometryName');
         $this->setSkin(new Skin('humanoid', $skinData, '', $geometryName));
     }
 
@@ -76,7 +75,7 @@ class Humanoid extends Entity{
 
     public function setSkin(Skin $skin){
         if (!$skin->isValid()) {
-            throw new \InvalidStateException("Specified skin is not valid, must be 8KiB or 16KiB");
+            throw new \InvalidStateException('Specified skin is not valid, must be 8KiB or 16KiB');
         }
 
         $this->skin = $skin;
@@ -93,14 +92,14 @@ class Humanoid extends Entity{
     public function saveNBT(){
         parent::saveNBT();
 
-        $this->namedtag->setTag(new CompoundTag("HeldItem", $this->heldItem->nbtSerialize()));
-        $this->namedtag->setTag(new StringTag("SkinData", $this->skin->getSkinData()));
-        $this->namedtag->setTag(new StringTag("GeometryName", $this->skin->getGeometryName()));
+        $this->namedtag->setTag(new CompoundTag('HeldItem', $this->heldItem->nbtSerialize()));
+        $this->namedtag->setTag(new StringTag('SkinData', $this->skin->getSkinData()));
+        $this->namedtag->setTag(new StringTag('GeometryName', $this->skin->getGeometryName()));
     }
 
     protected function sendSpawnPacket(Player $player) : void{
         if (!$this->skin->isValid()) {
-            throw new \InvalidStateException((new \ReflectionClass($this))->getShortName() . " must have a valid skin set");
+            throw new \InvalidStateException((new \ReflectionClass($this))->getShortName() . ' must have a valid skin set');
         }
 
         $pk = new AddPlayerPacket();
