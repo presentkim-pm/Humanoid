@@ -7,12 +7,10 @@ use pocketmine\Player;
 use pocketmine\entity\{
   Entity, Skin
 };
-use pocketmine\nbt\tag\{
-  CompoundTag, StringTag
-};
 use pocketmine\network\mcpe\protocol\{
   PlayerSkinPacket, types\ContainerIds, AddPlayerPacket, MobEquipmentPacket
 };
+use pocketmine\nbt\tag\StringTag;
 use pocketmine\item\Item;
 use pocketmine\utils\UUID;
 
