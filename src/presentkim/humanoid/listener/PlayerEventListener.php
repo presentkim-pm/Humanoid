@@ -22,10 +22,10 @@ class PlayerEventListener implements Listener{
 
     /** @param DataPacketReceiveEvent $event */
     public function onDataPacketReceiveEvent(DataPacketReceiveEvent $event){
-        $player = $event->getPlayer();
         $pk = $event->getPacket();
         if ($pk instanceof InventoryTransactionPacket) {
             if ($pk->transactionType === InventoryTransactionPacket::TYPE_USE_ITEM_ON_ENTITY) {
+                $player = $event->getPlayer();
                 $target = $player->level->getEntity($pk->trData->entityRuntimeId);
                 if ($target instanceof Humanoid) {
                     $event->setCancelled(true);
