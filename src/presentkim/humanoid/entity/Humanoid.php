@@ -93,7 +93,7 @@ class Humanoid extends Entity{
     public function saveNBT(){
         parent::saveNBT();
 
-        $this->namedtag->setTag(new CompoundTag('HeldItem', $this->heldItem->nbtSerialize()));
+        $this->namedtag->setTag($this->heldItem->nbtSerialize(-1, 'HeldItem'));
         $this->namedtag->setTag(new StringTag('SkinData', $this->skin->getSkinData()));
         $this->namedtag->setTag(new StringTag('GeometryName', $this->skin->getGeometryName()));
     }
