@@ -6,6 +6,7 @@ use pocketmine\entity\Entity;
 use pocketmine\plugin\PluginBase;
 use presentkim\humanoid\listener\PlayerEventListener;
 use presentkim\humanoid\entity\Humanoid;
+use presentkim\humanoid\util\Translation;
 
 class HumanoidMain extends PluginBase{
 
@@ -21,6 +22,7 @@ class HumanoidMain extends PluginBase{
         if (self::$instance === null) {
             self::$instance = $this;
             $this->getServer()->getLoader()->loadClass('presentkim\humanoid\util\Utils');
+            Translation::loadFromResource($this->getResource('lang/eng.yml'), true);
 
             Entity::registerEntity(Humanoid::class, true, ['Humanoid', 'presentkim:humanoid']);
         }
