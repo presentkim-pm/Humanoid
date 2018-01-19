@@ -40,9 +40,10 @@ class Humanoid extends Entity{
 
         $this->uuid = UUID::fromRandom();
 
-        $this->setHeldItem(Item::nbtDeserialize($this->namedtag->getCompoundTag('HeldItem')));
-        $skinData = $this->namedtag->getString('SkinData');
-        $geometryName = $this->namedtag->getString('GeometryName');
+        $this->setHeldItem($this->namedtag->hasTag('HeldItem') ? Item::nbtDeserialize($this->namedtag->getCompoundTag('HeldItem')) : Item::get(Item::AIR));
+
+        $skinData = $this->namedtag->hasTag('SkinData') ? $this->namedtag->getString('SkinData') : str_repeat("\x00", 8192);
+        $geometryName = $this->namedtag->hasTag('GeometryName') ? $this->namedtag->getString('GeometryName') : '';
         $this->setSkin(new Skin('humanoid', $skinData, '', $geometryName));
     }
 
