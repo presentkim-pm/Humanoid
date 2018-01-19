@@ -2,6 +2,7 @@
 
 namespace presentkim\humanoid\entity;
 
+use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\Player;
 use pocketmine\entity\{
   Entity, Skin
@@ -116,5 +117,9 @@ class Humanoid extends Entity{
         $player->dataPacket($pk);
 
         $this->sendSkin([$player]);
+    }
+
+    public function attack(EntityDamageEvent $source){
+        $source->setCancelled(true);
     }
 }
