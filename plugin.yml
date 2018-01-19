@@ -1,0 +1,31 @@
+---
+name:             Humanoid
+main:             presentkim\humanoid\HumanoidMain
+version:          1.0.0
+api:              [3.0.0, 3.0.0-ALPHA10]
+author:           PresentKim
+
+permissions:
+  humanoid.cmd:
+    description:  Humanoid main command
+    default:      op
+    children:
+      humanoid.cmd.add:
+        description:  Humanoid command - add
+        default:      op
+      humanoid.cmd.remove:
+        description:  Humanoid command - remove
+        default:      op
+      humanoid.cmd.list:
+        description:  Humanoid command - list
+        default:      op
+      humanoid.cmd.lang:
+        description:  Humanoid command - lang
+        default:      op
+      humanoid.cmd.reload:
+        description:  Humanoid command - reload
+        default:      op
+      humanoid.cmd.save:
+        description:  Humanoid command - save
+        default:      op
+...
