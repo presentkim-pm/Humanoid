@@ -16,6 +16,9 @@ class PlayerEventListener implements Listener{
     /** @var Plugin */
     private $owner = null;
 
+    /** @var int[] */
+    public $tasks = [];
+
     public function __construct(){
         $this->owner = Plugin::getInstance();
     }
