@@ -3,7 +3,7 @@
 namespace presentkim\humanoid\listener;
 
 use pocketmine\event\{
-  Listener, player\PlayerInteractEvent
+  Listener, server\DataPacketReceiveEvent
 };
 use presentkim\humanoid\HumanoidMain as Plugin;
 
@@ -16,8 +16,8 @@ class PlayerEventListener implements Listener{
         $this->owner = Plugin::getInstance();
     }
 
-    /** @param PlayerInteractEvent $event */
-    public function onPlayerInteractEvent(PlayerInteractEvent $event){
-
+    /** @param DataPacketReceiveEvent $event */
+    public function onDataPacketReceiveEvent(DataPacketReceiveEvent $event){
+        
     }
 }
