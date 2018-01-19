@@ -20,16 +20,10 @@ permissions:
       humanoid.cmd.remove:
         description:  Humanoid command - remove
         default:      op
-      humanoid.cmd.list:
-        description:  Humanoid command - list
-        default:      op
       humanoid.cmd.lang:
         description:  Humanoid command - lang
         default:      op
       humanoid.cmd.reload:
         description:  Humanoid command - reload
-        default:      op
-      humanoid.cmd.save:
-        description:  Humanoid command - save
         default:      op
 ...
