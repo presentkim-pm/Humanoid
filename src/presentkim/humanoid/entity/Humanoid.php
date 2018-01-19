@@ -2,9 +2,6 @@
 
 namespace presentkim\humanoid\entity;
 
-use pocketmine\event\entity\{
-  EntityDamageByEntityEvent, EntityDamageEvent
-};
 use pocketmine\Player;
 use pocketmine\entity\{
   Entity, Skin
@@ -17,7 +14,6 @@ use pocketmine\network\mcpe\protocol\{
 };
 use pocketmine\item\Item;
 use pocketmine\utils\UUID;
-use presentkim\humanoid\event\PlayerClickHumanoidEvent;
 
 class Humanoid extends Entity{
 
@@ -120,18 +116,5 @@ class Humanoid extends Entity{
         $player->dataPacket($pk);
 
         $this->sendSkin([$player]);
-    }
-
-
-    public function attack(EntityDamageEvent $source){
-        $source->setCancelled(true);
-        parent::attack($source);
-
-        if ($source instanceof EntityDamageByEntityEvent) {
-            $player = $source->getDamager();
-            if ($player instanceof Player) {
-                $this->server->getPluginManager()->callEvent(new PlayerClickHumanoidEvent($player, $this, PlayerClickHumanoidEvent::LEFT_CLICK));
-            }
-        }
     }
 }
