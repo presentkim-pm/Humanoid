@@ -18,16 +18,16 @@ class HumanoidMain extends PluginBase{
     /** @var self */
     private static $instance = null;
 
+    /** @return self */
+    public static function getInstance(){
+        return self::$instance;
+    }
+
     /** @var string */
     public static $prefix = '';
 
     /** @var PoolCommand */
     private $command;
-
-    /** @return self */
-    public static function getInstance(){
-        return self::$instance;
-    }
 
     public function onLoad(){
         if (self::$instance === null) {
