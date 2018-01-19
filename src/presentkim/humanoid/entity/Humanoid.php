@@ -122,4 +122,8 @@ class Humanoid extends Entity{
     public function attack(EntityDamageEvent $source){
         $source->setCancelled(true);
     }
+
+    public function move(float $dx, float $dy, float $dz) : bool{
+        return false;
+    }
 }
