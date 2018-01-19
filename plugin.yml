@@ -14,6 +14,9 @@ permissions:
       humanoid.cmd.add:
         description:  Humanoid command - add
         default:      op
+      humanoid.cmd.set:
+        description:  Humanoid command - set
+        default:      op
       humanoid.cmd.remove:
         description:  Humanoid command - remove
         default:      op
