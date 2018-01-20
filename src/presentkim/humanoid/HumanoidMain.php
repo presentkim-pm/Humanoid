@@ -10,7 +10,7 @@ use presentkim\humanoid\entity\Humanoid;
 use presentkim\humanoid\util\Translation;
 use presentkim\humanoid\command\PoolCommand;
 use presentkim\humanoid\command\subcommands\{
-  LangSubCommand, ReloadSubCommand
+  AddSubCommand, SetSubCommand, RemoveSubCommand, LangSubCommand, ReloadSubCommand
 };
 
 class HumanoidMain extends PluginBase{
@@ -28,6 +28,9 @@ class HumanoidMain extends PluginBase{
 
     /** @var PoolCommand */
     private $command;
+
+    /** @var array */
+    public $task = [];
 
     public function onLoad(){
         if (self::$instance === null) {
@@ -70,6 +73,9 @@ class HumanoidMain extends PluginBase{
     public function reloadCommand(){
         if ($this->command == null) {
             $this->command = new PoolCommand($this, 'humanoid');
+            $this->command->createSubCommand(AddSubCommand::class);
+            $this->command->createSubCommand(SetSubCommand::class);
+            $this->command->createSubCommand(RemoveSubCommand::class);
             $this->command->createSubCommand(LangSubCommand::class);
             $this->command->createSubCommand(ReloadSubCommand::class);
         }
