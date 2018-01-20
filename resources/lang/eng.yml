@@ -1,0 +1,38 @@
+---
+prefix: "[Humanoid] "
+
+command-generic-failure@in-game: "Available in game only"
+command-generic-failure@permission : "You do not have permission to use this command"
+command-generic-failure@invalid : "{%0} is invalid value"
+
+command-humanoid: "humanoid"
+command-humanoid@usage: "/humanoid <set | remove | list | lang | reload | save>"
+command-humanoid@description: "Main command of Humanoid"
+command-humanoid@aliases: ["hm"]
+
+command-humanoid-add: "add"
+command-humanoid-add@usage: "/humanoid Add [name]"
+command-humanoid-add@success: "Touch the block to spawn humanoid"
+command-humanoid-add@aliases: ["a"]
+
+command-humanoid-set: "set"
+command-humanoid-set@usage: "/humanoid Set <data name> [data]"
+command-humanoid-set@success: "Touch the humanoid to change data"
+command-humanoid-set@aliases: ["s"]
+
+command-humanoid-remove: "remove"
+command-humanoid-remove@usage: "/humanoid Remove"
+command-humanoid-remove@success: "Touch the humanoid to remove"
+command-humanoid-remove@aliases: ["r"]
+
+command-humanoid-lang: "lang"
+command-humanoid-lang@usage: "/humanoid Lang <language prefix>"
+command-humanoid-lang@success: "{%0} language file was loaded"
+command-humanoid-lang@failure: "{%0} is invalid language prefix"
+command-humanoid-lang@aliases: ["language"]
+
+command-humanoid-reload: "reload"
+command-humanoid-reload@usage: "/humanoid Reload"
+command-humanoid-reload@success: "All data was reloaded"
+command-humanoid-reload@aliases: ["rl"]
+...

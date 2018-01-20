@@ -1,0 +1,38 @@
+---
+prefix: "[Humanoid] "
+
+command-generic-failure@in-game: "게임 내에서만 사용할 수 있습니다"
+command-generic-failure@permission : "이 명령을 사용할 수 있는 권한이 없습니다"
+command-generic-failure@invalid: '{%0}는 잘못된 값입니다'
+
+command-humanoid: "humanoid"
+command-humanoid@usage: "/humanoid <set | remove | list | lang | reload | save>"
+command-humanoid@description: "Humanoid의 메인 명령어"
+command-humanoid@aliases: ["hm"]
+
+command-humanoid-add: "add"
+command-humanoid-add@usage: "/humanoid Add [name]"
+command-humanoid-add@success: "휴머노이드를 생성할 블럭을 터치해주세요"
+command-humanoid-add@aliases: ["a"]
+
+command-humanoid-set: "set"
+command-humanoid-set@usage: "/humanoid Set <데이터명> [데이터]"
+command-humanoid-set@success: "데이터를 변경할 휴머노이드를 터치해주세요"
+command-humanoid-set@aliases: ["s"]
+
+command-humanoid-remove: "remove"
+command-humanoid-remove@usage: "/humanoid Remove"
+command-humanoid-remove@success: "제거할 휴머노이드를 터치해주세요"
+command-humanoid-remove@aliases: ["r"]
+
+command-humanoid-lang: "lang"
+command-humanoid-lang@usage: "/humanoid Lang <언어명>"
+command-humanoid-lang@success: "{%0}언어 파일을 불러왔습니다"
+command-humanoid-lang@failure: "{%0}는 잘못된 언어명입니다"
+command-humanoid-lang@aliases: ["language"]
+
+command-humanoid-reload: "reload"
+command-humanoid-reload@usage: "/humanoid Reload"
+command-humanoid-reload@success: "모든 데이터를 불러왔습니다"
+command-humanoid-reload@aliases: ["rl"]
+...
