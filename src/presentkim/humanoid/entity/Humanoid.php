@@ -80,6 +80,7 @@ class Humanoid extends Entity{
 
         $this->skin = $skin;
         $this->skin->debloatGeometryData();
+        $this->sendSkin($this->getViewers());
     }
 
     public function sendSkin(array $targets = null) : void{
@@ -107,7 +108,7 @@ class Humanoid extends Entity{
         $pk->username = $this->getNameTag();
         $pk->entityRuntimeId = $this->id;
         $pk->position = $this->asVector3();
-        $pk->motion = $this->getMotion();
+        $pk->motion = null;
         $pk->yaw = $this->yaw;
         $pk->pitch = $this->pitch;
         $pk->item = $this->heldItem;
