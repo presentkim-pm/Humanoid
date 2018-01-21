@@ -21,10 +21,12 @@ abstract class SimpleSubCommand{
      *
      * @param string   $label
      * @param string[] $aliases
+     * @param string   $usage = ''
      */
-    public function __construct(string $label, array $aliases){
+    public function __construct(string $label, array $aliases, string $usage = ''){
         $this->label = $label;
         $this->aliases = $aliases;
+        $this->usage = $usage;
     }
 
     /**
@@ -64,4 +66,13 @@ abstract class SimpleSubCommand{
         $this->aliases = $aliases;
     }
 
+    /**  @return string */
+    public function getUsage(){
+        return $this->usage;
+    }
+
+    /**  @param string $usage */
+    public function setUsage(string $usage){
+        $this->usage = $usage;
+    }
 }
