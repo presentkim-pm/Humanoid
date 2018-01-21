@@ -2,8 +2,8 @@
 prefix: "[Humanoid] "
 
 command-generic-failure@in-game: "Available in game only"
-command-generic-failure@permission : "You do not have permission to use this command"
-command-generic-failure@invalid : "{%0} is invalid value"
+command-generic-failure@permission: "You do not have permission to use this command"
+command-generic-failure@invalid: "{%0} is invalid value"
 
 command-humanoid: "humanoid"
 command-humanoid@usage: "/humanoid <set | remove | list | lang | reload | save>"
