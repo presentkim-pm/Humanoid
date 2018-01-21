@@ -4,13 +4,15 @@ namespace presentkim\humanoid\command\subcommands\simple;
 
 
 use pocketmine\command\CommandSender;
-use pocketmine\item\Item;
+use pocketmine\entity\Skin;
 use pocketmine\Player;
 use pocketmine\Server;
 use presentkim\humanoid\{
-  command\SimpleSubCommand, HumanoidMain as Plugin, task\PlayerTask, task\SetItemTask, task\SetSkinTask, util\Translation
+  command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
-use function presentkim\humanoid\util\toInt;
+use presentkim\humanoid\task\{
+  PlayerTask, HumanoidSetTask
+};
 
 class SetSkinCommand extends SimpleSubCommand{
 
@@ -22,22 +24,38 @@ class SetSkinCommand extends SimpleSubCommand{
         if ($sender instanceof Player) {
             if (isset($args[0])) {
                 if ($args[0] === '*') {
-                    PlayerTask::registerTask(new SetSkinTask($sender, $sender->getSkin()));
-                    return true;
+                    $skin = $sender->getSkin();
                 } else {
                     $player = Server::getInstance()->getPlayerExact($args[0]);
                     if ($player === null) {
                         $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid-player', $args[0]));
                         return false;
                     } else {
-                        PlayerTask::registerTask(new SetSkinTask($sender, $player->getSkin()));
-                        return true;
+                        $skin = $player->getSkin();
                     }
                 }
             } else {
-                PlayerTask::registerTask(new SetSkinTask($sender, $sender->getSkin()));
-                return true;
+                $skin = $sender->getSkin();
             }
+            PlayerTask::registerTask(new class ($sender, $skin) extends HumanoidSetTask{
+
+                /** @var Skin | null */
+                private $skin;
+
+                public function __construct(Player $player, Skin $skin = null){
+                    parent::__construct($player);
+                    $this->skin = $skin;
+                }
+
+                public function onClickHumanoid(PlayerClickHumanoidEvent $event){
+                    $event->getHumanoid()->setSkin($this->skin);
+                    $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-skin@success'));
+
+                    $event->setCancelled(true);
+                    $this->cancel();
+                }
+            });
+            return true;
         } else {
             $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@in-game'));
             return false;
