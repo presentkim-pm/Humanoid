@@ -56,7 +56,7 @@ class SetSubCommand extends SubCommand{
                     return true;
                 }
             }
-            $sender->sendMessage(Plugin::$prefix . $this->translate('failure', $args[0]));
+            $sender->sendMessage(Plugin::$prefix . $this->translate('failure', $label));
             return true;
         }
         return false;
