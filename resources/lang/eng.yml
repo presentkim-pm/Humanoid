@@ -2,6 +2,7 @@
 prefix: "[Humanoid] "
 
 humanoid-add@success: "Humanoid was created"
+humanoid-remove@success: "Humanoid was removed"
 
 command-generic-failure@in-game: "Available in game only"
 command-generic-failure@permission: "You do not have permission to use this command"

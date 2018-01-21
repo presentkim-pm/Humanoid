@@ -2,6 +2,7 @@
 prefix: "[Humanoid] "
 
 humanoid-add@success: "휴머노이드가 생성되었습니다"
+humanoid-remove@success: "휴머노이드가 제거되었습니다"
 
 command-generic-failure@in-game: "게임 내에서만 사용할 수 있습니다"
 command-generic-failure@permission: "이 명령을 사용할 수 있는 권한이 없습니다"
