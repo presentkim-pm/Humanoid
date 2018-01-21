@@ -4,6 +4,8 @@ namespace presentkim\humanoid\entity;
 
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\math\Vector3;
+use pocketmine\nbt\tag\ByteTag;
+use pocketmine\nbt\tag\FloatTag;
 use pocketmine\Player;
 use pocketmine\entity\{
   Entity, Skin
@@ -48,6 +50,9 @@ class Humanoid extends Entity{
         $skinData = $this->namedtag->hasTag('SkinData') ? $this->namedtag->getString('SkinData') : str_repeat("\x00", 8192);
         $geometryName = $this->namedtag->hasTag('GeometryName') ? $this->namedtag->getString('GeometryName') : '';
         $this->setSkin(new Skin('humanoid', $skinData, '', $geometryName));
+
+        $this->setSneaking($this->namedtag->hasTag('Sneak') ? (bool) $this->namedtag->getByte('Sneak') : false);
+        $this->setScale($this->namedtag->hasTag('Scale') ? $this->namedtag->getFloat('Scale') : 1);
     }
 
     /** @return UUID */
@@ -102,6 +107,9 @@ class Humanoid extends Entity{
         $this->namedtag->setTag($this->heldItem->nbtSerialize(-1, 'HeldItem'));
         $this->namedtag->setTag(new StringTag('SkinData', $this->skin->getSkinData()));
         $this->namedtag->setTag(new StringTag('GeometryName', $this->skin->getGeometryName()));
+
+        $this->namedtag->setTag(new ByteTag('Sneak', (int) $this->isSneaking()));
+        $this->namedtag->setTag(new FloatTag('Scale', $this->getScale()));
     }
 
     /** @param \pocketmine\Player $player */
