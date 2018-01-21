@@ -23,8 +23,10 @@ class SetRotationTask extends HumanoidSetTask{
     }
 
     public function onClickHumanoid(PlayerClickHumanoidEvent $event){
-        $event->getHumanoid()->setRotation($this->yaw ?? $this->player->yaw, $this->pitch ?? $this->player->pitch);
-        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-rotation@success'));
+        $this->yaw = $this->yaw ?? $this->player->yaw;
+        $this->pitch = $this->pitch ?? $this->player->pitch;
+        $event->getHumanoid()->setRotation($this->yaw, $this->pitch);
+        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-rotation@success', $this->yaw, $this->pitch));
 
         $event->setCancelled(true);
         $this->cancel();
