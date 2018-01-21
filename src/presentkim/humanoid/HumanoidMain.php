@@ -9,7 +9,7 @@ use presentkim\humanoid\listener\PlayerEventListener;
 use presentkim\humanoid\util\Translation;
 use presentkim\humanoid\command\PoolCommand;
 use presentkim\humanoid\command\subcommands\{
-  AddSubCommand, SetSubCommand, RemoveSubCommand, LangSubCommand, ReloadSubCommand
+  AddSubCommand, SetSubCommand, RemoveSubCommand, CancelSubCommand, LangSubCommand, ReloadSubCommand
 };
 
 class HumanoidMain extends PluginBase{
@@ -72,6 +72,7 @@ class HumanoidMain extends PluginBase{
             $this->command->createSubCommand(AddSubCommand::class);
             $this->command->createSubCommand(SetSubCommand::class);
             $this->command->createSubCommand(RemoveSubCommand::class);
+            $this->command->createSubCommand(CancelSubCommand::class);
             $this->command->createSubCommand(LangSubCommand::class);
             $this->command->createSubCommand(ReloadSubCommand::class);
         }
