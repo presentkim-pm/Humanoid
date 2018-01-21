@@ -3,12 +3,13 @@
 namespace presentkim\humanoid\entity;
 
 use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\math\Vector3;
 use pocketmine\Player;
 use pocketmine\entity\{
   Entity, Skin
 };
 use pocketmine\network\mcpe\protocol\{
-  PlayerSkinPacket, types\ContainerIds, AddPlayerPacket, MobEquipmentPacket
+  MovePlayerPacket, PlayerSkinPacket, types\ContainerIds, AddPlayerPacket, MobEquipmentPacket
 };
 use pocketmine\nbt\tag\StringTag;
 use pocketmine\item\Item;
@@ -126,6 +127,33 @@ class Humanoid extends Entity{
     }
 
     public function move(float $dx, float $dy, float $dz) : bool{
+        return false;
+    }
+
+    /**
+     * @param Vector3    $pos
+     * @param float|null $yaw
+     * @param float|null $pitch
+     *
+     * @return bool
+     */
+    public function teleport(Vector3 $pos, float $yaw = null, float $pitch = null) : bool{
+        if (parent::teleport($pos, $yaw, $pitch)) {
+            $yaw = $yaw ?? $this->yaw;
+            $pitch = $pitch ?? $this->pitch;
+
+            $pk = new MovePlayerPacket();
+            $pk->entityRuntimeId = $this->getId();
+            $pk->position = $this->getOffsetPosition($pos);
+            $pk->pitch = $pitch;
+            $pk->headYaw = $yaw;
+            $pk->yaw = $yaw;
+            $pk->mode = MovePlayerPacket::MODE_TELEPORT;
+
+            $this->server->broadcastPacket($targets ?? $this->hasSpawned, $pk);
+            $this->spawnToAll();
+            return true;
+        }
         return false;
     }
 }
