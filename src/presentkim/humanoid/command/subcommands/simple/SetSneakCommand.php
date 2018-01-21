@@ -18,6 +18,12 @@ class SetSneakCommand extends SimpleSubCommand{
         parent::__construct('sneak');
     }
 
+    /**
+     * @param CommandSender $sender
+     * @param String[]      $args
+     *
+     * @return bool
+     */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
             PlayerTask::registerTask(new class($sender, implode(' ', $args)) extends HumanoidSetTask{
@@ -25,11 +31,16 @@ class SetSneakCommand extends SimpleSubCommand{
                 /** @var string */
                 private $name;
 
+                /**
+                 * @param Player $player
+                 * @param string $name
+                 */
                 public function __construct(Player $player, string $name){
                     parent::__construct($player);
                     $this->name = $name;
                 }
 
+                /** @param PlayerClickHumanoidEvent $event */
                 public function onClickHumanoid(PlayerClickHumanoidEvent $event){
                     $humanoid = $event->getHumanoid();
                     $humanoid->setSneaking(!$humanoid->isSneaking());

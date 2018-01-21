@@ -18,6 +18,12 @@ class SetNameCommand extends SimpleSubCommand{
         parent::__construct('name');
     }
 
+    /**
+     * @param CommandSender $sender
+     * @param String[]      $args
+     *
+     * @return bool
+     */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
             if (isset($args[0])) {
@@ -26,11 +32,16 @@ class SetNameCommand extends SimpleSubCommand{
                     /** @var string */
                     private $name;
 
+                    /**
+                     * @param Player $player
+                     * @param string $name
+                     */
                     public function __construct(Player $player, string $name){
                         parent::__construct($player);
                         $this->name = $name;
                     }
 
+                    /** @param PlayerClickHumanoidEvent $event */
                     public function onClickHumanoid(PlayerClickHumanoidEvent $event){
                         $event->getHumanoid()->setNameTag($this->name);
                         $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-name@success', $this->name));

@@ -19,6 +19,13 @@ class SetGeometryCommand extends SimpleSubCommand{
         parent::__construct('geometry');
     }
 
+
+    /**
+     * @param CommandSender $sender
+     * @param String[]      $args
+     *
+     * @return bool
+     */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
             if (isset($args[0])) {
@@ -30,11 +37,16 @@ class SetGeometryCommand extends SimpleSubCommand{
                     /** @var string */
                     private $geometryName;
 
+                    /**
+                     * @param Player $player
+                     * @param string $geometryName
+                     */
                     public function __construct(Player $player, string $geometryName){
                         parent::__construct($player);
                         $this->geometryName = $geometryName;
                     }
 
+                    /** @param PlayerClickHumanoidEvent $event */
                     public function onClickHumanoid(PlayerClickHumanoidEvent $event){
                         $event->getHumanoid()->setSkin(new Skin('humanoid', $event->getHumanoid()->getSkin()->getSkinData(), '', $this->geometryName));
                         $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-geometry@success', $this->geometryName));

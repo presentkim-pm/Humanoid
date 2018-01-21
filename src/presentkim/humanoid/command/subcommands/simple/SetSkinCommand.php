@@ -20,6 +20,12 @@ class SetSkinCommand extends SimpleSubCommand{
         parent::__construct('skin');
     }
 
+    /**
+     * @param CommandSender $sender
+     * @param String[]      $args
+     *
+     * @return bool
+     */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
             if (isset($args[0])) {
@@ -42,11 +48,16 @@ class SetSkinCommand extends SimpleSubCommand{
                 /** @var Skin | null */
                 private $skin;
 
+                /**
+                 * @param Player    $player
+                 * @param Skin|null $skin
+                 */
                 public function __construct(Player $player, Skin $skin = null){
                     parent::__construct($player);
                     $this->skin = $skin;
                 }
 
+                /** @param PlayerClickHumanoidEvent $event */
                 public function onClickHumanoid(PlayerClickHumanoidEvent $event){
                     $event->getHumanoid()->setSkin($this->skin);
                     $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-skin@success'));

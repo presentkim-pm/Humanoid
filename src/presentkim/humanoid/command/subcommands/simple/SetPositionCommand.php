@@ -21,6 +21,12 @@ class SetPositionCommand extends SimpleSubCommand{
         parent::__construct('position');
     }
 
+    /**
+     * @param CommandSender $sender
+     * @param String[]      $args
+     *
+     * @return bool
+     */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
             if (!isset($args[0])) {
@@ -72,11 +78,16 @@ class SetPositionCommand extends SimpleSubCommand{
                 /** @var Vector3 */
                 private $pos;
 
+                /**
+                 * @param Player  $player
+                 * @param Vector3 $pos
+                 */
                 public function __construct(Player $player, Vector3 $pos){
                     parent::__construct($player);
                     $this->pos = $pos;
                 }
 
+                /** @param PlayerClickHumanoidEvent $event */
                 public function onClickHumanoid(PlayerClickHumanoidEvent $event){
                     $event->getHumanoid()->teleport($this->pos);
                     $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-position@success'));

@@ -20,6 +20,12 @@ class SetItemCommand extends SimpleSubCommand{
         parent::__construct('item');
     }
 
+    /**
+     * @param CommandSender $sender
+     * @param String[]      $args
+     *
+     * @return bool
+     */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
             if (isset($args[0])) {
@@ -45,11 +51,16 @@ class SetItemCommand extends SimpleSubCommand{
                     /** @var Item | null */
                     private $item;
 
+                    /**
+                     * @param Player    $player
+                     * @param Item|null $item
+                     */
                     public function __construct(Player $player, Item $item = null){
                         parent::__construct($player);
                         $this->item = $item;
                     }
 
+                    /** @param PlayerClickHumanoidEvent $event */
                     public function onClickHumanoid(PlayerClickHumanoidEvent $event){
                         $event->getHumanoid()->setHeldItem($this->item);
                         $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-item@success'));

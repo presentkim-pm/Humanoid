@@ -30,6 +30,7 @@ class RemoveSubCommand extends SubCommand{
         if ($sender instanceof Player) {
             PlayerTask::registerTask(new class ($sender) extends HumanoidSetTask{
 
+                /** @param PlayerClickHumanoidEvent $event */
                 public function onClickHumanoid(PlayerClickHumanoidEvent $event){
                     $event->getHumanoid()->kill();
 

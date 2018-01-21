@@ -35,11 +35,16 @@ class AddSubCommand extends SubCommand{
                 /** @var string */
                 private $name;
 
+                /**
+                 * @param Player $player
+                 * @param string $name
+                 */
                 public function __construct(Player $player, string $name){
                     parent::__construct($player);
                     $this->name = $name;
                 }
 
+                /** @param PlayerInteractEvent $event */
                 public function onInteract(PlayerInteractEvent $event){
                     if ($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_AIR) {
                         $nbt = Entity::createBaseNBT($this->player, null, $this->player->yaw, $this->player->pitch);

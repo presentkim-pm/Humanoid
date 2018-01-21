@@ -19,6 +19,12 @@ class SetRotationCommand extends SimpleSubCommand{
         parent::__construct('rotation');
     }
 
+    /**
+     * @param CommandSender $sender
+     * @param String[]      $args
+     *
+     * @return bool
+     */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
             if (isset($args[0])) {
@@ -47,12 +53,18 @@ class SetRotationCommand extends SimpleSubCommand{
                     /** @var int | null */
                     private $pitch;
 
+                    /**
+                     * @param Player   $player
+                     * @param int|null $yaw
+                     * @param int|null $pitch
+                     */
                     public function __construct(Player $player, ?int $yaw = null, ?int $pitch = null){
                         parent::__construct($player);
                         $this->yaw = $yaw;
                         $this->pitch = $pitch;
                     }
 
+                    /** @param PlayerClickHumanoidEvent $event */
                     public function onClickHumanoid(PlayerClickHumanoidEvent $event){
                         $this->yaw = $this->yaw ?? $this->player->yaw;
                         $this->pitch = $this->pitch ?? $this->player->pitch;

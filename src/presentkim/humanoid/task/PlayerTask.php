@@ -46,10 +46,12 @@ abstract class PlayerTask{
     /** @var int */
     protected $id;
 
+    /** @param \pocketmine\Player $player */
     public function __construct(Player $player){
         $this->player = $player;
     }
 
+    /** @param PlayerInteractEvent $event */
     public function onInteract(PlayerInteractEvent $event){
         $this->cancel();
     }

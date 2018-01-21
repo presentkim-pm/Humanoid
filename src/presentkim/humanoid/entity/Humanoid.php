@@ -77,6 +77,7 @@ class Humanoid extends Entity{
         return $this->skin;
     }
 
+    /** @param Skin $skin */
     public function setSkin(Skin $skin){
         if (!$skin->isValid()) {
             throw new \InvalidStateException('Specified skin is not valid, must be 8KiB or 16KiB');
@@ -87,7 +88,8 @@ class Humanoid extends Entity{
         $this->sendSkin($this->getViewers());
     }
 
-    public function sendSkin(array $targets = null) : void{
+    /** @param Player[] | null $targets */
+    public function sendSkin(array $targets = null){
         $pk = new PlayerSkinPacket();
         $pk->uuid = $this->getUniqueId();
         $pk->skin = $this->skin;
@@ -102,6 +104,7 @@ class Humanoid extends Entity{
         $this->namedtag->setTag(new StringTag('GeometryName', $this->skin->getGeometryName()));
     }
 
+    /** @param \pocketmine\Player $player */
     protected function sendSpawnPacket(Player $player) : void{
         if (!$this->skin->isValid()) {
             throw new \InvalidStateException((new \ReflectionClass($this))->getShortName() . ' must have a valid skin set');
@@ -122,10 +125,18 @@ class Humanoid extends Entity{
         $this->sendSkin([$player]);
     }
 
+    /** @param EntityDamageEvent $source */
     public function attack(EntityDamageEvent $source){
         $source->setCancelled(true);
     }
 
+    /**
+     * @param float $dx
+     * @param float $dy
+     * @param float $dz
+     *
+     * @return bool
+     */
     public function move(float $dx, float $dy, float $dz) : bool{
         return false;
     }
