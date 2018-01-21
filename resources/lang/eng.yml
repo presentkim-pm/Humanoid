@@ -3,6 +3,7 @@ prefix: "[Humanoid] "
 
 humanoid-add@success: "Humanoid was created"
 humanoid-remove@success: "Humanoid was removed"
+humanoid-set-name@success: "Humanoid name was setted to {%0}"
 
 command-generic-failure@in-game: "Available in game only"
 command-generic-failure@permission: "You do not have permission to use this command"
@@ -23,6 +24,10 @@ command-humanoid-set@usage: "/humanoid Set <data name> [data]"
 command-humanoid-set@success: "Touch the humanoid to change data"
 command-humanoid-set@failure: "{%0} is invalid data name"
 command-humanoid-set@aliases: ["s"]
+
+command-humanoid-set-name: "name"
+command-humanoid-set-name@usage: "/humanoid Set Name <name>"
+command-humanoid-set-name@aliases: ["n"]
 
 command-humanoid-remove: "remove"
 command-humanoid-remove@usage: "/humanoid Remove"

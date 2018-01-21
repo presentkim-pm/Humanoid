@@ -4,7 +4,7 @@ namespace presentkim\humanoid\command\subcommands;
 
 use pocketmine\command\CommandSender;
 use presentkim\humanoid\{
-  command\PoolCommand, command\SimpleSubCommand, HumanoidMain as Plugin, command\SubCommand
+  command\PoolCommand, command\SimpleSubCommand, command\subcommands\simple\SetNameCommand, HumanoidMain as Plugin, command\SubCommand, util\Translation
 };
 
 class SetSubCommand extends SubCommand{
@@ -29,6 +29,7 @@ class SetSubCommand extends SubCommand{
 
     public function __construct(PoolCommand $owner){
         parent::__construct($owner, 'set');
+        self::addSubCommand(new SetNameCommand());
     }
 
     /**
