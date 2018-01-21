@@ -3,8 +3,12 @@
 namespace presentkim\humanoid\command\subcommands;
 
 use pocketmine\command\CommandSender;
-use presentkim\humanoid\{
-  command\PoolCommand, command\SimpleSubCommand, command\subcommands\simple\SetNameCommand, command\subcommands\simple\SetRotationCommand, HumanoidMain as Plugin, command\SubCommand, util\Translation
+use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\command\{
+  PoolCommand, SubCommand, SimpleSubCommand
+};
+use presentkim\humanoid\command\subcommands\simple\{
+  SetNameCommand, SetRotationCommand
 };
 
 class SetSubCommand extends SubCommand{
