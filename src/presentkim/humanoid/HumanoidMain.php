@@ -6,7 +6,6 @@ use pocketmine\entity\Entity;
 use pocketmine\plugin\PluginBase;
 use presentkim\humanoid\listener\DataPacketEventListener;
 use presentkim\humanoid\listener\PlayerEventListener;
-use presentkim\humanoid\entity\Humanoid;
 use presentkim\humanoid\util\Translation;
 use presentkim\humanoid\command\PoolCommand;
 use presentkim\humanoid\command\subcommands\{
@@ -14,6 +13,9 @@ use presentkim\humanoid\command\subcommands\{
 };
 
 class HumanoidMain extends PluginBase{
+
+    /** @var string */
+    public static $prefix = '';
 
     /** @var self */
     private static $instance = null;
@@ -23,14 +25,8 @@ class HumanoidMain extends PluginBase{
         return self::$instance;
     }
 
-    /** @var string */
-    public static $prefix = '';
-
     /** @var PoolCommand */
     private $command;
-
-    /** @var array */
-    public $task = [];
 
     public function onLoad(){
         if (self::$instance === null) {
