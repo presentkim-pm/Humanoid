@@ -3,7 +3,6 @@ prefix: "[Humanoid] "
 
 humanoid-add@success: "Humanoid was created"
 humanoid-remove@success: "Humanoid was removed"
-command-generic-failure@invalid-player: "{%0} is invalid player name"
 
 humanoid-set-name@success: "Humanoid's name was setted to {%0}"
 humanoid-set-rotation@success: "Humanoid's rotation was setted to {%0}:{%1}"
@@ -17,6 +16,7 @@ humanoid-set-scale@success: "Humanoid's scale was setted to {%0}"
 command-generic-failure@in-game: "Available in game only"
 command-generic-failure@permission: "You do not have permission to use this command"
 command-generic-failure@invalid: "{%0} is invalid value"
+command-generic-failure@invalid-player: "{%0} is invalid player name"
 
 command-humanoid: "humanoid"
 command-humanoid@usage: "/humanoid <add | set | remove | cancel | lang | reload | save>"
@@ -33,6 +33,12 @@ command-humanoid-set@usage: "/humanoid Set <data name> [data]"
 command-humanoid-set@success: "Touch the humanoid to change data"
 command-humanoid-set@failure: "{%0} is invalid data name"
 command-humanoid-set@aliases: ["s"]
+
+command-humanoid-set-list: "list"
+command-humanoid-set-list@usage: "/humanoid Set List [Page]"
+command-humanoid-set-list@head: "--- Data name list (page {%0} of {%1}) ---"
+command-humanoid-set-list@item: " - {%1}"
+command-humanoid-set-list@aliases: ["l"]
 
 command-humanoid-set-name: "name"
 command-humanoid-set-name@usage: "/humanoid Set Name <name>"
