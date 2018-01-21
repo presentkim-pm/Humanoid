@@ -43,16 +43,15 @@ class SetSubCommand extends SubCommand{
             $label = array_shift($args);
             foreach (self::$subCommands as $key => $value) {
                 if ($value->checkLabel($label)) {
-                    if (!$value->onCommand($sender, $args)) {
-                        return true;
+                    if ($value->onCommand($sender, $args)) {
+                        $sender->sendMessage(Plugin::$prefix . $this->translate('success'));
                     }
-                    break;
+                    return true;
                 }
             }
-            $sender->sendMessage(Plugin::$prefix . $this->translate('success'));
+            $sender->sendMessage(Plugin::$prefix . $this->translate('failure', $args[0]));
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 }
