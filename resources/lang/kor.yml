@@ -9,6 +9,7 @@ humanoid-set-name@success: "휴머노이드의 이름이 {%0}로 설정되었습
 humanoid-set-rotation@success: "휴머노이드의 방향이 {%0}:{%1}로 설정되었습니다"
 humanoid-set-item@success: "휴머노이드의 아이템이 변경되었습니다"
 humanoid-set-skin@success: "휴머노이드의 스킨이 변경되었습니다"
+humanoid-set-geometry@success:  "휴머노이드의 geometry가 {%0}로 설정되었습니다"
 
 command-generic-failure@in-game: "게임 내에서만 사용할 수 있습니다"
 command-generic-failure@permission: "이 명령을 사용할 수 있는 권한이 없습니다"
@@ -44,7 +45,11 @@ command-humanoid-set-item@aliases: ["i"]
 
 command-humanoid-set-skin: "skin"
 command-humanoid-set-skin@usage: "/humanoid Set Skin [플레이어명]"
-command-humanoid-set-skin@aliases: ["i"]
+command-humanoid-set-skin@aliases: ["s"]
+
+command-humanoid-set-geometry: "geometry"
+command-humanoid-set-geometry@usage: "/humanoid Set Geometry <geometry명>"
+command-humanoid-set-geometry@aliases: ["g"]
 
 command-humanoid-remove: "remove"
 command-humanoid-remove@usage: "/humanoid Remove"
