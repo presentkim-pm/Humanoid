@@ -119,7 +119,7 @@ class Humanoid extends Entity{
         $pk->yaw = $this->yaw;
         $pk->pitch = $this->pitch;
         $pk->item = $this->heldItem;
-        $pk->metadata = $this->dataProperties;
+        $pk->metadata = $this->propertyManager->getAll();
         $player->dataPacket($pk);
 
         $this->sendSkin([$player]);
