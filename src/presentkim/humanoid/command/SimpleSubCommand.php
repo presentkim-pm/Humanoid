@@ -4,8 +4,12 @@ namespace presentkim\humanoid\command;
 
 use pocketmine\command\CommandSender;
 use function presentkim\humanoid\util\in_arrayi;
+use presentkim\humanoid\util\Translation;
 
 abstract class SimpleSubCommand{
+
+    /** @var string */
+    public $uname;
 
     /** @var string */
     protected $label;
@@ -19,14 +23,12 @@ abstract class SimpleSubCommand{
     /**
      * SubCommand constructor.
      *
-     * @param string   $label
-     * @param string[] $aliases
-     * @param string   $usage = ''
+     * @param string $uname ;
      */
-    public function __construct(string $label, array $aliases, string $usage = ''){
-        $this->label = $label;
-        $this->aliases = $aliases;
-        $this->usage = $usage;
+    public function __construct(string $uname){
+        $this->uname = $uname;
+
+        $this->updateTranslation();
     }
 
     /**
@@ -74,5 +76,11 @@ abstract class SimpleSubCommand{
     /**  @param string $usage */
     public function setUsage(string $usage){
         $this->usage = $usage;
+    }
+
+    public function updateTranslation(){
+        $this->label = Translation::translate("command-humanoid-set-{$this->uname}");
+        $this->aliases = Translation::getArray("command-humanoid-set-{$this->uname}@aliases");
+        $this->usage = Translation::translate("command-humanoid-set-{$this->uname}@usage");
     }
 }
