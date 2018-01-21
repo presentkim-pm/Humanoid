@@ -12,6 +12,7 @@ use presentkim\humanoid\{
 use presentkim\humanoid\task\{
   PlayerTask, HumanoidSetTask
 };
+use function presentkim\humanoid\util\toInt;
 
 class SetScaleCommand extends SimpleSubCommand{
 
@@ -28,7 +29,9 @@ class SetScaleCommand extends SimpleSubCommand{
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
             if (isset($args[0])) {
-                $scale = is_numeric($args[0]) ? (float) $args[0] : null;
+                $scale = toInt($args[0], null, function (int $i){
+                    return $i >= 10;
+                });
                 if ($scale === null) {
                     $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid', $args[0]));
                     return false;
