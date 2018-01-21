@@ -3,8 +3,9 @@ prefix: "[Humanoid] "
 
 humanoid-add@success: "Humanoid was created"
 humanoid-remove@success: "Humanoid was removed"
-humanoid-set-name@success: "Humanoid name was setted to {%0}"
-humanoid-set-rotation@success: "Humanoid rotation was setted to {%0}:{%1}"
+
+humanoid-set-name@success: "Humanoid's name was setted to {%0}"
+humanoid-set-rotation@success: "Humanoid's rotation was setted to {%0}:{%1}"
 humanoid-set-item@success: "Humanoid's item was changed"
 
 command-generic-failure@in-game: "Available in game only"

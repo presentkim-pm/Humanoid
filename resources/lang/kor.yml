@@ -3,6 +3,7 @@ prefix: "[Humanoid] "
 
 humanoid-add@success: "휴머노이드가 생성되었습니다"
 humanoid-remove@success: "휴머노이드가 제거되었습니다"
+
 humanoid-set-name@success: "휴머노이드의 이름이 {%0}로 설정되었습니다"
 humanoid-set-rotation@success: "휴머노이드의 방향이 {%0}:{%1}로 설정되었습니다"
 humanoid-set-item@success: "휴머노이드의 아이템이 변경되었습니다"
