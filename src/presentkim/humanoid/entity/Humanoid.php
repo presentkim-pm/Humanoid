@@ -128,13 +128,4 @@ class Humanoid extends Entity{
     public function move(float $dx, float $dy, float $dz) : bool{
         return false;
     }
-
-    public function onUpdate(int $currentTick) : bool{
-        if (count($this->changedDataProperties) > 0) {
-            $this->sendData($this->hasSpawned, $this->changedDataProperties);
-            $this->changedDataProperties = [];
-        }
-        $this->broadcastMovement();
-        return false;
-    }
 }
