@@ -34,6 +34,9 @@ class Humanoid extends Entity{
     /** @var float */
     public $eyeHeight = 1.62;
 
+    /** @var float */
+    protected $baseOffset = 1.62;
+
     protected function initEntity(){
         parent::initEntity();
 
@@ -123,6 +126,15 @@ class Humanoid extends Entity{
     }
 
     public function move(float $dx, float $dy, float $dz) : bool{
+        return false;
+    }
+
+    public function onUpdate(int $currentTick) : bool{
+        if (count($this->changedDataProperties) > 0) {
+            $this->sendData($this->hasSpawned, $this->changedDataProperties);
+            $this->changedDataProperties = [];
+        }
+        $this->broadcastMovement();
         return false;
     }
 }
