@@ -28,6 +28,12 @@ command-humanoid-remove@usage: "/humanoid Remove"
 command-humanoid-remove@success: "Touch the humanoid to remove"
 command-humanoid-remove@aliases: ["r"]
 
+command-humanoid-cancel: "cancel"
+command-humanoid-cancel@usage: "/humanoid cancel"
+command-humanoid-cancel@success: "Task was cancelled"
+command-humanoid-cancel@failure: "You don't have any task"
+command-humanoid-cancel@aliases: ["c"]
+
 command-humanoid-lang: "lang"
 command-humanoid-lang@usage: "/humanoid Lang <language prefix>"
 command-humanoid-lang@success: "{%0} language file was loaded"

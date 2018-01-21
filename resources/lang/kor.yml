@@ -28,6 +28,12 @@ command-humanoid-remove@usage: "/humanoid Remove"
 command-humanoid-remove@success: "제거할 휴머노이드를 터치해주세요"
 command-humanoid-remove@aliases: ["r"]
 
+command-humanoid-cancel: "cancel"
+command-humanoid-cancel@usage: "/humanoid cancel"
+command-humanoid-cancel@success: "할일이 취소되었습니다"
+command-humanoid-cancel@failure: "취소할 할일이 없습니다"
+command-humanoid-cancel@aliases: ["c"]
+
 command-humanoid-lang: "lang"
 command-humanoid-lang@usage: "/humanoid Lang <언어명>"
 command-humanoid-lang@success: "{%0}언어 파일을 불러왔습니다"
