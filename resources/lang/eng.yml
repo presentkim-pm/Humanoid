@@ -21,6 +21,7 @@ command-humanoid-add@aliases: ["a"]
 command-humanoid-set: "set"
 command-humanoid-set@usage: "/humanoid Set <data name> [data]"
 command-humanoid-set@success: "Touch the humanoid to change data"
+command-humanoid-set@failure: "{%0} is invalid data name"
 command-humanoid-set@aliases: ["s"]
 
 command-humanoid-remove: "remove"

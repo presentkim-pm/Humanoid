@@ -6,7 +6,7 @@ humanoid-remove@success: "휴머노이드가 제거되었습니다"
 
 command-generic-failure@in-game: "게임 내에서만 사용할 수 있습니다"
 command-generic-failure@permission: "이 명령을 사용할 수 있는 권한이 없습니다"
-command-generic-failure@invalid: '{%0}는 잘못된 값입니다'
+command-generic-failure@invalid: "{%0}는 잘못된 값입니다"
 
 command-humanoid: "humanoid"
 command-humanoid@usage: "/humanoid <add | set | remove | cancel | lang | reload | save>"
@@ -21,6 +21,7 @@ command-humanoid-add@aliases: ["a"]
 command-humanoid-set: "set"
 command-humanoid-set@usage: "/humanoid Set <데이터명> [데이터]"
 command-humanoid-set@success: "데이터를 변경할 휴머노이드를 터치해주세요"
+command-humanoid-set@failure: "{%0}는 잘못된 데이터명입니다"
 command-humanoid-set@aliases: ["s"]
 
 command-humanoid-remove: "remove"
