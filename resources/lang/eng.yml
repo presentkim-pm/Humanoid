@@ -5,6 +5,7 @@ humanoid-add@success: "Humanoid was created"
 humanoid-remove@success: "Humanoid was removed"
 humanoid-set-name@success: "Humanoid name was setted to {%0}"
 humanoid-set-rotation@success: "Humanoid rotation was setted to {%0}:{%1}"
+humanoid-set-item@success: "Humanoid's item was changed"
 
 command-generic-failure@in-game: "Available in game only"
 command-generic-failure@permission: "You do not have permission to use this command"
@@ -33,6 +34,10 @@ command-humanoid-set-name@aliases: ["n"]
 command-humanoid-set-rotation: "rotation"
 command-humanoid-set-rotation@usage: "/humanoid Set Rotation {* | <yaw> <pitch>}"
 command-humanoid-set-rotation@aliases: ["r"]
+
+command-humanoid-set-item: "item"
+command-humanoid-set-item@usage: "/humanoid Set Item {* | <item id> [item meta]}"
+command-humanoid-set-item@aliases: ["i"]
 
 command-humanoid-remove: "remove"
 command-humanoid-remove@usage: "/humanoid Remove"

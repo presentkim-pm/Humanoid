@@ -8,7 +8,7 @@ use presentkim\humanoid\command\{
   PoolCommand, SubCommand, SimpleSubCommand
 };
 use presentkim\humanoid\command\subcommands\simple\{
-  SetNameCommand, SetRotationCommand
+  SetNameCommand, SetRotationCommand, SetItemCommand
 };
 
 class SetSubCommand extends SubCommand{
@@ -35,6 +35,7 @@ class SetSubCommand extends SubCommand{
         parent::__construct($owner, 'set');
         self::addSubCommand(new SetNameCommand());
         self::addSubCommand(new SetRotationCommand());
+        self::addSubCommand(new SetItemCommand());
     }
 
     /**
