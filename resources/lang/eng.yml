@@ -11,6 +11,7 @@ humanoid-set-item@success: "Humanoid's item was changed"
 humanoid-set-skin@success: "Humanoid's skin was changed"
 humanoid-set-geometry@success: "Humanoid's geometry was setted to {%0}"
 humanoid-set-sneak@success: "Humanoid's sneaking was changed"
+humanoid-set-position@success: "Humanoid's sneaking was changed"
 
 command-generic-failure@in-game: "Available in game only"
 command-generic-failure@permission: "You do not have permission to use this command"
@@ -55,6 +56,10 @@ command-humanoid-set-geometry@aliases: ["g"]
 command-humanoid-set-sneak: "sneak"
 command-humanoid-set-sneak@usage: "/humanoid Set Sneak"
 command-humanoid-set-sneak@aliases: ["sn"]
+
+command-humanoid-set-position: "position"
+command-humanoid-set-position@usage: "/humanoid Set Position <x> <y> <z> [world name]"
+command-humanoid-set-position@aliases: ["p", "pos"]
 
 command-humanoid-remove: "remove"
 command-humanoid-remove@usage: "/humanoid Remove"
