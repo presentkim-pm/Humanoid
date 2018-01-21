@@ -9,7 +9,7 @@ command-generic-failure@permission: "이 명령을 사용할 수 있는 권한�
 command-generic-failure@invalid: '{%0}는 잘못된 값입니다'
 
 command-humanoid: "humanoid"
-command-humanoid@usage: "/humanoid <set | remove | list | lang | reload | save>"
+command-humanoid@usage: "/humanoid <add | set | remove | cancel | lang | reload | save>"
 command-humanoid@description: "Humanoid의 메인 명령어"
 command-humanoid@aliases: ["hm"]
 

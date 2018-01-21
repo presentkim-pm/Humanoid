@@ -9,7 +9,7 @@ command-generic-failure@permission: "You do not have permission to use this comm
 command-generic-failure@invalid: "{%0} is invalid value"
 
 command-humanoid: "humanoid"
-command-humanoid@usage: "/humanoid <set | remove | list | lang | reload | save>"
+command-humanoid@usage: "/humanoid <add | set | remove | cancel | lang | reload | save>"
 command-humanoid@description: "Main command of Humanoid"
 command-humanoid@aliases: ["hm"]
 
