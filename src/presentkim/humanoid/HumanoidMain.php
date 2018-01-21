@@ -4,6 +4,7 @@ namespace presentkim\humanoid;
 
 use pocketmine\entity\Entity;
 use pocketmine\plugin\PluginBase;
+use presentkim\humanoid\entity\Humanoid;
 use presentkim\humanoid\listener\DataPacketEventListener;
 use presentkim\humanoid\listener\PlayerEventListener;
 use presentkim\humanoid\util\Translation;
