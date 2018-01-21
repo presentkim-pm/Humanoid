@@ -20,7 +20,7 @@ class SetNameTask extends HumanoidSetTask{
 
     public function onClickHumanoid(PlayerClickHumanoidEvent $event){
         $event->getHumanoid()->setNameTag($this->name);
-        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-simple-set-name@success'));
+        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-name@success'));
 
         $event->setCancelled(true);
         $this->cancel();
