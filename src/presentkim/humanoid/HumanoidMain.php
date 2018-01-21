@@ -65,6 +65,10 @@ class HumanoidMain extends PluginBase{
 
         self::$prefix = Translation::translate('prefix');
         $this->reloadCommand();
+
+        foreach(SetSubCommand::getSubCommands() as $key => $value){
+            $value->updateTranslation();
+        }
     }
 
     public function reloadCommand(){
