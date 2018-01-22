@@ -12,7 +12,7 @@ use presentkim\humanoid\{
   command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
 use presentkim\humanoid\act\{
-  PlayerAct, HumanoidSetAct
+  PlayerAct, ClickHumanoidAct
 };
 
 class SetPositionCommand extends SimpleSubCommand{
@@ -73,7 +73,7 @@ class SetPositionCommand extends SimpleSubCommand{
                 $sender->sendMessage(Plugin::$prefix . $this->usage);
                 return false;
             }
-            PlayerAct::registerTask(new class($sender, $pos) extends HumanoidSetAct{
+            PlayerAct::registerTask(new class($sender, $pos) extends PlayerAct implements ClickHumanoidAct{
 
                 /** @var Vector3 */
                 private $pos;

@@ -11,7 +11,7 @@ use presentkim\humanoid\{
   HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
 use presentkim\humanoid\act\{
-  PlayerAct, HumanoidSetAct
+  PlayerAct, ClickHumanoidAct
 };
 
 class RemoveSubCommand extends SubCommand{
@@ -28,7 +28,7 @@ class RemoveSubCommand extends SubCommand{
      */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
-            PlayerAct::registerTask(new class ($sender) extends HumanoidSetAct{
+            PlayerAct::registerTask(new class ($sender) extends PlayerAct implements ClickHumanoidAct{
 
                 /** @param PlayerClickHumanoidEvent $event */
                 public function onClickHumanoid(PlayerClickHumanoidEvent $event){

@@ -11,7 +11,7 @@ use presentkim\humanoid\{
   command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
 use presentkim\humanoid\act\{
-  PlayerAct, HumanoidSetAct
+  PlayerAct, ClickHumanoidAct
 };
 
 class SetSkinCommand extends SimpleSubCommand{
@@ -43,7 +43,7 @@ class SetSkinCommand extends SimpleSubCommand{
             } else {
                 $skin = $sender->getSkin();
             }
-            PlayerAct::registerTask(new class ($sender, $skin) extends HumanoidSetAct{
+            PlayerAct::registerTask(new class ($sender, $skin) extends PlayerAct implements ClickHumanoidAct{
 
                 /** @var Skin | null */
                 private $skin;
