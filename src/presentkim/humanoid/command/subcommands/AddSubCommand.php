@@ -13,7 +13,7 @@ use presentkim\humanoid\{
   HumanoidMain as Plugin, util\Translation
 };
 use presentkim\humanoid\task\{
-  PlayerTask
+  PlayerAct
 };
 
 class AddSubCommand extends SubCommand{
@@ -30,7 +30,7 @@ class AddSubCommand extends SubCommand{
      */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
-            PlayerTask::registerTask(new  class ($sender, isset($args[0]) ? implode(' ', $args) : $sender->getNameTag()) extends PlayerTask{
+            PlayerAct::registerTask(new  class ($sender, isset($args[0]) ? implode(' ', $args) : $sender->getNameTag()) extends PlayerAct{
 
                 /** @var string */
                 private $name;

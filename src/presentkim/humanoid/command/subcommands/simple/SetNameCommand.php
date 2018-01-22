@@ -9,7 +9,7 @@ use presentkim\humanoid\{
   command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
 use presentkim\humanoid\task\{
-  PlayerTask, HumanoidSetTask
+  PlayerAct, HumanoidSetAct
 };
 
 class SetNameCommand extends SimpleSubCommand{
@@ -27,7 +27,7 @@ class SetNameCommand extends SimpleSubCommand{
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
             if (isset($args[0])) {
-                PlayerTask::registerTask(new class($sender, implode(' ', $args)) extends HumanoidSetTask{
+                PlayerAct::registerTask(new class($sender, implode(' ', $args)) extends HumanoidSetAct{
 
                     /** @var string */
                     private $name;

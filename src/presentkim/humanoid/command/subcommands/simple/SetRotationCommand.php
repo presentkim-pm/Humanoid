@@ -10,7 +10,7 @@ use presentkim\humanoid\{
   command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
 use presentkim\humanoid\task\{
-  PlayerTask, HumanoidSetTask
+  PlayerAct, HumanoidSetAct
 };
 
 class SetRotationCommand extends SimpleSubCommand{
@@ -45,7 +45,7 @@ class SetRotationCommand extends SimpleSubCommand{
                     $sender->sendMessage(Plugin::$prefix . $this->usage);
                     return false;
                 }
-                PlayerTask::registerTask(new  class($sender, $yaw, $pitch) extends HumanoidSetTask{
+                PlayerAct::registerTask(new  class($sender, $yaw, $pitch) extends HumanoidSetAct{
 
                     /** @var int | null */
                     private $yaw;

@@ -5,7 +5,7 @@ namespace presentkim\humanoid\task;
 use pocketmine\event\player\PlayerInteractEvent;
 use presentkim\humanoid\event\PlayerClickHumanoidEvent;
 
-abstract class HumanoidSetTask extends PlayerTask{
+abstract class HumanoidSetAct extends PlayerAct{
 
     /** @param PlayerClickHumanoidEvent $event */
     public abstract function onClickHumanoid(PlayerClickHumanoidEvent $event);

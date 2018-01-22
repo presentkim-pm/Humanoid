@@ -10,7 +10,7 @@ use presentkim\humanoid\{
   command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
 use presentkim\humanoid\task\{
-  PlayerTask, HumanoidSetTask
+  PlayerAct, HumanoidSetAct
 };
 
 class SetGeometryCommand extends SimpleSubCommand{
@@ -32,7 +32,7 @@ class SetGeometryCommand extends SimpleSubCommand{
                 if ($args[0] === '*') {
                     $args[0] = $sender->getSkin()->getGeometryName();
                 }
-                PlayerTask::registerTask(new class($sender, implode('_', $args)) extends HumanoidSetTask{
+                PlayerAct::registerTask(new class($sender, implode('_', $args)) extends HumanoidSetAct{
 
                     /** @var string */
                     private $geometryName;

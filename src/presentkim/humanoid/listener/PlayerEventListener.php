@@ -8,7 +8,7 @@ use pocketmine\event\{
 use presentkim\humanoid\event\PlayerClickHumanoidEvent;
 use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\task\{
-  PlayerTask, HumanoidSetTask
+  PlayerAct, HumanoidSetAct
 };
 
 class PlayerEventListener implements Listener{
@@ -22,16 +22,16 @@ class PlayerEventListener implements Listener{
 
     /** @param PlayerClickHumanoidEvent $event */
     public function onPlayerClickHumanoidEvent(PlayerClickHumanoidEvent $event){
-        $task = PlayerTask::getTask($player = $event->getPlayer());
-        if ($task instanceof HumanoidSetTask) {
+        $task = PlayerAct::getTask($player = $event->getPlayer());
+        if ($task instanceof HumanoidSetAct) {
             $task->onClickHumanoid($event);
         }
     }
 
     /** @param PlayerInteractEvent $event */
     public function onPlayerInteractEvent(PlayerInteractEvent $event){
-        $task = PlayerTask::getTask($player = $event->getPlayer());
-        if ($task instanceof PlayerTask) {
+        $task = PlayerAct::getTask($player = $event->getPlayer());
+        if ($task instanceof PlayerAct) {
             $task->onInteract($event);
         }
     }

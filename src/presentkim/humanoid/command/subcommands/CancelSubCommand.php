@@ -5,7 +5,7 @@ namespace presentkim\humanoid\command\subcommands;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
 use presentkim\humanoid\{
-  command\PoolCommand, HumanoidMain as Plugin, command\SubCommand, task\PlayerTask, task\RemoveHumanoidTask, util\Translation
+  command\PoolCommand, HumanoidMain as Plugin, command\SubCommand, task\PlayerAct, task\RemoveHumanoidTask, util\Translation
 };
 
 class CancelSubCommand extends SubCommand{
@@ -22,8 +22,8 @@ class CancelSubCommand extends SubCommand{
      */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
-            $task = PlayerTask::getTask($sender);
-            if ($task instanceof PlayerTask) {
+            $task = PlayerAct::getTask($sender);
+            if ($task instanceof PlayerAct) {
                 $task->cancel();
                 $sender->sendMessage(Plugin::$prefix . $this->translate('success'));
             }else{

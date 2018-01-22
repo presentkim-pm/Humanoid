@@ -7,37 +7,37 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\Player;
 use presentkim\humanoid\HumanoidMain as Plugin;
 
-abstract class PlayerTask{
+abstract class PlayerAct{
 
-    /** @var PlayerTask[] */
+    /** @var PlayerAct[] */
     private static $tasks = [];
 
-    /** @return PlayerTask[] */
+    /** @return PlayerAct[] */
     public static function getTasks(){
-        return PlayerTask::$tasks;
+        return PlayerAct::$tasks;
     }
 
     /**
      * @param Player $player
      *
-     * @return PlayerTask | null
+     * @return PlayerAct | null
      */
     public static function getTask(Player $player){
-        return PlayerTask::$tasks[$player->getLowerCaseName()] ?? null;
+        return PlayerAct::$tasks[$player->getLowerCaseName()] ?? null;
     }
 
-    /** @param PlayerTask $task */
-    public static function registerTask(PlayerTask $task){
-        PlayerTask::$tasks[$task->getKey()] = $task;
+    /** @param PlayerAct $task */
+    public static function registerTask(PlayerAct $task){
+        PlayerAct::$tasks[$task->getKey()] = $task;
     }
 
-    /** @param PlayerTask $task */
-    public static function cancelTask(PlayerTask $task){
-        unset(PlayerTask::$tasks[$task->getKey()]);
+    /** @param PlayerAct $task */
+    public static function cancelTask(PlayerAct $task){
+        unset(PlayerAct::$tasks[$task->getKey()]);
     }
 
     public static function cancelAllTask(){
-        PlayerTask::$tasks = [];
+        PlayerAct::$tasks = [];
     }
 
     /** @var Player */

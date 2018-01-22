@@ -10,7 +10,7 @@ use presentkim\humanoid\{
   command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
 use presentkim\humanoid\task\{
-  PlayerTask, HumanoidSetTask
+  PlayerAct, HumanoidSetAct
 };
 use function presentkim\humanoid\util\toInt;
 
@@ -36,7 +36,7 @@ class SetScaleCommand extends SimpleSubCommand{
                     $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid', $args[0]));
                     return false;
                 } else {
-                    PlayerTask::registerTask(new class($sender, $scale) extends HumanoidSetTask{
+                    PlayerAct::registerTask(new class($sender, $scale) extends HumanoidSetAct{
 
                         /** @var int */
                         private $scale;

@@ -10,7 +10,7 @@ use presentkim\humanoid\{
   command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
 use presentkim\humanoid\task\{
-  PlayerTask, HumanoidSetTask
+  PlayerAct, HumanoidSetAct
 };
 use function presentkim\humanoid\util\toInt;
 
@@ -46,7 +46,7 @@ class SetItemCommand extends SimpleSubCommand{
 
                     }
                 }
-                PlayerTask::registerTask(new class ($sender, $item) extends HumanoidSetTask{
+                PlayerAct::registerTask(new class ($sender, $item) extends HumanoidSetAct{
 
                     /** @var Item | null */
                     private $item;
