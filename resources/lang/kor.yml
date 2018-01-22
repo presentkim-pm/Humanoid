@@ -79,7 +79,7 @@ command-humanoid-remove@aliases: ["r"]
 
 command-humanoid-cancel: "cancel"
 command-humanoid-cancel@usage: "/humanoid cancel"
-command-humanoid-cancel@success: "할일이 취소되었습니다"
+command-humanoid-cancel@success: "행동이 취소되었습니다"
 command-humanoid-cancel@failure: "취소할 행동이 없습니다"
 command-humanoid-cancel@aliases: ["c"]
 
