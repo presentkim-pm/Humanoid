@@ -43,7 +43,7 @@ class SetSkinCommand extends SimpleSubCommand{
             } else {
                 $skin = $sender->getSkin();
             }
-            PlayerAct::registerTask(new class ($sender, $skin) extends PlayerAct implements ClickHumanoidAct{
+            PlayerAct::registerAct(new class ($sender, $skin) extends PlayerAct implements ClickHumanoidAct{
 
                 /** @var Skin | null */
                 private $skin;

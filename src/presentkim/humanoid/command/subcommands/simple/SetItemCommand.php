@@ -46,7 +46,7 @@ class SetItemCommand extends SimpleSubCommand{
 
                     }
                 }
-                PlayerAct::registerTask(new class ($sender, $item) extends PlayerAct implements ClickHumanoidAct{
+                PlayerAct::registerAct(new class ($sender, $item) extends PlayerAct implements ClickHumanoidAct{
 
                     /** @var Item | null */
                     private $item;

@@ -22,7 +22,7 @@ class PlayerEventListener implements Listener{
 
     /** @param PlayerClickHumanoidEvent $event */
     public function onPlayerClickHumanoidEvent(PlayerClickHumanoidEvent $event){
-        $task = PlayerAct::getTask($player = $event->getPlayer());
+        $task = PlayerAct::getAct($player = $event->getPlayer());
         if ($task instanceof ClickHumanoidAct) {
             $task->onClickHumanoid($event);
         }
@@ -30,7 +30,7 @@ class PlayerEventListener implements Listener{
 
     /** @param PlayerInteractEvent $event */
     public function onPlayerInteractEvent(PlayerInteractEvent $event){
-        $task = PlayerAct::getTask($player = $event->getPlayer());
+        $task = PlayerAct::getAct($player = $event->getPlayer());
         if ($task instanceof InteractAct) {
             $task->onInteract($event);
         }

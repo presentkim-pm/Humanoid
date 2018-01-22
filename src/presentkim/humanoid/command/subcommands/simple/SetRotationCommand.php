@@ -45,7 +45,7 @@ class SetRotationCommand extends SimpleSubCommand{
                     $sender->sendMessage(Plugin::$prefix . $this->usage);
                     return false;
                 }
-                PlayerAct::registerTask(new  class($sender, $yaw, $pitch) extends PlayerAct implements ClickHumanoidAct{
+                PlayerAct::registerAct(new  class($sender, $yaw, $pitch) extends PlayerAct implements ClickHumanoidAct{
 
                     /** @var int | null */
                     private $yaw;

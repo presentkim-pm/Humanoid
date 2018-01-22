@@ -30,7 +30,7 @@ class AddSubCommand extends SubCommand{
      */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
-            PlayerAct::registerTask(new  class ($sender, isset($args[0]) ? implode(' ', $args) : $sender->getNameTag()) extends PlayerAct implements InteractAct{
+            PlayerAct::registerAct(new  class ($sender, isset($args[0]) ? implode(' ', $args) : $sender->getNameTag()) extends PlayerAct implements InteractAct{
 
                 /** @var string */
                 private $name;

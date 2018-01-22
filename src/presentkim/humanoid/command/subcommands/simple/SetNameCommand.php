@@ -27,7 +27,7 @@ class SetNameCommand extends SimpleSubCommand{
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
             if (isset($args[0])) {
-                PlayerAct::registerTask(new class($sender, implode(' ', $args)) extends PlayerAct implements ClickHumanoidAct{
+                PlayerAct::registerAct(new class($sender, implode(' ', $args)) extends PlayerAct implements ClickHumanoidAct{
 
                     /** @var string */
                     private $name;

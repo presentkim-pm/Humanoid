@@ -36,7 +36,7 @@ class SetScaleCommand extends SimpleSubCommand{
                     $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid', $args[0]));
                     return false;
                 } else {
-                    PlayerAct::registerTask(new class($sender, $scale) extends PlayerAct implements ClickHumanoidAct{
+                    PlayerAct::registerAct(new class($sender, $scale) extends PlayerAct implements ClickHumanoidAct{
 
                         /** @var int */
                         private $scale;

@@ -26,7 +26,7 @@ class SetSneakCommand extends SimpleSubCommand{
      */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
-            PlayerAct::registerTask(new class($sender, implode(' ', $args)) extends PlayerAct implements ClickHumanoidAct{
+            PlayerAct::registerAct(new class($sender, implode(' ', $args)) extends PlayerAct implements ClickHumanoidAct{
 
                 /** @var string */
                 private $name;

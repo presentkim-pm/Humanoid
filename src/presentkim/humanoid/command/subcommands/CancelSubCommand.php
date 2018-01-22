@@ -22,7 +22,7 @@ class CancelSubCommand extends SubCommand{
      */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
-            $task = PlayerAct::getTask($sender);
+            $task = PlayerAct::getAct($sender);
             if ($task instanceof PlayerAct) {
                 $task->cancel();
                 $sender->sendMessage(Plugin::$prefix . $this->translate('success'));

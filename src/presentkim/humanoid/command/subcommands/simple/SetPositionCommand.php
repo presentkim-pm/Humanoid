@@ -73,7 +73,7 @@ class SetPositionCommand extends SimpleSubCommand{
                 $sender->sendMessage(Plugin::$prefix . $this->usage);
                 return false;
             }
-            PlayerAct::registerTask(new class($sender, $pos) extends PlayerAct implements ClickHumanoidAct{
+            PlayerAct::registerAct(new class($sender, $pos) extends PlayerAct implements ClickHumanoidAct{
 
                 /** @var Vector3 */
                 private $pos;

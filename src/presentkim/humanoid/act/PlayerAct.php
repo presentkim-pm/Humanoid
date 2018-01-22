@@ -7,11 +7,11 @@ use pocketmine\Player;
 abstract class PlayerAct{
 
     /** @var PlayerAct[] */
-    private static $tasks = [];
+    private static $acts = [];
 
     /** @return PlayerAct[] */
-    public static function getTasks(){
-        return PlayerAct::$tasks;
+    public static function getActs(){
+        return PlayerAct::$acts;
     }
 
     /**
@@ -19,22 +19,22 @@ abstract class PlayerAct{
      *
      * @return PlayerAct | null
      */
-    public static function getTask(Player $player){
-        return PlayerAct::$tasks[$player->getLowerCaseName()] ?? null;
+    public static function getAct(Player $player){
+        return PlayerAct::$acts[$player->getLowerCaseName()] ?? null;
     }
 
     /** @param PlayerAct $task */
-    public static function registerTask(PlayerAct $task){
-        PlayerAct::$tasks[$task->getKey()] = $task;
+    public static function registerAct(PlayerAct $task){
+        PlayerAct::$acts[$task->getKey()] = $task;
     }
 
     /** @param PlayerAct $task */
-    public static function cancelTask(PlayerAct $task){
-        unset(PlayerAct::$tasks[$task->getKey()]);
+    public static function cancelAct(PlayerAct $task){
+        unset(PlayerAct::$acts[$task->getKey()]);
     }
 
-    public static function cancelAllTask(){
-        PlayerAct::$tasks = [];
+    public static function cancelAllAct(){
+        PlayerAct::$acts = [];
     }
 
     /** @var Player */
@@ -49,11 +49,11 @@ abstract class PlayerAct{
     }
 
     public function register(){
-        self::registerTask($this);
+        self::registerAct($this);
     }
 
     public function cancel(){
-        self::cancelTask($this);
+        self::cancelAct($this);
     }
 
     /** @return string */

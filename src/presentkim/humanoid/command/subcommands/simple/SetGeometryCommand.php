@@ -32,7 +32,7 @@ class SetGeometryCommand extends SimpleSubCommand{
                 if ($args[0] === '*') {
                     $args[0] = $sender->getSkin()->getGeometryName();
                 }
-                PlayerAct::registerTask(new class($sender, implode('_', $args)) extends PlayerAct implements ClickHumanoidAct{
+                PlayerAct::registerAct(new class($sender, implode('_', $args)) extends PlayerAct implements ClickHumanoidAct{
 
                     /** @var string */
                     private $geometryName;

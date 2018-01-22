@@ -28,7 +28,7 @@ class RemoveSubCommand extends SubCommand{
      */
     public function onCommand(CommandSender $sender, array $args){
         if ($sender instanceof Player) {
-            PlayerAct::registerTask(new class ($sender) extends PlayerAct implements ClickHumanoidAct{
+            PlayerAct::registerAct(new class ($sender) extends PlayerAct implements ClickHumanoidAct{
 
                 /** @param PlayerClickHumanoidEvent $event */
                 public function onClickHumanoid(PlayerClickHumanoidEvent $event){
