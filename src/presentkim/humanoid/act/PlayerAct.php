@@ -2,8 +2,6 @@
 
 namespace presentkim\humanoid\act;
 
-
-use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\Player;
 
 abstract class PlayerAct{
@@ -48,11 +46,6 @@ abstract class PlayerAct{
     /** @param \pocketmine\Player $player */
     public function __construct(Player $player){
         $this->player = $player;
-    }
-
-    /** @param PlayerInteractEvent $event */
-    public function onInteract(PlayerInteractEvent $event){
-        $this->cancel();
     }
 
     public function register(){
