@@ -10,7 +10,7 @@ use presentkim\humanoid\command\{
 use presentkim\humanoid\{
   HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
-use presentkim\humanoid\task\{
+use presentkim\humanoid\act\{
   PlayerAct, HumanoidSetAct
 };
 

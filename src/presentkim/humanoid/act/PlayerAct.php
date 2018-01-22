@@ -1,11 +1,10 @@
 <?php
 
-namespace presentkim\humanoid\task;
+namespace presentkim\humanoid\act;
 
 
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\Player;
-use presentkim\humanoid\HumanoidMain as Plugin;
 
 abstract class PlayerAct{
 

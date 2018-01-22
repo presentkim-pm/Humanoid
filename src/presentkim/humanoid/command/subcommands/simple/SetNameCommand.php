@@ -8,7 +8,7 @@ use pocketmine\Player;
 use presentkim\humanoid\{
   command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
 };
-use presentkim\humanoid\task\{
+use presentkim\humanoid\act\{
   PlayerAct, HumanoidSetAct
 };
 

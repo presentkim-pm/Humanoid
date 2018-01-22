@@ -12,7 +12,7 @@ use presentkim\humanoid\command\{
 use presentkim\humanoid\{
   HumanoidMain as Plugin, util\Translation
 };
-use presentkim\humanoid\task\{
+use presentkim\humanoid\act\{
   PlayerAct
 };
 

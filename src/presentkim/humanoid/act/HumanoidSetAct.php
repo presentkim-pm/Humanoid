@@ -1,6 +1,6 @@
 <?php
 
-namespace presentkim\humanoid\task;
+namespace presentkim\humanoid\act;
 
 use pocketmine\event\player\PlayerInteractEvent;
 use presentkim\humanoid\event\PlayerClickHumanoidEvent;

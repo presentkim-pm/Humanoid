@@ -7,7 +7,7 @@ use pocketmine\event\{
 };
 use presentkim\humanoid\event\PlayerClickHumanoidEvent;
 use presentkim\humanoid\HumanoidMain as Plugin;
-use presentkim\humanoid\task\{
+use presentkim\humanoid\act\{
   PlayerAct, HumanoidSetAct
 };
 
