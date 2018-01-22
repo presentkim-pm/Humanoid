@@ -10,7 +10,7 @@ humanoid-set-item@success: "Humanoid's item was changed"
 humanoid-set-skin@success: "Humanoid's skin was changed"
 humanoid-set-geometry@success: "Humanoid's geometry was setted to {%0}"
 humanoid-set-sneak@success: "Humanoid's sneaking was changed"
-humanoid-set-position@success: "Humanoid's sneaking was changed"
+humanoid-set-position@success: "Humanoid's position was changed"
 humanoid-set-scale@success: "Humanoid's scale was setted to {%0}"
 
 command-generic-failure@in-game: "Available in game only"
