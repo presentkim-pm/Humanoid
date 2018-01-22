@@ -79,7 +79,7 @@ command-humanoid-remove@aliases: ["r"]
 
 command-humanoid-cancel: "cancel"
 command-humanoid-cancel@usage: "/humanoid cancel"
-command-humanoid-cancel@success: "Task was cancelled"
+command-humanoid-cancel@success: "Act was cancelled"
 command-humanoid-cancel@failure: "You don't have any act"
 command-humanoid-cancel@aliases: ["c"]
 
