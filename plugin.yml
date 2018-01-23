@@ -5,7 +5,6 @@ version:          1.0.0
 api:              [3.0.0, 3.0.0-ALPHA10]
 author:           PresentKim
 load:             STARTUP
-softdepend:       ['TriggerPE']
 
 permissions:
   humanoid.cmd:
