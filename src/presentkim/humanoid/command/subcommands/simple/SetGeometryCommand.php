@@ -19,7 +19,6 @@ class SetGeometryCommand extends SimpleSubCommand{
         parent::__construct('geometry');
     }
 
-
     /**
      * @param CommandSender $sender
      * @param String[]      $args
