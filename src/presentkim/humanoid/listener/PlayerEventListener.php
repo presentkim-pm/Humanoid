@@ -20,19 +20,31 @@ class PlayerEventListener implements Listener{
         $this->owner = Plugin::getInstance();
     }
 
-    /** @param PlayerClickHumanoidEvent $event */
+    /**
+     * @priority LOW
+     *
+     * @param PlayerClickHumanoidEvent $event
+     */
     public function onPlayerClickHumanoidEvent(PlayerClickHumanoidEvent $event){
-        $task = PlayerAct::getAct($player = $event->getPlayer());
-        if ($task instanceof ClickHumanoidAct) {
-            $task->onClickHumanoid($event);
+        if (!$event->isCancelled()) {
+            $task = PlayerAct::getAct($player = $event->getPlayer());
+            if ($task instanceof ClickHumanoidAct) {
+                $task->onClickHumanoid($event);
+            }
         }
     }
 
-    /** @param PlayerInteractEvent $event */
+    /**
+     * @priority LOW
+     *
+     * @param PlayerInteractEvent $event
+     */
     public function onPlayerInteractEvent(PlayerInteractEvent $event){
-        $task = PlayerAct::getAct($player = $event->getPlayer());
-        if ($task instanceof InteractAct) {
-            $task->onInteract($event);
+        if (!$event->isCancelled()) {
+            $task = PlayerAct::getAct($player = $event->getPlayer());
+            if ($task instanceof InteractAct) {
+                $task->onInteract($event);
+            }
         }
     }
 }
