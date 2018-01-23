@@ -2,7 +2,6 @@
 
 namespace presentkim\humanoid\command\subcommands\simple;
 
-
 use function is_numeric;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;

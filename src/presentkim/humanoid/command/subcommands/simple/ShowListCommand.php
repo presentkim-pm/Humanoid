@@ -2,7 +2,6 @@
 
 namespace presentkim\humanoid\command\subcommands\simple;
 
-
 use pocketmine\command\CommandSender;
 use presentkim\humanoid\{
   command\SimpleSubCommand, command\subcommands\SetSubCommand, HumanoidMain as Plugin, util\Translation
@@ -14,7 +13,6 @@ class ShowListCommand extends SimpleSubCommand{
     public function __construct(){
         parent::__construct('list');
     }
-
 
     /**
      * @param CommandSender $sender

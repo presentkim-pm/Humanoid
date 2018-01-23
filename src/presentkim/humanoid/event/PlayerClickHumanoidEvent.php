@@ -23,7 +23,6 @@ class PlayerClickHumanoidEvent extends PlayerEvent implements Cancellable{
     /** @var int */
     protected $action;
 
-
     public function __construct(Player $player, Humanoid $humanoid, int $action = self::LEFT_CLICK){
         $this->player = $player;
         $this->humanoid = $humanoid;

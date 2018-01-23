@@ -2,7 +2,6 @@
 
 namespace presentkim\humanoid\command\subcommands\simple;
 
-
 use pocketmine\command\CommandSender;
 use pocketmine\item\Item;
 use pocketmine\Player;
