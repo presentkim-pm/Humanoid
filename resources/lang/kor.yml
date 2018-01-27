@@ -3,6 +3,8 @@ prefix: "[Humanoid] "
 
 humanoid-add@success: "휴머노이드가 생성되었습니다"
 humanoid-remove@success: "휴머노이드가 제거되었습니다"
+humanoid-copy@success-copy: "휴머노이드를 붙여넣기할 블럭을 터치해주세요"
+humanoid-copy@success-paste: "휴머노이드가 복사되었습니다"
 
 humanoid-set-name@success: "휴머노이드의 이름이 {%0}로 설정되었습니다"
 humanoid-set-rotation@success: "휴머노이드의 방향이 {%0}:{%1}로 설정되었습니다"
@@ -19,7 +21,7 @@ command-generic-failure@invalid: "{%0}는 잘못된 값입니다"
 command-generic-failure@invalid-player: "{%0}는 잘못된 플레이어 명입니다"
 
 command-humanoid: "humanoid"
-command-humanoid@usage: "/humanoid <add | set | remove | cancel | lang | reload | save>"
+command-humanoid@usage: "/humanoid <add | set | remove | copy | cancel | lang | reload | save>"
 command-humanoid@description: "Humanoid의 메인 명령어"
 command-humanoid@aliases: ["hm"]
 
@@ -76,6 +78,11 @@ command-humanoid-remove: "remove"
 command-humanoid-remove@usage: "/humanoid Remove"
 command-humanoid-remove@success: "제거할 휴머노이드를 터치해주세요"
 command-humanoid-remove@aliases: ["r"]
+
+command-humanoid-copy: "copy"
+command-humanoid-copy@usage: "/humanoid Copy"
+command-humanoid-copy@success: "복사할 휴머노이드를 터치해주세요"
+command-humanoid-copy@aliases: ["cp"]
 
 command-humanoid-cancel: "cancel"
 command-humanoid-cancel@usage: "/humanoid cancel"

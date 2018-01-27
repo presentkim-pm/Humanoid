@@ -3,6 +3,8 @@ prefix: "[Humanoid] "
 
 humanoid-add@success: "Humanoid was created"
 humanoid-remove@success: "Humanoid was removed"
+humanoid-copy@success-copy: "Touch the block to paste humanoid"
+humanoid-copy@success-paste: "Humanoid was copied"
 
 humanoid-set-name@success: "Humanoid's name was setted to {%0}"
 humanoid-set-rotation@success: "Humanoid's rotation was setted to {%0}:{%1}"
@@ -19,7 +21,7 @@ command-generic-failure@invalid: "{%0} is invalid value"
 command-generic-failure@invalid-player: "{%0} is invalid player name"
 
 command-humanoid: "humanoid"
-command-humanoid@usage: "/humanoid <add | set | remove | cancel | lang | reload | save>"
+command-humanoid@usage: "/humanoid <add | set | remove | copy | cancel | lang | reload | save>"
 command-humanoid@description: "Main command of Humanoid"
 command-humanoid@aliases: ["hm"]
 
@@ -71,6 +73,11 @@ command-humanoid-set-position@aliases: ["p", "pos"]
 command-humanoid-set-scale: "scale"
 command-humanoid-set-scale@usage: "/humanoid Set Scale <scale percent>"
 command-humanoid-set-scale@aliases: ["sc"]
+
+command-humanoid-copy: "copy"
+command-humanoid-copy@usage: "/humanoid Copy"
+command-humanoid-copy@success: "Touch the humanoid to copy"
+command-humanoid-copy@aliases: ["cp"]
 
 command-humanoid-remove: "remove"
 command-humanoid-remove@usage: "/humanoid Remove"

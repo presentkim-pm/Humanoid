@@ -20,6 +20,9 @@ permissions:
       humanoid.cmd.remove:
         description:  Humanoid command - remove
         default:      op
+      humanoid.cmd.copy:
+        description:  Humanoid command - copy
+        default:      op
       humanoid.cmd.cancel:
         description:  Humanoid command - cancel
         default:      op

@@ -7,7 +7,7 @@ use pocketmine\plugin\PluginBase;
 
 use presentkim\humanoid\command\PoolCommand;
 use presentkim\humanoid\command\subcommands\{
-  AddSubCommand, SetSubCommand, RemoveSubCommand, CancelSubCommand, LangSubCommand, ReloadSubCommand
+  AddSubCommand, SetSubCommand, RemoveSubCommand, CopySubCommand, CancelSubCommand, LangSubCommand, ReloadSubCommand
 };
 use presentkim\humanoid\entity\Humanoid;
 use presentkim\humanoid\listener\DataPacketEventListener;
@@ -78,6 +78,7 @@ class HumanoidMain extends PluginBase{
             $this->command->createSubCommand(AddSubCommand::class);
             $this->command->createSubCommand(SetSubCommand::class);
             $this->command->createSubCommand(RemoveSubCommand::class);
+            $this->command->createSubCommand(CopySubCommand::class);
             $this->command->createSubCommand(CancelSubCommand::class);
             $this->command->createSubCommand(LangSubCommand::class);
             $this->command->createSubCommand(ReloadSubCommand::class);
