@@ -40,7 +40,7 @@ class Humanoid extends Entity{
     /** @var float */
     protected $baseOffset = 1.62;
 
-    protected function initEntity(){
+    protected function initEntity() : void{
         parent::initEntity();
 
         $this->uuid = UUID::fromRandom();
@@ -56,17 +56,17 @@ class Humanoid extends Entity{
     }
 
     /** @return UUID */
-    public function getUniqueId(){
+    public function getUniqueId() : UUID{
         return $this->uuid;
     }
 
     /** @return Item */
-    public function getHeldItem(){
+    public function getHeldItem() : Item{
         return clone $this->heldItem;
     }
 
     /** @param Item $heldItem */
-    public function setHeldItem(Item $heldItem){
+    public function setHeldItem(Item $heldItem) : void{
         $this->heldItem = $heldItem;
 
         $pk = new MobEquipmentPacket();
@@ -83,7 +83,7 @@ class Humanoid extends Entity{
     }
 
     /** @param Skin $skin */
-    public function setSkin(Skin $skin){
+    public function setSkin(Skin $skin) : void{
         if (!$skin->isValid()) {
             throw new \InvalidStateException('Specified skin is not valid, must be 8KiB or 16KiB');
         }
@@ -94,14 +94,14 @@ class Humanoid extends Entity{
     }
 
     /** @param Player[] | null $targets */
-    public function sendSkin(array $targets = null){
+    public function sendSkin(array $targets = null) : void{
         $pk = new PlayerSkinPacket();
         $pk->uuid = $this->getUniqueId();
         $pk->skin = $this->skin;
         $this->server->broadcastPacket($targets ?? $this->hasSpawned, $pk);
     }
 
-    public function saveNBT(){
+    public function saveNBT() : void{
         parent::saveNBT();
 
         $this->namedtag->setTag($this->heldItem->nbtSerialize(-1, 'HeldItem'));
@@ -134,7 +134,7 @@ class Humanoid extends Entity{
     }
 
     /** @param EntityDamageEvent $source */
-    public function attack(EntityDamageEvent $source){
+    public function attack(EntityDamageEvent $source) : void{
         $source->setCancelled(true);
     }
 

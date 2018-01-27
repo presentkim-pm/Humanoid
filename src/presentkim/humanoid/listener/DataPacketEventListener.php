@@ -21,7 +21,7 @@ class DataPacketEventListener implements Listener{
     }
 
     /** @param DataPacketReceiveEvent $event */
-    public function onDataPacketReceiveEvent(DataPacketReceiveEvent $event){
+    public function onDataPacketReceiveEvent(DataPacketReceiveEvent $event) : void{
         $pk = $event->getPacket();
         if ($pk instanceof InventoryTransactionPacket) {
             if ($pk->transactionType === InventoryTransactionPacket::TYPE_USE_ITEM_ON_ENTITY) {

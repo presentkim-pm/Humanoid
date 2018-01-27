@@ -25,7 +25,7 @@ class SetScaleCommand extends SimpleSubCommand{
      *
      * @return bool
      */
-    public function onCommand(CommandSender $sender, array $args){
+    public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
             if (isset($args[0])) {
                 $scale = toInt($args[0], null, function (int $i){
@@ -50,7 +50,7 @@ class SetScaleCommand extends SimpleSubCommand{
                         }
 
                         /** @param PlayerClickHumanoidEvent $event */
-                        public function onClickHumanoid(PlayerClickHumanoidEvent $event){
+                        public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
                             $event->getHumanoid()->setScale($this->scale * 0.01);
                             $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-scale@success', $this->scale));
 

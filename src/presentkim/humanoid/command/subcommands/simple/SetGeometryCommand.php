@@ -24,7 +24,7 @@ class SetGeometryCommand extends SimpleSubCommand{
      *
      * @return bool
      */
-    public function onCommand(CommandSender $sender, array $args){
+    public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
             if (isset($args[0])) {
                 if ($args[0] === '*') {
@@ -45,7 +45,7 @@ class SetGeometryCommand extends SimpleSubCommand{
                     }
 
                     /** @param PlayerClickHumanoidEvent $event */
-                    public function onClickHumanoid(PlayerClickHumanoidEvent $event){
+                    public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
                         $event->getHumanoid()->setSkin(new Skin('humanoid', $event->getHumanoid()->getSkin()->getSkinData(), '', $this->geometryName));
                         $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-geometry@success', $this->geometryName));
 

@@ -28,7 +28,7 @@ class AddSubCommand extends SubCommand{
      *
      * @return bool
      */
-    public function onCommand(CommandSender $sender, array $args){
+    public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
             PlayerAct::registerAct(new  class ($sender, isset($args[0]) ? implode(' ', $args) : $sender->getNameTag()) extends PlayerAct implements InteractAct{
 
@@ -45,7 +45,7 @@ class AddSubCommand extends SubCommand{
                 }
 
                 /** @param PlayerInteractEvent $event */
-                public function onInteract(PlayerInteractEvent $event){
+                public function onInteract(PlayerInteractEvent $event) : void{
                     if ($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_AIR) {
                         $nbt = Entity::createBaseNBT($this->player, null, $this->player->yaw, $this->player->pitch);
                     } else {

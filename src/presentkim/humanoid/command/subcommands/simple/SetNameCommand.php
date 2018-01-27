@@ -23,7 +23,7 @@ class SetNameCommand extends SimpleSubCommand{
      *
      * @return bool
      */
-    public function onCommand(CommandSender $sender, array $args){
+    public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
             if (isset($args[0])) {
                 PlayerAct::registerAct(new class($sender, implode(' ', $args)) extends PlayerAct implements ClickHumanoidAct{
@@ -41,7 +41,7 @@ class SetNameCommand extends SimpleSubCommand{
                     }
 
                     /** @param PlayerClickHumanoidEvent $event */
-                    public function onClickHumanoid(PlayerClickHumanoidEvent $event){
+                    public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
                         $event->getHumanoid()->setNameTag($this->name);
                         $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-name@success', $this->name));
 

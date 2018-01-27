@@ -26,12 +26,12 @@ class RemoveSubCommand extends SubCommand{
      *
      * @return bool
      */
-    public function onCommand(CommandSender $sender, array $args){
+    public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
             PlayerAct::registerAct(new class ($sender) extends PlayerAct implements ClickHumanoidAct{
 
                 /** @param PlayerClickHumanoidEvent $event */
-                public function onClickHumanoid(PlayerClickHumanoidEvent $event){
+                public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
                     $event->getHumanoid()->kill();
 
                     $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-remove@success'));

@@ -8,7 +8,7 @@ namespace presentkim\humanoid\util;
  *
  * @return bool
  */
-function in_arrayi(string $str, array $strs){
+function in_arrayi(string $str, array $strs) : bool{
     foreach ($strs as $key => $value) {
         if (strcasecmp($str, $value) === 0) {
             return true;
@@ -22,7 +22,7 @@ function in_arrayi(string $str, array $strs){
  *
  * @return string[]
  */
-function listToPairs(array $list){
+function listToPairs(array $list) : array{
     $pairs = [];
     $size = sizeOf($list);
     for ($i = 0; $i < $size; ++$i) {
@@ -39,7 +39,7 @@ function listToPairs(array $list){
  *
  * @return int|null
  */
-function toInt(string $str, int $default = null, \Closure $filter = null){
+function toInt(string $str, int $default = null, \Closure $filter = null) : ?int{
     if (is_numeric($str)) {
         $i = (int) $str;
     } elseif (is_numeric($default)) {

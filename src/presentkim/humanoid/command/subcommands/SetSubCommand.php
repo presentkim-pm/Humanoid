@@ -17,17 +17,17 @@ class SetSubCommand extends SubCommand{
     protected static $subCommands = [];
 
     /** @return SimpleSubCommand[] */
-    public static function getSubCommands(){
+    public static function getSubCommands() : array{
         return self::$subCommands;
     }
 
     /** @param SimpleSubCommand[] $subCommands */
-    public static function setSubCommands(array $subCommands){
+    public static function setSubCommands(array $subCommands) : void{
         self::$subCommands = $subCommands;
     }
 
     /** @param SimpleSubCommand $subCommand */
-    public static function addSubCommand(SimpleSubCommand $subCommand){
+    public static function addSubCommand(SimpleSubCommand $subCommand) : void{
         self::$subCommands[] = $subCommand;
     }
 
@@ -50,7 +50,7 @@ class SetSubCommand extends SubCommand{
      *
      * @return bool
      */
-    public function onCommand(CommandSender $sender, array $args){
+    public function onCommand(CommandSender $sender, array $args) : bool{
         if (isset($args[0])) {
             $label = array_shift($args);
             foreach (self::$subCommands as $key => $value) {

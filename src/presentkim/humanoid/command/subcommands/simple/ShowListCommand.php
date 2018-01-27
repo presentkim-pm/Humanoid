@@ -20,7 +20,7 @@ class ShowListCommand extends SimpleSubCommand{
      *
      * @return bool
      */
-    public function onCommand(CommandSender $sender, array $args){
+    public function onCommand(CommandSender $sender, array $args) : bool{
         $list = [];
         foreach (SetSubCommand::getSubCommands() as $key => $value) {
             $list[] = [

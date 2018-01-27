@@ -22,14 +22,14 @@ class HumanoidMain extends PluginBase{
     private static $instance = null;
 
     /** @return self */
-    public static function getInstance(){
+    public static function getInstance() : self{
         return self::$instance;
     }
 
     /** @var PoolCommand */
     private $command;
 
-    public function onLoad(){
+    public function onLoad() : void{
         if (self::$instance === null) {
             self::$instance = $this;
             $this->getServer()->getLoader()->loadClass('presentkim\humanoid\util\Utils');
@@ -42,13 +42,13 @@ class HumanoidMain extends PluginBase{
         }
     }
 
-    public function onEnable(){
+    public function onEnable() : void{
         $this->load();
         $this->getServer()->getPluginManager()->registerEvents(new DataPacketEventListener(), $this);
         $this->getServer()->getPluginManager()->registerEvents(new PlayerEventListener(), $this);
     }
 
-    public function load(){
+    public function load() : void{
         $dataFolder = $this->getDataFolder();
         if (!file_exists($dataFolder)) {
             mkdir($dataFolder, 0777, true);
@@ -66,12 +66,12 @@ class HumanoidMain extends PluginBase{
         self::$prefix = Translation::translate('prefix');
         $this->reloadCommand();
 
-        foreach(SetSubCommand::getSubCommands() as $key => $value){
+        foreach (SetSubCommand::getSubCommands() as $key => $value) {
             $value->updateTranslation();
         }
     }
 
-    public function reloadCommand(){
+    public function reloadCommand() : void{
         if ($this->command == null) {
             $this->command = new PoolCommand($this, 'humanoid');
             $this->command->createSubCommand(AddSubCommand::class);

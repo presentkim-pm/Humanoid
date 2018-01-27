@@ -23,7 +23,7 @@ class SetSneakCommand extends SimpleSubCommand{
      *
      * @return bool
      */
-    public function onCommand(CommandSender $sender, array $args){
+    public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
             PlayerAct::registerAct(new class($sender, implode(' ', $args)) extends PlayerAct implements ClickHumanoidAct{
 
@@ -40,7 +40,7 @@ class SetSneakCommand extends SimpleSubCommand{
                 }
 
                 /** @param PlayerClickHumanoidEvent $event */
-                public function onClickHumanoid(PlayerClickHumanoidEvent $event){
+                public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
                     $humanoid = $event->getHumanoid();
                     $humanoid->setSneaking(!$humanoid->isSneaking());
                     $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-sneak@success'));

@@ -20,7 +20,7 @@ class CancelSubCommand extends SubCommand{
      *
      * @return bool
      */
-    public function onCommand(CommandSender $sender, array $args){
+    public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
             $task = PlayerAct::getAct($sender);
             if ($task instanceof PlayerAct) {

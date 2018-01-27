@@ -30,7 +30,7 @@ class PlayerClickHumanoidEvent extends PlayerEvent implements Cancellable{
     }
 
     /** @return Humanoid */
-    public function getHumanoid(){
+    public function getHumanoid() : Humanoid{
         return $this->humanoid;
     }
 

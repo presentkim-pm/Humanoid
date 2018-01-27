@@ -25,7 +25,7 @@ class PlayerEventListener implements Listener{
      *
      * @param PlayerClickHumanoidEvent $event
      */
-    public function onPlayerClickHumanoidEvent(PlayerClickHumanoidEvent $event){
+    public function onPlayerClickHumanoidEvent(PlayerClickHumanoidEvent $event) : void{
         if (!$event->isCancelled()) {
             $task = PlayerAct::getAct($player = $event->getPlayer());
             if ($task instanceof ClickHumanoidAct) {
@@ -39,7 +39,7 @@ class PlayerEventListener implements Listener{
      *
      * @param PlayerInteractEvent $event
      */
-    public function onPlayerInteractEvent(PlayerInteractEvent $event){
+    public function onPlayerInteractEvent(PlayerInteractEvent $event) : void{
         if (!$event->isCancelled()) {
             $task = PlayerAct::getAct($player = $event->getPlayer());
             if ($task instanceof InteractAct) {
