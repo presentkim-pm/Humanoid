@@ -42,6 +42,24 @@ Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | 
 
 
 
+## \<data name\> list
+ex)  `/humanoid Set List 2`
+
+| name       | arguments                        | description                     |
+| ---------- | -------------------------------- | ------------------------------- |
+| List       | \[page\]                         | Show data name list             |
+| Name       | \[name\]                         | Change humanoid's name          |
+| Rotation   | * or \<yaw\> \<pitch\>           | Change humanoid's yaw and pitch |
+| Item       | * or \<item id\> \[item meta\]   | Change humanoid's held item     |
+| Skin       | * or \<player name\>             | Change humanoid's skin          |
+| Geometry   | \<geometry name\>                | Change humanoid's geometry name |
+| Sneak      |                                  | Toggle humanoid's sneaking      |
+| Position   | * or \<player name\> or \<x\> \<y\> \<z\> \[world name\] | Change humanoid's position |
+| Scale      | \<scale percent\>                | Change humanoid's scale         |
+
+
+
+
 ## ChangeLog
 ### v1.0.0 [![Source](https://img.shields.io/badge/source-v1.0.0-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.0) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.0/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.0)
 - First release
