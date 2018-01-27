@@ -2,11 +2,15 @@
 
 namespace presentkim\humanoid\command\subcommands;
 
-use pocketmine\command\CommandSender;
 use pocketmine\Player;
-use presentkim\humanoid\{
-  command\PoolCommand, HumanoidMain as Plugin, command\SubCommand, act\PlayerAct, util\Translation
+use pocketmine\command\CommandSender;
+
+use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\act\PlayerAct;
+use presentkim\humanoid\command\{
+  SubCommand, PoolCommand,
 };
+use presentkim\humanoid\util\Translation;
 
 class CancelSubCommand extends SubCommand{
 

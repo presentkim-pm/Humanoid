@@ -2,17 +2,18 @@
 
 namespace presentkim\humanoid\command\subcommands;
 
-use pocketmine\command\CommandSender;
 use pocketmine\Player;
-use presentkim\humanoid\command\{
-  SubCommand, PoolCommand,
-};
-use presentkim\humanoid\{
-  HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
-};
+use pocketmine\command\CommandSender;
+
+use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\act\{
   PlayerAct, ClickHumanoidAct
 };
+use presentkim\humanoid\command\{
+  SubCommand, PoolCommand,
+};
+use presentkim\humanoid\event\PlayerClickHumanoidEvent;
+use presentkim\humanoid\util\Translation;
 
 class RemoveSubCommand extends SubCommand{
 

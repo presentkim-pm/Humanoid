@@ -3,8 +3,10 @@
 namespace presentkim\humanoid\command\subcommands;
 
 use pocketmine\command\CommandSender;
-use presentkim\humanoid\{
-  command\PoolCommand, HumanoidMain as Plugin, command\SubCommand
+
+use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\command\{
+  SubCommand, PoolCommand,
 };
 
 class ReloadSubCommand extends SubCommand{

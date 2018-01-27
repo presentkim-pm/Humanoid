@@ -3,9 +3,10 @@
 namespace presentkim\humanoid\command\subcommands;
 
 use pocketmine\command\CommandSender;
+
 use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\command\{
-  PoolCommand, SubCommand, SimpleSubCommand
+  SubCommand, PoolCommand, SimpleSubCommand
 };
 use presentkim\humanoid\command\subcommands\simple\{
   ShowListCommand, SetNameCommand, SetRotationCommand, SetItemCommand, SetSkinCommand, SetGeometryCommand, SetSneakCommand, SetPositionCommand, SetScaleCommand

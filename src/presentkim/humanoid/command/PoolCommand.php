@@ -5,8 +5,9 @@ namespace presentkim\humanoid\command;
 use pocketmine\command\{
   Command, CommandExecutor, CommandSender, PluginCommand
 };
-use presentkim\humanoid\util\Translation;
+
 use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\util\Translation;
 
 class PoolCommand extends PluginCommand implements CommandExecutor{
 

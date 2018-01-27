@@ -2,15 +2,16 @@
 
 namespace presentkim\humanoid\command\subcommands\simple;
 
-use function is_numeric;
-use pocketmine\command\CommandSender;
 use pocketmine\Player;
-use presentkim\humanoid\{
-  command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
-};
+use pocketmine\command\CommandSender;
+
+use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\act\{
   PlayerAct, ClickHumanoidAct
 };
+use presentkim\humanoid\command\SimpleSubCommand;
+use presentkim\humanoid\event\PlayerClickHumanoidEvent;
+use presentkim\humanoid\util\Translation;
 
 class SetRotationCommand extends SimpleSubCommand{
 

@@ -2,11 +2,11 @@
 
 namespace presentkim\humanoid\event;
 
-use pocketmine\event\{
-  Cancellable, player\PlayerEvent
-};
-use pocketmine\network\mcpe\protocol\InventoryTransactionPacket;
 use pocketmine\Player;
+use pocketmine\event\Cancellable;
+use pocketmine\event\player\PlayerEvent;
+use pocketmine\network\mcpe\protocol\InventoryTransactionPacket;
+
 use presentkim\humanoid\entity\Humanoid;
 
 class PlayerClickHumanoidEvent extends PlayerEvent implements Cancellable{

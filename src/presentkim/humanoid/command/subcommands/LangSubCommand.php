@@ -3,9 +3,12 @@
 namespace presentkim\humanoid\command\subcommands;
 
 use pocketmine\command\CommandSender;
-use presentkim\humanoid\{
-  command\PoolCommand, HumanoidMain as Plugin, util\Translation, command\SubCommand
+
+use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\command\{
+  SubCommand, PoolCommand,
 };
+use presentkim\humanoid\util\Translation;
 
 class LangSubCommand extends SubCommand{
 

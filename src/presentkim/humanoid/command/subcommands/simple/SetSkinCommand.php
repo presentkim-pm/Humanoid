@@ -2,16 +2,18 @@
 
 namespace presentkim\humanoid\command\subcommands\simple;
 
-use pocketmine\command\CommandSender;
-use pocketmine\entity\Skin;
 use pocketmine\Player;
 use pocketmine\Server;
-use presentkim\humanoid\{
-  command\SimpleSubCommand, HumanoidMain as Plugin, event\PlayerClickHumanoidEvent, util\Translation
-};
+use pocketmine\command\CommandSender;
+use pocketmine\entity\Skin;
+
+use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\act\{
   PlayerAct, ClickHumanoidAct
 };
+use presentkim\humanoid\command\SimpleSubCommand;
+use presentkim\humanoid\event\PlayerClickHumanoidEvent;
+use presentkim\humanoid\util\Translation;
 
 class SetSkinCommand extends SimpleSubCommand{
 

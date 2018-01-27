@@ -2,19 +2,19 @@
 
 namespace presentkim\humanoid\command\subcommands;
 
+use pocketmine\Player;
 use pocketmine\command\CommandSender;
 use pocketmine\entity\Entity;
 use pocketmine\event\player\PlayerInteractEvent;
-use pocketmine\Player;
-use presentkim\humanoid\command\{
-  SubCommand, PoolCommand,
-};
-use presentkim\humanoid\{
-  HumanoidMain as Plugin, util\Translation
-};
+
+use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\act\{
   PlayerAct, InteractAct
 };
+use presentkim\humanoid\command\{
+  SubCommand, PoolCommand,
+};
+use presentkim\humanoid\util\Translation;
 
 class AddSubCommand extends SubCommand{
 

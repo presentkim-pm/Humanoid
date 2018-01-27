@@ -3,9 +3,12 @@
 namespace presentkim\humanoid\command\subcommands\simple;
 
 use pocketmine\command\CommandSender;
-use presentkim\humanoid\{
-  command\SimpleSubCommand, command\subcommands\SetSubCommand, HumanoidMain as Plugin, util\Translation
-};
+
+use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\command\SimpleSubCommand;
+use presentkim\humanoid\command\subcommands\SetSubCommand;
+use presentkim\humanoid\util\Translation;
+
 use function presentkim\humanoid\util\toInt;
 
 class ShowListCommand extends SimpleSubCommand{

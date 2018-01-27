@@ -2,19 +2,20 @@
 
 namespace presentkim\humanoid\entity;
 
-use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\math\Vector3;
-use pocketmine\nbt\tag\ByteTag;
-use pocketmine\nbt\tag\FloatTag;
 use pocketmine\Player;
 use pocketmine\entity\{
   Entity, Skin
 };
-use pocketmine\network\mcpe\protocol\{
-  MovePlayerPacket, PlayerSkinPacket, types\ContainerIds, AddPlayerPacket, MobEquipmentPacket
-};
-use pocketmine\nbt\tag\StringTag;
+use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\item\Item;
+use pocketmine\math\Vector3;
+use pocketmine\nbt\tag\{
+  ByteTag, FloatTag, StringTag
+};
+use pocketmine\network\mcpe\protocol\{
+  AddPlayerPacket, MovePlayerPacket, MobEquipmentPacket, PlayerSkinPacket
+};
+use pocketmine\network\mcpe\protocol\types\ContainerIds;
 use pocketmine\utils\UUID;
 
 class Humanoid extends Entity{
