@@ -11,16 +11,16 @@ A plugin give virtual chest to player for PocketMine-MP
 ## Command
 Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | save>`
 
-| subcommand | arguments                        | description                 |
-| ---------- | -------------------------------- | --------------------------- |
-| Add        | \[name\]                         | Add humanoid                |
-| Set        | \<data name\> \[data\]           | Change humanoid's data      |
-| Remove     |                                  | Remove humanoid             |
-| Copy       |                                  | Copy humanoid               |
-| Cancel     |                                  | Cancel act                  |
-| Lang       | \<language prefix\>              | Load default lang file      |
-| Reload     |                                  | Reload all data             |
-| Save       |                                  | Save all data               |
+| subcommand | arguments              | description                 |
+| ---------- | ---------------------- | --------------------------- |
+| Add        | \[name\]               | Add humanoid                |
+| Set        | \<data name\> \[data\] | Change humanoid's data      |
+| Remove     |                        | Remove humanoid             |
+| Copy       |                        | Copy humanoid               |
+| Cancel     |                        | Cancel act                  |
+| Lang       | \<language prefix\>    | Load default lang file      |
+| Reload     |                        | Reload all data             |
+| Save       |                        | Save all data               |
 
 
 
