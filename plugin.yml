@@ -1,7 +1,7 @@
 ---
 name:             Humanoid
 main:             presentkim\humanoid\HumanoidMain
-version:          1.0.1
+version:          1.0.2
 api:              [3.0.0, 3.0.0-ALPHA10]
 author:           PresentKim
 load:             STARTUP
