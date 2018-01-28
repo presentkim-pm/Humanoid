@@ -18,6 +18,8 @@ use pocketmine\network\mcpe\protocol\{
 use pocketmine\network\mcpe\protocol\types\ContainerIds;
 use pocketmine\utils\UUID;
 
+use presentkim\geometryapi\GeometryAPI;
+
 class Humanoid extends Entity{
 
     /** @var UUID */
@@ -50,7 +52,8 @@ class Humanoid extends Entity{
 
         $skinData = $this->namedtag->hasTag('SkinData') ? $this->namedtag->getString('SkinData') : str_repeat("\x00", 8192);
         $geometryName = $this->namedtag->hasTag('GeometryName') ? $this->namedtag->getString('GeometryName') : '';
-        $this->setSkin(new Skin('humanoid', $skinData, '', $geometryName));
+        $geometryData = class_exists(GeometryAPI::class) ? GeometryAPI::getInstance()->getGeometryData($geometryName) ?? '' : '';
+        $this->setSkin(new Skin('humanoid', $skinData, '', $geometryName, $geometryData));
 
         $this->setSneaking($this->namedtag->hasTag('Sneak') ? (bool) $this->namedtag->getByte('Sneak') : false);
         $this->setScale($this->namedtag->hasTag('Scale') ? $this->namedtag->getFloat('Scale') : 1);
