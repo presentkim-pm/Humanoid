@@ -8,7 +8,7 @@
 [![Download](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/total.svg?label=Download)](https://github.com/PMMPPlugin/Humanoid/releases/latest)
 
 
-A plugin give virtual chest to player for PocketMine-MP
+A plugin add humanoid entity for PocketMine-MP
 
 ## Command
 Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | save>`
