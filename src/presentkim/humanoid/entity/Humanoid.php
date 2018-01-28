@@ -52,8 +52,7 @@ class Humanoid extends Entity{
 
         $skinData = $this->namedtag->hasTag('SkinData') ? $this->namedtag->getString('SkinData') : str_repeat("\x00", 8192);
         $geometryName = $this->namedtag->hasTag('GeometryName') ? $this->namedtag->getString('GeometryName') : '';
-        $geometryData = class_exists(GeometryAPI::class) ? GeometryAPI::getInstance()->getGeometryData($geometryName) ?? '' : '';
-        $this->setSkin(new Skin('humanoid', $skinData, '', $geometryName, $geometryData));
+        $this->setSkin(new Skin('humanoid', $skinData, '', $geometryName));
 
         $this->setSneaking($this->namedtag->hasTag('Sneak') ? (bool) $this->namedtag->getByte('Sneak') : false);
         $this->setScale($this->namedtag->hasTag('Scale') ? $this->namedtag->getFloat('Scale') : 1);
@@ -92,6 +91,10 @@ class Humanoid extends Entity{
             throw new \InvalidStateException('Specified skin is not valid, must be 8KiB or 16KiB');
         }
 
+        if (empty($skin->getGeometryData()) && class_exists(GeometryAPI::class)) {
+            $geometryData = GeometryAPI::getInstance()->getGeometryData($geometryName = $skin->getGeometryName()) ?? '';
+            $skin = new Skin($skin->getSkinId(), $skin->getSkinData(), $skin->getCapeData(), $geometryName, $geometryData);
+        }
         $this->skin = $skin;
         $this->skin->debloatGeometryData();
         $this->sendSkin($this->getViewers());
