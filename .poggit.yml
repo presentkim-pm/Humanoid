@@ -4,4 +4,5 @@ branches:
 projects:
   Humanoid:
     path: ""
+    icon: meta/icon/192x192.png
 ...

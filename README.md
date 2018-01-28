@@ -1,5 +1,7 @@
 [![Telegram](https://img.shields.io/badge/Telegram-PresentKim-blue.svg?logo=telegram)](https://t.me/PresentKim)
 
+[![icon/96x96](https://raw.githubusercontent.com/PMMPPlugin/Humanoid/master/meta/icon/96x96.png)]()
+
 [![License](https://img.shields.io/github/license/PMMPPlugin/Humanoid.svg?label=License)](LICENSE)
 [![Poggit](https://poggit.pmmp.io/ci.shield/PMMPPlugin/Humanoid/Humanoid)](https://poggit.pmmp.io/ci/PMMPPlugin/Humanoid)
 [![Release](https://img.shields.io/github/release/PMMPPlugin/Humanoid.svg?label=Release)](https://github.com/PMMPPlugin/Humanoid/releases/latest)
