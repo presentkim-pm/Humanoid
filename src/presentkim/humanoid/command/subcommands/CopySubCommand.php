@@ -9,7 +9,6 @@ use pocketmine\command\CommandSender;
 use pocketmine\entity\Entity;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\nbt\tag\CompoundTag;
-
 use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\act\{
   PlayerAct, ClickHumanoidAct, InteractAct

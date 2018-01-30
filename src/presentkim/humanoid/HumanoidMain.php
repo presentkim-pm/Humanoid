@@ -4,7 +4,6 @@ namespace presentkim\humanoid;
 
 use pocketmine\entity\Entity;
 use pocketmine\plugin\PluginBase;
-
 use presentkim\humanoid\command\PoolCommand;
 use presentkim\humanoid\command\subcommands\{
   AddSubCommand, SetSubCommand, RemoveSubCommand, CopySubCommand, CancelSubCommand, LangSubCommand, ReloadSubCommand

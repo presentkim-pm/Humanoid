@@ -6,7 +6,6 @@ use pocketmine\Server;
 use pocketmine\event\Listener;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\network\mcpe\protocol\InventoryTransactionPacket;
-
 use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\entity\Humanoid;
 use presentkim\humanoid\event\PlayerClickHumanoidEvent;

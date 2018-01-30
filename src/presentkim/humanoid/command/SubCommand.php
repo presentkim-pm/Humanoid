@@ -3,10 +3,8 @@
 namespace presentkim\humanoid\command;
 
 use pocketmine\command\CommandSender;
-
 use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\util\Translation;
-
 use function presentkim\humanoid\util\in_arrayi;
 
 abstract class SubCommand{

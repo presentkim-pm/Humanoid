@@ -5,7 +5,6 @@ namespace presentkim\humanoid\command\subcommands\simple;
 use pocketmine\Player;
 use pocketmine\command\CommandSender;
 use pocketmine\item\Item;
-
 use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\act\{
   PlayerAct, ClickHumanoidAct
