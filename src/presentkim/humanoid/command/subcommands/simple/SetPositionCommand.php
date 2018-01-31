@@ -6,7 +6,7 @@ use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\command\CommandSender;
 use pocketmine\level\Position;
-use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\Humanoid as Plugin;
 use presentkim\humanoid\act\PlayerAct;
 use presentkim\humanoid\act\child\SetHumanoidPositionAct;
 use presentkim\humanoid\command\SimpleSubCommand;

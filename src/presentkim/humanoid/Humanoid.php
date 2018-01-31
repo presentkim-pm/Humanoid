@@ -13,7 +13,7 @@ use presentkim\humanoid\listener\DataPacketEventListener;
 use presentkim\humanoid\listener\PlayerEventListener;
 use presentkim\humanoid\util\Translation;
 
-class HumanoidMain extends PluginBase{
+class Humanoid extends PluginBase{
 
     /** @var string */
     public static $prefix = '';

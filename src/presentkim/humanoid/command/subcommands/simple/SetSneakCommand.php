@@ -4,7 +4,7 @@ namespace presentkim\humanoid\command\subcommands\simple;
 
 use pocketmine\Player;
 use pocketmine\command\CommandSender;
-use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\Humanoid as Plugin;
 use presentkim\humanoid\act\PlayerAct;
 use presentkim\humanoid\act\child\ToggleHumanoidSneakAct;
 use presentkim\humanoid\command\SimpleSubCommand;

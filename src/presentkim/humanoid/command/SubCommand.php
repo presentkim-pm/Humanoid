@@ -3,7 +3,7 @@
 namespace presentkim\humanoid\command;
 
 use pocketmine\command\CommandSender;
-use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\Humanoid as Plugin;
 use presentkim\humanoid\util\{
     Translation, Utils
 };

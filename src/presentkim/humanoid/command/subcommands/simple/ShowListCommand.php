@@ -3,7 +3,7 @@
 namespace presentkim\humanoid\command\subcommands\simple;
 
 use pocketmine\command\CommandSender;
-use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\Humanoid as Plugin;
 use presentkim\humanoid\command\SimpleSubCommand;
 use presentkim\humanoid\command\subcommands\SetSubCommand;
 use presentkim\humanoid\util\{

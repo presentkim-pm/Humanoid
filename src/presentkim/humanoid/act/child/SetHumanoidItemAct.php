@@ -4,7 +4,7 @@ namespace presentkim\humanoid\act\child;
 
 use pocketmine\Player;
 use pocketmine\item\Item;
-use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\Humanoid as Plugin;
 use presentkim\humanoid\act\{
   PlayerAct, ClickHumanoidAct
 };

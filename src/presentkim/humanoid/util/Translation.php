@@ -2,7 +2,7 @@
 
 namespace presentkim\humanoid\util;
 
-use presentkim\humanoid\HumanoidMain as Plugin;
+use presentkim\humanoid\Humanoid as Plugin;
 
 class Translation{
 
