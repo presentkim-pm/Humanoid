@@ -7,7 +7,7 @@ use pocketmine\command\CommandSender;
 use presentkim\humanoid\Humanoid as Plugin;
 use presentkim\humanoid\act\PlayerAct;
 use presentkim\humanoid\command\{
-  SubCommand, PoolCommand,
+  SubCommand, PoolCommand
 };
 use presentkim\humanoid\util\Translation;
 
