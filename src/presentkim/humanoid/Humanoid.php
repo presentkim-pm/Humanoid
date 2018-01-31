@@ -8,7 +8,7 @@ use presentkim\humanoid\command\PoolCommand;
 use presentkim\humanoid\command\subcommands\{
   AddSubCommand, SetSubCommand, RemoveSubCommand, CopySubCommand, CancelSubCommand, LangSubCommand, ReloadSubCommand
 };
-use presentkim\humanoid\entity\Humanoid;
+use presentkim\humanoid\entity\Humanoid as HumanoidEntity;
 use presentkim\humanoid\listener\DataPacketEventListener;
 use presentkim\humanoid\listener\PlayerEventListener;
 use presentkim\humanoid\util\Translation;
@@ -34,7 +34,7 @@ class Humanoid extends PluginBase{
             self::$instance = $this;
             Translation::loadFromResource($this->getResource('lang/eng.yml'), true);
 
-            Entity::registerEntity(Humanoid::class, true, [
+            Entity::registerEntity(HumanoidEntity::class, true, [
               'Humanoid',
               'presentkim:humanoid',
             ]);
