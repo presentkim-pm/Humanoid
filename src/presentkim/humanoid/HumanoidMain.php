@@ -32,7 +32,6 @@ class HumanoidMain extends PluginBase{
     public function onLoad() : void{
         if (self::$instance === null) {
             self::$instance = $this;
-            $this->getServer()->getLoader()->loadClass('presentkim\humanoid\util\Utils');
             Translation::loadFromResource($this->getResource('lang/eng.yml'), true);
 
             Entity::registerEntity(Humanoid::class, true, [
