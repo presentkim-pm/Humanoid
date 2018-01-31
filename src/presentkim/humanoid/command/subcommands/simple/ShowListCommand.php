@@ -6,9 +6,9 @@ use pocketmine\command\CommandSender;
 use presentkim\humanoid\HumanoidMain as Plugin;
 use presentkim\humanoid\command\SimpleSubCommand;
 use presentkim\humanoid\command\subcommands\SetSubCommand;
-use presentkim\humanoid\util\Translation;
-
-use function presentkim\humanoid\util\toInt;
+use presentkim\humanoid\util\{
+  Translation, Utils
+};
 
 class ShowListCommand extends SimpleSubCommand{
 
@@ -32,7 +32,7 @@ class ShowListCommand extends SimpleSubCommand{
         }
 
         $max = ceil(count($list) / 5);
-        $page = min($max, (isset($args[0]) ? toInt($args[0], 1, function (int $i){
+        $page = min($max, (isset($args[0]) ? Utils::toInt($args[0], 1, function (int $i){
               return $i > 0 ? 1 : -1;
           }) : 1) - 1);
         $sender->sendMessage(Plugin::$prefix . Translation::translate('command-humanoid-set-list@head', $page + 1, $max));

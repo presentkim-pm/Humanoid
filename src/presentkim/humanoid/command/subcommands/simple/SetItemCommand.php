@@ -11,9 +11,9 @@ use presentkim\humanoid\act\{
 };
 use presentkim\humanoid\command\SimpleSubCommand;
 use presentkim\humanoid\event\PlayerClickHumanoidEvent;
-use presentkim\humanoid\util\Translation;
-
-use function presentkim\humanoid\util\toInt;
+use presentkim\humanoid\util\{
+  Translation, Utils
+};
 
 class SetItemCommand extends SimpleSubCommand{
 
@@ -33,10 +33,10 @@ class SetItemCommand extends SimpleSubCommand{
                 if ($args[0] === '*') {
                     $item = $sender->getInventory()->getItemInHand();
                 } else {
-                    $id = toInt($args[0], null, function (int $i){
+                    $id = Utils::toInt($args[0], null, function (int $i){
                         return $i >= 0;
                     });
-                    $damage = isset($args[1]) ? toInt($args[1], 0, function (int $i){
+                    $damage = isset($args[1]) ? Utils::toInt($args[1], 0, function (int $i){
                         return $i >= 0;
                     }) : 0;
                     if ($id === null) {

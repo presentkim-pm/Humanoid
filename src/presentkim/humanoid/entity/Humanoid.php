@@ -17,7 +17,6 @@ use pocketmine\network\mcpe\protocol\{
 };
 use pocketmine\network\mcpe\protocol\types\ContainerIds;
 use pocketmine\utils\UUID;
-
 use presentkim\geometryapi\GeometryAPI;
 
 class Humanoid extends Entity{

@@ -10,9 +10,9 @@ use presentkim\humanoid\act\{
 };
 use presentkim\humanoid\command\SimpleSubCommand;
 use presentkim\humanoid\event\PlayerClickHumanoidEvent;
-use presentkim\humanoid\util\Translation;
-
-use function presentkim\humanoid\util\toInt;
+use presentkim\humanoid\util\{
+  Translation, Utils
+};
 
 class SetScaleCommand extends SimpleSubCommand{
 
@@ -29,7 +29,7 @@ class SetScaleCommand extends SimpleSubCommand{
     public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
             if (isset($args[0])) {
-                $scale = toInt($args[0], null, function (int $i){
+                $scale = Utils::toInt($args[0], null, function (int $i){
                     return $i >= 10;
                 });
                 if ($scale === null) {

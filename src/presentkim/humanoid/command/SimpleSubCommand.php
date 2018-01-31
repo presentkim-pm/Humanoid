@@ -3,8 +3,9 @@
 namespace presentkim\humanoid\command;
 
 use pocketmine\command\CommandSender;
-use presentkim\humanoid\util\Translation;
-use function presentkim\humanoid\util\in_arrayi;
+use presentkim\humanoid\util\{
+  Translation, Utils
+};
 
 abstract class SimpleSubCommand{
 
@@ -45,7 +46,7 @@ abstract class SimpleSubCommand{
      * @return bool
      */
     public function checkLabel(string $label) : bool{
-        return strcasecmp($label, $this->label) === 0 || $this->aliases && in_arrayi($label, $this->aliases);
+        return strcasecmp($label, $this->label) === 0 || $this->aliases && Utils::in_arrayi($label, $this->aliases);
     }
 
     /** @return string */

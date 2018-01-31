@@ -5,10 +5,10 @@ namespace presentkim\humanoid\listener;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use presentkim\humanoid\HumanoidMain as Plugin;
-use presentkim\humanoid\event\PlayerClickHumanoidEvent;
 use presentkim\humanoid\act\{
   PlayerAct, ClickHumanoidAct, InteractAct
 };
+use presentkim\humanoid\event\PlayerClickHumanoidEvent;
 
 class PlayerEventListener implements Listener{
 
