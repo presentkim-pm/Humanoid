@@ -5,13 +5,10 @@ namespace presentkim\humanoid\command\subcommands\simple;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\command\CommandSender;
-use pocketmine\entity\Skin;
 use presentkim\humanoid\HumanoidMain as Plugin;
-use presentkim\humanoid\act\{
-  PlayerAct, ClickHumanoidAct
-};
+use presentkim\humanoid\act\PlayerAct;
+use presentkim\humanoid\act\child\SetHumanoidSkinAct;
 use presentkim\humanoid\command\SimpleSubCommand;
-use presentkim\humanoid\event\PlayerClickHumanoidEvent;
 use presentkim\humanoid\util\Translation;
 
 class SetSkinCommand extends SimpleSubCommand{
@@ -43,29 +40,7 @@ class SetSkinCommand extends SimpleSubCommand{
             } else {
                 $skin = $sender->getSkin();
             }
-            PlayerAct::registerAct(new class ($sender, $skin) extends PlayerAct implements ClickHumanoidAct{
-
-                /** @var Skin | null */
-                private $skin;
-
-                /**
-                 * @param Player    $player
-                 * @param Skin|null $skin
-                 */
-                public function __construct(Player $player, Skin $skin = null){
-                    parent::__construct($player);
-                    $this->skin = $skin;
-                }
-
-                /** @param PlayerClickHumanoidEvent $event */
-                public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
-                    $event->getHumanoid()->setSkin($this->skin);
-                    $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-skin@success'));
-
-                    $event->setCancelled(true);
-                    $this->cancel();
-                }
-            });
+            PlayerAct::registerAct(new SetHumanoidSkinAct($sender, $skin));
             return true;
         } else {
             $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@in-game'));

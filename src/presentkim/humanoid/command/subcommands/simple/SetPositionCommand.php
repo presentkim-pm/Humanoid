@@ -6,13 +6,10 @@ use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\command\CommandSender;
 use pocketmine\level\Position;
-use pocketmine\math\Vector3;
 use presentkim\humanoid\HumanoidMain as Plugin;
-use presentkim\humanoid\act\{
-  PlayerAct, ClickHumanoidAct
-};
+use presentkim\humanoid\act\PlayerAct;
+use presentkim\humanoid\act\child\SetHumanoidPositionAct;
 use presentkim\humanoid\command\SimpleSubCommand;
-use presentkim\humanoid\event\PlayerClickHumanoidEvent;
 use presentkim\humanoid\util\Translation;
 
 class SetPositionCommand extends SimpleSubCommand{
@@ -73,29 +70,7 @@ class SetPositionCommand extends SimpleSubCommand{
                 $sender->sendMessage(Plugin::$prefix . $this->usage);
                 return false;
             }
-            PlayerAct::registerAct(new class($sender, $pos) extends PlayerAct implements ClickHumanoidAct{
-
-                /** @var Vector3 */
-                private $pos;
-
-                /**
-                 * @param Player  $player
-                 * @param Vector3 $pos
-                 */
-                public function __construct(Player $player, Vector3 $pos){
-                    parent::__construct($player);
-                    $this->pos = $pos;
-                }
-
-                /** @param PlayerClickHumanoidEvent $event */
-                public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
-                    $event->getHumanoid()->teleport($this->pos);
-                    $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-position@success'));
-
-                    $event->setCancelled(true);
-                    $this->cancel();
-                }
-            });
+            PlayerAct::registerAct(new SetHumanoidPositionAct($sender, $pos));
             return true;
         } else {
             $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@in-game'));

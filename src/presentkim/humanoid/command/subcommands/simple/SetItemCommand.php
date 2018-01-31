@@ -6,11 +6,9 @@ use pocketmine\Player;
 use pocketmine\command\CommandSender;
 use pocketmine\item\Item;
 use presentkim\humanoid\HumanoidMain as Plugin;
-use presentkim\humanoid\act\{
-  PlayerAct, ClickHumanoidAct
-};
+use presentkim\humanoid\act\PlayerAct;
+use presentkim\humanoid\act\child\SetHumanoidItemAct;
 use presentkim\humanoid\command\SimpleSubCommand;
-use presentkim\humanoid\event\PlayerClickHumanoidEvent;
 use presentkim\humanoid\util\{
   Translation, Utils
 };
@@ -44,32 +42,9 @@ class SetItemCommand extends SimpleSubCommand{
                         return false;
                     } else {
                         $item = Item::get($id, $damage);
-
                     }
                 }
-                PlayerAct::registerAct(new class ($sender, $item) extends PlayerAct implements ClickHumanoidAct{
-
-                    /** @var Item | null */
-                    private $item;
-
-                    /**
-                     * @param Player    $player
-                     * @param Item|null $item
-                     */
-                    public function __construct(Player $player, Item $item = null){
-                        parent::__construct($player);
-                        $this->item = $item;
-                    }
-
-                    /** @param PlayerClickHumanoidEvent $event */
-                    public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
-                        $event->getHumanoid()->setHeldItem($this->item);
-                        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-item@success'));
-
-                        $event->setCancelled(true);
-                        $this->cancel();
-                    }
-                });
+                PlayerAct::registerAct(new SetHumanoidItemAct($sender, $item));
                 return true;
             } else {
                 $sender->sendMessage(Plugin::$prefix . $this->usage);
