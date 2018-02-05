@@ -21,7 +21,8 @@ command-generic-failure@invalid: "{%0}는 잘못된 값입니다"
 command-generic-failure@invalid-player: "{%0}는 잘못된 플레이어 명입니다"
 
 command-humanoid: "humanoid"
-command-humanoid@usage: "/humanoid <add | set | remove | copy | cancel | lang | reload | save>"
+command-humanoid@usage: "/humanoid <{%0}>"
+command-humanoid@usage-separator: " | "
 command-humanoid@description: "Humanoid의 메인 명령어"
 command-humanoid@aliases: ["hm"]
 

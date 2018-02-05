@@ -21,7 +21,8 @@ command-generic-failure@invalid: "{%0} is invalid value"
 command-generic-failure@invalid-player: "{%0} is invalid player name"
 
 command-humanoid: "humanoid"
-command-humanoid@usage: "/humanoid <add | set | remove | copy | cancel | lang | reload | save>"
+command-humanoid@usage: "/humanoid <{%0}>"
+command-humanoid@usage-separator: " | "
 command-humanoid@description: "Main command of Humanoid"
 command-humanoid@aliases: ["hm"]
 
