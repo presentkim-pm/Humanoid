@@ -5,7 +5,7 @@ namespace presentkim\humanoid\command;
 use pocketmine\command\CommandSender;
 use presentkim\humanoid\Humanoid as Plugin;
 use presentkim\humanoid\util\{
-    Translation, Utils
+  Translation, Utils
 };
 
 
@@ -104,5 +104,35 @@ abstract class SubCommand{
         $this->label = Translation::translate($this->strId);
         $this->aliases = Translation::getArray("{$this->strId}@aliases");
         $this->usage = $this->translate('usage');
+    }
+
+    /** @return string */
+    public function getLabel() : string{
+        return $this->label;
+    }
+
+    /** @param string $label */
+    public function setLabel(string $label) : void{
+        $this->label = $label;
+    }
+
+    /**  @return string[] */
+    public function getAliases() : array{
+        return $this->aliases;
+    }
+
+    /** @param string[] $aliases */
+    public function setAliases(array $aliases) : void{
+        $this->aliases = $aliases;
+    }
+
+    /** @return string */
+    public function getUsage() : string{
+        return $this->usage;
+    }
+
+    /** @param string $usage */
+    public function setUsage(string $usage) : void{
+        $this->usage = $usage;
     }
 }
