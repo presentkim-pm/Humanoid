@@ -4,6 +4,8 @@ main:             presentkim\humanoid\Humanoid
 version:          1.0.2
 api:              [3.0.0, 3.0.0-ALPHA10, 3.0.0-ALPHA11]
 author:           PresentKim
+website:          https://github.com/PMMPPlugin/Humanoid
+description:      A plugin add humanoid entity
 load:             STARTUP
 softdepend:       ['GeometryAPI']
 
