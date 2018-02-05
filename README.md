@@ -65,8 +65,23 @@ ex)  `/humanoid Set List 2`
 ## ChangeLog
 ### v1.0.0 [![Source](https://img.shields.io/badge/source-v1.0.0-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.0) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.0/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.0)
 - First release
+  
+  
+---
 ### v1.0.1 [![Source](https://img.shields.io/badge/source-v1.0.1-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.1) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.1/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.1)
 - \[Added\] Softdepend https://github.com/PMMPPlugin/GeometryAPI
 - \[Fixed\] Humanoid : get geometry data from GeometryAPI
+  
+  
+---
 ### v1.0.2 [![Source](https://img.shields.io/badge/source-v1.0.2-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.2) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.2/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.2)
 - \[Fixed\] Humanoid : load geometry data only entity construct
+  
+  
+---
+### v1.0.3 [![Source](https://img.shields.io/badge/source-v1.0.3-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.3) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.3/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.3)
+- \[Added\] Add PluginCommand getter and setter
+- \[Added\] Add getters and setters to SubCommand
+- \[Fixed\] Add api 3.0.0-ALPHA11
+- \[Added\] Add website and description
+- \[Changed\] Show only subcommands that sender have permission to use
