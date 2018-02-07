@@ -14,7 +14,9 @@ class CopyHumanoidAct extends PlayerAct implements ClickHumanoidAct{
     /** @param PlayerClickHumanoidEvent $event */
     public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
         $this->cancel();
-        PlayerAct::registerAct(new PasteHumanoidAct($this->player, clone $event->getHumanoid()->namedtag));
+        $humanoid = $event->getHumanoid();
+        $humanoid->saveNBT();
+        PlayerAct::registerAct(new PasteHumanoidAct($this->player, clone $humanoid->namedtag));
 
         $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-copy@success-copy'));
 
