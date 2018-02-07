@@ -85,3 +85,9 @@ ex)  `/humanoid Set List 2`
 - \[Fixed\] Add api 3.0.0-ALPHA11
 - \[Added\] Add website and description
 - \[Changed\] Show only subcommands that sender have permission to use
+  
+  
+---
+### v1.0.4 [![Source](https://img.shields.io/badge/source-v1.0.4-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.4) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.4/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.4)
+- \[Added\] Add skin steal sub command
+- \[Fixed\] Save NBT before copy humanoid
