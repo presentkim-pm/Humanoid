@@ -5,6 +5,7 @@ humanoid-add@success: "Humanoid was created"
 humanoid-remove@success: "Humanoid was removed"
 humanoid-copy@success-copy: "Touch the block to paste humanoid"
 humanoid-copy@success-paste: "Humanoid was copied"
+humanoid-skinsteal@success: "Steal humanoid's skin"
 
 humanoid-set-name@success: "Humanoid's name was setted to {%0}"
 humanoid-set-rotation@success: "Humanoid's rotation was setted to {%0}:{%1}"
@@ -101,4 +102,9 @@ command-humanoid-reload: "reload"
 command-humanoid-reload@usage: "/humanoid Reload"
 command-humanoid-reload@success: "All data was reloaded"
 command-humanoid-reload@aliases: ["rl"]
+
+command-humanoid-skinsteal: "skinsteal"
+command-humanoid-skinsteal@usage: "/humanoid SkinSteal"
+command-humanoid-skinsteal@success: "Touch the humanoid to steal skin"
+command-humanoid-skinsteal@aliases: ["ss"]
 ...
