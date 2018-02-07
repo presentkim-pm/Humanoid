@@ -67,7 +67,7 @@ class SetPositionCommand extends SimpleSubCommand{
                 }
                 $pos = new Position($x, $y, $z, $level);
             } else {
-                $sender->sendMessage(Plugin::$prefix . $this->usage);
+                $sender->sendMessage(Server::getInstance()->getLanguage()->translateString("commands.generic.usage", [$this->usage]));
                 return false;
             }
             PlayerAct::registerAct(new SetHumanoidPositionAct($sender, $pos));

@@ -3,6 +3,7 @@
 namespace presentkim\humanoid\command\subcommands\simple;
 
 use pocketmine\Player;
+use pocketmine\Server;
 use pocketmine\command\CommandSender;
 use pocketmine\item\Item;
 use presentkim\humanoid\Humanoid as Plugin;
@@ -47,7 +48,7 @@ class SetItemCommand extends SimpleSubCommand{
                 PlayerAct::registerAct(new SetHumanoidItemAct($sender, $item));
                 return true;
             } else {
-                $sender->sendMessage(Plugin::$prefix . $this->usage);
+                $sender->sendMessage(Server::getInstance()->getLanguage()->translateString("commands.generic.usage", [$this->usage]));
                 return false;
             }
         } else {
