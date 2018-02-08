@@ -26,6 +26,9 @@ permissions:
       humanoid.cmd.copy:
         description:  Humanoid command - copy
         default:      op
+      humanoid.cmd.skinsteal:
+        description:  Humanoid command - skinsteal
+        default:      op
       humanoid.cmd.cancel:
         description:  Humanoid command - cancel
         default:      op
