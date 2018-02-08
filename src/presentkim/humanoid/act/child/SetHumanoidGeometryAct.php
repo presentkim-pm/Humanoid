@@ -27,7 +27,9 @@ class SetHumanoidGeometryAct extends PlayerAct implements ClickHumanoidAct{
 
     /** @param PlayerClickHumanoidEvent $event */
     public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
-        $event->getHumanoid()->setSkin(new Skin('humanoid', $event->getHumanoid()->getSkin()->getSkinData(), '', $this->geometryName));
+        $humanoid = $event->getHumanoid();
+        $humanoidSkin = $humanoid->getSkin();
+        $humanoid->setSkin(new Skin('humanoid', $humanoidSkin->getSkinData(), $humanoidSkin->getCapeData(), $this->geometryName));
         $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-geometry@success', $this->geometryName));
 
         $event->setCancelled(true);
