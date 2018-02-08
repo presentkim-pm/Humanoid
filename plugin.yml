@@ -1,7 +1,7 @@
 ---
 name:             Humanoid
 main:             presentkim\humanoid\Humanoid
-version:          1.0.4
+version:          1.0.5
 api:              [3.0.0, 3.0.0-ALPHA10, 3.0.0-ALPHA11]
 author:           PresentKim
 website:          https://github.com/PMMPPlugin/Humanoid
