@@ -21,6 +21,7 @@ command-generic-failure@in-game: "Available in game only"
 command-generic-failure@permission: "You do not have permission to use this command"
 command-generic-failure@invalid: "{%0} is invalid value"
 command-generic-failure@invalid-player: "{%0} is invalid player name"
+command-generic-failure@invalid-item: "{%0} is invalid item id"
 
 command-humanoid: "humanoid"
 command-humanoid@usage: "/humanoid <{%0}>"

@@ -30,7 +30,7 @@ class SetItemCommand extends SimpleSubCommand{
             } else {
                 $item = ItemFactory::fromString($args[0]);
                 if ($item->isNull()) {
-                    $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid', $args[0]));
+                    $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid-item', $args[0]));
                     return false;
                 }
             }
