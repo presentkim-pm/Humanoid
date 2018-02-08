@@ -28,7 +28,7 @@ class SetSkinCommand extends SimpleSubCommand{
             if (!isset($args[0]) || $args[0] === '*') {
                 $skin = $sender->getSkin();
             } else {
-                $player = Server::getInstance()->getPlayerExact($args[0]);
+                $player = Server::getInstance()->getPlayer($args[0]);
                 if ($player === null) {
                     $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid-player', $args[0]));
                     return false;

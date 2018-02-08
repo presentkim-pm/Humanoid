@@ -29,7 +29,7 @@ class SetPositionCommand extends SimpleSubCommand{
             if (!isset($args[0]) || $args[0] === '*') {
                 $pos = $sender->asPosition();
             } elseif (!isset($args[1])) {
-                $player = Server::getInstance()->getPlayerExact($args[0]);
+                $player = Server::getInstance()->getPlayer($args[0]);
                 if ($player === null) {
                     $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid-player', $args[0]));
                     return false;
