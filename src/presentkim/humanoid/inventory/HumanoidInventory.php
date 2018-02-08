@@ -2,7 +2,6 @@
 
 namespace presentkim\humanoid\inventory;
 
-use pocketmine\item\ItemFactory;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\Player;
 use pocketmine\inventory\BaseInventory;
