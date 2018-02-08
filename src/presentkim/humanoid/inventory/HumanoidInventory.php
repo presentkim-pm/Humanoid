@@ -2,13 +2,14 @@
 
 namespace presentkim\humanoid\inventory;
 
+use pocketmine\Player;
 use pocketmine\inventory\BaseInventory;
 use pocketmine\item\Item;
 use pocketmine\network\mcpe\protocol\MobArmorEquipmentPacket;
 use pocketmine\network\mcpe\protocol\MobEquipmentPacket;
 use pocketmine\network\mcpe\protocol\types\ContainerIds;
-use pocketmine\Player;
 use presentkim\humanoid\entity\Humanoid;
+use presentkim\humanoid\util\Utils;
 
 class HumanoidInventory extends BaseInventory{
 
@@ -154,6 +155,42 @@ class HumanoidInventory extends BaseInventory{
 
         foreach ($target as $player) {
             $player->dataPacket($pk);
+        }
+    }
+
+    public function canAddItem(Item $item) : bool{
+        return $this->getItem($this->getIndex($item))->isNull();
+    }
+
+    public function addItem(Item ...$slots) : array{
+        $itemSlots = [];
+        foreach ($slots as $slot) {
+            if ($slot->isNull()) {
+                $itemSlots[] = clone $slot;
+            } else {
+                $index = $this->getIndex($slot);
+                if ($this->getItem($index)->isNull()) {
+                    $this->setItem($index, $slot);
+                } else {
+                    $itemSlots[] = clone $slot;
+                }
+            }
+        }
+        return $itemSlots;
+    }
+
+    public function getIndex(Item $item){
+        $class = get_class($item);
+        if (Utils::endsWith($class, 'Helmet') || Utils::endsWith($class, 'Cap')) {
+            return self::HELMET;
+        } elseif (Utils::endsWith($class, 'Chestplate') || Utils::endsWith($class, 'Tunic')) {
+            return self::CHESTPLATE;
+        } elseif (Utils::endsWith($class, 'Leggings') || Utils::endsWith($class, 'Pants')) {
+            return self::LEGGINGS;
+        } elseif (Utils::endsWith($class, 'Boots')) {
+            return self::BOOTS;
+        } else {
+            return self::HELDITEM;
         }
     }
 
