@@ -47,9 +47,14 @@ class Humanoid extends Entity{
 
         $this->uuid = UUID::fromRandom();
 
-        $this->inventory = new HumanoidInventory($this);
-        $this->inventory->setHeldItem($this->namedtag->hasTag('HeldItem') ? Item::nbtDeserialize($this->namedtag->getCompoundTag('HeldItem')) : Item::get(Item::AIR));
+        if ($this->namedtag->hasTag('Inventory')) {
+            $this->inventory = HumanoidInventory::nbtDeserialize($this, $this->namedtag->getCompoundTag('Inventory'));
+        } else {
+            $this->inventory = new HumanoidInventory($this);
+            $this->inventory->setHeldItem($this->namedtag->hasTag('HeldItem') ? Item::nbtDeserialize($this->namedtag->getCompoundTag('HeldItem')) : Item::get(Item::AIR));
 
+            $this->namedtag->removeTag('HeldItem');
+        }
         if ($this->namedtag->hasTag('Skin')) {
             $skinTag = $this->namedtag->getCompoundTag('Skin');
             $skinData = $skinTag->getString('SkinData');
@@ -109,7 +114,7 @@ class Humanoid extends Entity{
     public function saveNBT() : void{
         parent::saveNBT();
 
-        $this->namedtag->setTag($this->inventory->getHeldItem()->nbtSerialize(-1, 'HeldItem'));
+        $this->namedtag->setTag($this->inventory->nbtSerialize());
         $this->namedtag->setTag(new CompoundTag('Skin', [
           new StringTag('SkinData', $this->skin->getSkinData()),
           new StringTag('CapeData', $this->skin->getCapeData()),
