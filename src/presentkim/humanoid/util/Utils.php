@@ -57,4 +57,19 @@ class Utils{
             return null;
         }
     }
+
+    /**
+     * @param string $str
+     * @param string $end
+     *
+     * @return bool
+     */
+    public static function endsWith(string $str, string $end) : bool{
+        $strlen = strlen($str);
+        $endlen = strlen($end);
+        if ($endlen > $strlen) {
+            return false;
+        }
+        return substr_compare($str, $end, $strlen - $endlen, $endlen) === 0;
+    }
 }
