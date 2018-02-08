@@ -52,11 +52,13 @@ ex)  `/humanoid Set List 2`
 | List       | \[page\]                                            | Show data name list             |
 | Name       | \[name\]                                            | Change humanoid's name          |
 | Rotation   | \<yaw\> \<pitch\>                                   | Change humanoid's yaw and pitch |
-| Item       | \<item id\> \[item meta\]                           | Change humanoid's held item     |
-| Skin       | \<player name\>                                     | Change humanoid's skin          |
-| Geometry   | \<geometry name\>                                   | Change humanoid's geometry name |
+| Item       | \[item id\]                                         | Change humanoid's held item     |
+| Armor      | \[item id\]                                         | Change humanoid's Armor         |
+| Skin       | \[player name\]                                     | Change humanoid's skin data     |
+| Cape       | \[player name\]                                     | Change humanoid's cape data     |
+| Geometry   | \[geometry name\]                                   | Change humanoid's geometry name |
 | Sneak      |                                                     | Toggle humanoid's sneaking      |
-| Position   | \<player name\> or \<x\> \<y\> \<z\> \[world name\] | Change humanoid's position |
+| Position   | \<player name\> or \<x\> \<y\> \<z\> \[world name\] | Change humanoid's position      |
 | Scale      | \<scale percent\>                                   | Change humanoid's scale         |
 
 
