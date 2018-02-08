@@ -11,7 +11,7 @@
 A plugin add humanoid entity for PocketMine-MP
 
 ## Command
-Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | save>`
+Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | save | skinsteal>`
 
 | subcommand | arguments              | description                 |
 | ---------- | ---------------------- | --------------------------- |
@@ -20,26 +20,26 @@ Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | 
 | Remove     |                        | Remove humanoid             |
 | Copy       |                        | Copy humanoid               |
 | Cancel     |                        | Cancel act                  |
+| SkinSteal  |                        | Steal humanoid's skin       |
 | Lang       | \<language prefix\>    | Load default lang file      |
 | Reload     |                        | Reload all data             |
-| Save       |                        | Save all data               |
 
 
 
 
 ## Permission
-| permission          | default  | description        |
-| ------------------- | -------- | ------------------ |
-| humanoid.cmd        | OP       | main command       |
-|                     |          |                    |
-| humanoid.cmd.add    | OP       | add subcommand     |
-| humanoid.cmd.set    | OP       | set  subcommand    |
-| humanoid.cmd.remove | OP       | remove subcommand  |
-| humanoid.cmd.copy   | OP       | copy subcommand    |
-| humanoid.cmd.cancel | OP       | cancel subcommand  |
-| humanoid.cmd.lang   | OP       | lang subcommand    |
-| humanoid.cmd.reload | OP       | reload subcommand  |
-| humanoid.cmd.save   | OP       | save subcommand    |
+| permission             | default  | description          |
+| ---------------------- | -------- | -------------------- |
+| humanoid.cmd           | OP       | main command         |
+|                        |          |                      |
+| humanoid.cmd.add       | OP       | add subcommand       |
+| humanoid.cmd.set       | OP       | set  subcommand      |
+| humanoid.cmd.remove    | OP       | remove subcommand    |
+| humanoid.cmd.copy      | OP       | copy subcommand      |
+| humanoid.cmd.cancel    | OP       | cancel subcommand    |
+| humanoid.cmd.skinsteal | OP       | skinsteal subcommand |
+| humanoid.cmd.lang      | OP       | lang subcommand      |
+| humanoid.cmd.reload    | OP       | reload subcommand    |
 
 
 
@@ -47,17 +47,17 @@ Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | 
 ## \<data name\> list
 ex)  `/humanoid Set List 2`
 
-| name       | arguments                        | description                     |
-| ---------- | -------------------------------- | ------------------------------- |
-| List       | \[page\]                         | Show data name list             |
-| Name       | \[name\]                         | Change humanoid's name          |
-| Rotation   | * or \<yaw\> \<pitch\>           | Change humanoid's yaw and pitch |
-| Item       | * or \<item id\> \[item meta\]   | Change humanoid's held item     |
-| Skin       | * or \<player name\>             | Change humanoid's skin          |
-| Geometry   | \<geometry name\>                | Change humanoid's geometry name |
-| Sneak      |                                  | Toggle humanoid's sneaking      |
-| Position   | * or \<player name\> or \<x\> \<y\> \<z\> \[world name\] | Change humanoid's position |
-| Scale      | \<scale percent\>                | Change humanoid's scale         |
+| name       | arguments                                           | description                     |
+| ---------- | --------------------------------------------------- | ------------------------------- |
+| List       | \[page\]                                            | Show data name list             |
+| Name       | \[name\]                                            | Change humanoid's name          |
+| Rotation   | \<yaw\> \<pitch\>                                   | Change humanoid's yaw and pitch |
+| Item       | \<item id\> \[item meta\]                           | Change humanoid's held item     |
+| Skin       | \<player name\>                                     | Change humanoid's skin          |
+| Geometry   | \<geometry name\>                                   | Change humanoid's geometry name |
+| Sneak      |                                                     | Toggle humanoid's sneaking      |
+| Position   | \<player name\> or \<x\> \<y\> \<z\> \[world name\] | Change humanoid's position |
+| Scale      | \<scale percent\>                                   | Change humanoid's scale         |
 
 
 
@@ -91,3 +91,24 @@ ex)  `/humanoid Set List 2`
 ### v1.0.4 [![Source](https://img.shields.io/badge/source-v1.0.4-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.4) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.4/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.4)
 - \[Added\] Add skin steal sub command
 - \[Fixed\] Save NBT before copy humanoid
+  
+  
+---
+### v1.0.5 [![Source](https://img.shields.io/badge/source-v1.0.5-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.5) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.5/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.5)
+- \[Fixed\] SetHumanoidSkinAct : Only change skin data
+- \[Fixed\] SetHumanoidGeometryAct : Only change geometry name
+- \[Added\] Add set cape sub command
+- \[Added\] Save humanoid's cape data
+- \[Added\] Add set armor sub command
+- \[Added\] Add inventory to humanoid  for contain armors and held item
+- \[Changed\] Command : Change check first parameter logic
+- \[Changed\] SetItemCommand : Get item from string
+- \[Changed\] Command : Get player by name with auto completion
+- \[Removed\] Remove set-success detail message
+  
+  
+---
+### v1.0.6 [![Source](https://img.shields.io/badge/source-v1.0.6-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.6) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.6/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.6)
+- \[Added\] Add humanoid.cmd.skinsteal permisson
+- \[Changed\] Sub command order
+
