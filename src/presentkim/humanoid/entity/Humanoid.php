@@ -10,7 +10,7 @@ use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\item\Item;
 use pocketmine\math\Vector3;
 use pocketmine\nbt\tag\{
-  ByteTag, FloatTag, StringTag
+  CompoundTag, ByteTag, FloatTag, StringTag
 };
 use pocketmine\network\mcpe\protocol\{
   AddPlayerPacket, MovePlayerPacket, MobEquipmentPacket, PlayerSkinPacket
@@ -49,10 +49,20 @@ class Humanoid extends Entity{
 
         $this->setHeldItem($this->namedtag->hasTag('HeldItem') ? Item::nbtDeserialize($this->namedtag->getCompoundTag('HeldItem')) : Item::get(Item::AIR));
 
-        $skinData = $this->namedtag->hasTag('SkinData') ? $this->namedtag->getString('SkinData') : str_repeat("\x00", 8192);
-        $geometryName = $this->namedtag->hasTag('GeometryName') ? $this->namedtag->getString('GeometryName') : '';
-        $this->setSkin(new Skin('humanoid', $skinData, '', $geometryName));
+        if ($this->namedtag->hasTag('Skin')) {
+            $skinTag = $this->namedtag->getCompoundTag('Skin');
+            $skinData = $skinTag->getString('SkinData');
+            $capeData = $skinTag->getString('CapeData');
+            $geometryName = $skinTag->getString('GeometryName');
+        } else {
+            $skinData = $this->namedtag->hasTag('SkinData') ? $this->namedtag->getString('SkinData') : str_repeat("\x00", 8192);
+            $capeData = '';
+            $geometryName = $this->namedtag->hasTag('GeometryName') ? $this->namedtag->getString('GeometryName') : '';
 
+            $this->namedtag->removeTag('SkinData');
+            $this->namedtag->removeTag('GeometryName');
+        }
+        $this->setSkin(new Skin('humanoid', $skinData, $capeData, $geometryName));
         $this->setSneaking($this->namedtag->hasTag('Sneak') ? (bool) $this->namedtag->getByte('Sneak') : false);
         $this->setScale($this->namedtag->hasTag('Scale') ? $this->namedtag->getFloat('Scale') : 1);
     }
@@ -111,9 +121,11 @@ class Humanoid extends Entity{
         parent::saveNBT();
 
         $this->namedtag->setTag($this->heldItem->nbtSerialize(-1, 'HeldItem'));
-        $this->namedtag->setTag(new StringTag('SkinData', $this->skin->getSkinData()));
-        $this->namedtag->setTag(new StringTag('GeometryName', $this->skin->getGeometryName()));
-
+        $this->namedtag->setTag(new CompoundTag('Skin', [
+          new StringTag('SkinData', $this->skin->getSkinData()),
+          new StringTag('CapeData', $this->skin->getCapeData()),
+          new StringTag('GeometryName', $this->skin->getGeometryName()),
+        ]));
         $this->namedtag->setTag(new ByteTag('Sneak', (int) $this->isSneaking()));
         $this->namedtag->setTag(new FloatTag('Scale', $this->getScale()));
     }
