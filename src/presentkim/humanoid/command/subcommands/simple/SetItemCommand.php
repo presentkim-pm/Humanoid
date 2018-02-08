@@ -3,16 +3,13 @@
 namespace presentkim\humanoid\command\subcommands\simple;
 
 use pocketmine\Player;
-use pocketmine\Server;
 use pocketmine\command\CommandSender;
-use pocketmine\item\Item;
+use pocketmine\item\ItemFactory;
 use presentkim\humanoid\Humanoid as Plugin;
 use presentkim\humanoid\act\PlayerAct;
 use presentkim\humanoid\act\child\SetHumanoidItemAct;
 use presentkim\humanoid\command\SimpleSubCommand;
-use presentkim\humanoid\util\{
-  Translation, Utils
-};
+use presentkim\humanoid\util\Translation;
 
 class SetItemCommand extends SimpleSubCommand{
 
@@ -31,17 +28,10 @@ class SetItemCommand extends SimpleSubCommand{
             if (!isset($args[0]) || $args[0] === '*') {
                 $item = $sender->getInventory()->getItemInHand();
             } else {
-                $id = Utils::toInt($args[0], null, function (int $i){
-                    return $i >= 0;
-                });
-                $damage = isset($args[1]) ? Utils::toInt($args[1], 0, function (int $i){
-                    return $i >= 0;
-                }) : 0;
-                if ($id === null) {
+                $item = ItemFactory::fromString($args[0]);
+                if ($item->isNull()) {
                     $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid', $args[0]));
                     return false;
-                } else {
-                    $item = Item::get($id, $damage);
                 }
             }
             PlayerAct::registerAct(new SetHumanoidItemAct($sender, $item));

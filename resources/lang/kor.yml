@@ -54,7 +54,7 @@ command-humanoid-set-rotation@usage: "/humanoid Set Rotation <yaw> <pitch>"
 command-humanoid-set-rotation@aliases: ["r"]
 
 command-humanoid-set-item: "item"
-command-humanoid-set-item@usage: "/humanoid Set Item <아이템id> [아이템meta]"
+command-humanoid-set-item@usage: "/humanoid Set Item <아이템id>"
 command-humanoid-set-item@aliases: ["i"]
 
 command-humanoid-set-skin: "skin"
