@@ -2,11 +2,14 @@
 
 namespace presentkim\humanoid\inventory;
 
+use pocketmine\item\ItemFactory;
+use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\Player;
 use pocketmine\inventory\BaseInventory;
 use pocketmine\item\Item;
-use pocketmine\network\mcpe\protocol\MobArmorEquipmentPacket;
-use pocketmine\network\mcpe\protocol\MobEquipmentPacket;
+use pocketmine\network\mcpe\protocol\{
+  MobArmorEquipmentPacket, MobEquipmentPacket
+};
 use pocketmine\network\mcpe\protocol\types\ContainerIds;
 use presentkim\humanoid\entity\Humanoid;
 use presentkim\humanoid\util\Utils;
@@ -197,5 +200,36 @@ class HumanoidInventory extends BaseInventory{
     /** @return Player[] */
     public function getViewers() : array{
         return array_merge(parent::getViewers(), $this->holder->getViewers());
+    }
+
+    /**
+     * @param string $tagName
+     *
+     * @return CompoundTag
+     */
+    public function nbtSerialize(string $tagName = 'Inventory') : CompoundTag{
+        return new CompoundTag($tagName, [
+          $this->getHelmet()->nbtSerialize(self::HELMET, 'Helmet'),
+          $this->getChestplate()->nbtSerialize(self::CHESTPLATE, 'Chestplate'),
+          $this->getLeggings()->nbtSerialize(self::LEGGINGS, 'Leggings'),
+          $this->getBoots()->nbtSerialize(self::BOOTS, 'Boots'),
+          $this->getHeldItem()->nbtSerialize(self::HELDITEM, 'HeldItem'),
+        ]);
+    }
+
+    /**
+     * @param Humanoid    $humanoid
+     * @param CompoundTag $tag
+     *
+     * @return HumanoidInventory
+     */
+    public static function nbtDeserialize(Humanoid $humanoid, CompoundTag $tag) : HumanoidInventory{
+        $inventory = new HumanoidInventory($humanoid);
+        $inventory->setHelmet(Item::nbtDeserialize($tag->getCompoundTag('Helmet')));
+        $inventory->setChestplate(Item::nbtDeserialize($tag->getCompoundTag('Chestplate')));
+        $inventory->setLeggings(Item::nbtDeserialize($tag->getCompoundTag('Leggings')));
+        $inventory->setBoots(Item::nbtDeserialize($tag->getCompoundTag('Boots')));
+        $inventory->setHeldItem(Item::nbtDeserialize($tag->getCompoundTag('HeldItem')));
+        return $inventory;
     }
 }
