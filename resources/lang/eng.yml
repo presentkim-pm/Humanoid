@@ -11,6 +11,7 @@ humanoid-set-name@success: "Humanoid's name was setted to {%0}"
 humanoid-set-rotation@success: "Humanoid's rotation was setted to {%0}:{%1}"
 humanoid-set-item@success: "Humanoid's item was changed"
 humanoid-set-skin@success: "Humanoid's skin was changed"
+humanoid-set-cape@success: "Humanoid's cape was changed"
 humanoid-set-geometry@success: "Humanoid's geometry was setted to {%0}"
 humanoid-set-sneak@success: "Humanoid's sneaking was changed"
 humanoid-set-position@success: "Humanoid's position was changed"
@@ -59,6 +60,10 @@ command-humanoid-set-item@aliases: ["i"]
 command-humanoid-set-skin: "skin"
 command-humanoid-set-skin@usage: "/humanoid Set Skin [player name]"
 command-humanoid-set-skin@aliases: ["s"]
+
+command-humanoid-set-cape: "cape"
+command-humanoid-set-cape@usage: "/humanoid Set Cape [player name]"
+command-humanoid-set-cape@aliases: ["c"]
 
 command-humanoid-set-geometry: "geometry"
 command-humanoid-set-geometry@usage: "/humanoid Set Geometry <geometry name>"

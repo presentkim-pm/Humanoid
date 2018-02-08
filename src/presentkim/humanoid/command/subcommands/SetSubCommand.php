@@ -8,7 +8,7 @@ use presentkim\humanoid\command\{
   SubCommand, PoolCommand, SimpleSubCommand
 };
 use presentkim\humanoid\command\subcommands\simple\{
-  ShowListCommand, SetNameCommand, SetRotationCommand, SetItemCommand, SetSkinCommand, SetGeometryCommand, SetSneakCommand, SetPositionCommand, SetScaleCommand
+  ShowListCommand, SetNameCommand, SetRotationCommand, SetItemCommand, SetSkinCommand, SetCapeCommand, SetGeometryCommand, SetSneakCommand, SetPositionCommand, SetScaleCommand
 };
 
 class SetSubCommand extends SubCommand{
@@ -38,6 +38,7 @@ class SetSubCommand extends SubCommand{
         self::addSubCommand(new SetRotationCommand());
         self::addSubCommand(new SetItemCommand());
         self::addSubCommand(new SetSkinCommand());
+        self::addSubCommand(new SetCapeCommand());
         self::addSubCommand(new SetGeometryCommand());
         self::addSubCommand(new SetSneakCommand());
         self::addSubCommand(new SetPositionCommand());
