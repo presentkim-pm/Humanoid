@@ -119,7 +119,7 @@ class Humanoid extends Entity{
         $this->namedtag->setTag(new FloatTag('Scale', $this->getScale()));
     }
 
-    /** @param \pocketmine\Player $player */
+    /** @param Player $player */
     protected function sendSpawnPacket(Player $player) : void{
         if (!$this->skin->isValid()) {
             throw new \InvalidStateException((new \ReflectionClass($this))->getShortName() . ' must have a valid skin set');
