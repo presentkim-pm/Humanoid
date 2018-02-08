@@ -25,16 +25,13 @@ class SetGeometryCommand extends SimpleSubCommand{
      */
     public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
-            if (isset($args[0])) {
-                if ($args[0] === '*') {
-                    $args[0] = $sender->getSkin()->getGeometryName();
-                }
-                PlayerAct::registerAct(new SetHumanoidGeometryAct($sender, implode('_', $args)));
-                return true;
+            if (!isset($args[0]) || $args[0] === '*') {
+                $geometryName = $sender->getSkin()->getGeometryName();
             } else {
-                $sender->sendMessage(Server::getInstance()->getLanguage()->translateString("commands.generic.usage", [$this->usage]));
-                return false;
+                $geometryName = implode('_', $args);
             }
+            PlayerAct::registerAct(new SetHumanoidGeometryAct($sender, $geometryName));
+            return true;
         } else {
             $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@in-game'));
             return false;

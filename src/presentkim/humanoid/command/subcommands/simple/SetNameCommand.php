@@ -25,13 +25,8 @@ class SetNameCommand extends SimpleSubCommand{
      */
     public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
-            if (isset($args[0])) {
-                PlayerAct::registerAct(new SetHumanoidNameAct($sender, implode(' ', $args)));
-                return true;
-            } else {
-                $sender->sendMessage(Server::getInstance()->getLanguage()->translateString("commands.generic.usage", [$this->usage]));
-                return false;
-            }
+            PlayerAct::registerAct(new SetHumanoidNameAct($sender, implode(' ', $args)));
+            return true;
         } else {
             $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@in-game'));
             return false;

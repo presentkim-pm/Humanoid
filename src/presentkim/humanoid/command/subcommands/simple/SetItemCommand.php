@@ -28,29 +28,24 @@ class SetItemCommand extends SimpleSubCommand{
      */
     public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
-            if (isset($args[0])) {
-                if ($args[0] === '*') {
-                    $item = $sender->getInventory()->getItemInHand();
-                } else {
-                    $id = Utils::toInt($args[0], null, function (int $i){
-                        return $i >= 0;
-                    });
-                    $damage = isset($args[1]) ? Utils::toInt($args[1], 0, function (int $i){
-                        return $i >= 0;
-                    }) : 0;
-                    if ($id === null) {
-                        $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid', $args[0]));
-                        return false;
-                    } else {
-                        $item = Item::get($id, $damage);
-                    }
-                }
-                PlayerAct::registerAct(new SetHumanoidItemAct($sender, $item));
-                return true;
+            if (!isset($args[0]) || $args[0] === '*') {
+                $item = $sender->getInventory()->getItemInHand();
             } else {
-                $sender->sendMessage(Server::getInstance()->getLanguage()->translateString("commands.generic.usage", [$this->usage]));
-                return false;
+                $id = Utils::toInt($args[0], null, function (int $i){
+                    return $i >= 0;
+                });
+                $damage = isset($args[1]) ? Utils::toInt($args[1], 0, function (int $i){
+                    return $i >= 0;
+                }) : 0;
+                if ($id === null) {
+                    $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid', $args[0]));
+                    return false;
+                } else {
+                    $item = Item::get($id, $damage);
+                }
             }
+            PlayerAct::registerAct(new SetHumanoidItemAct($sender, $item));
+            return true;
         } else {
             $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@in-game'));
             return false;

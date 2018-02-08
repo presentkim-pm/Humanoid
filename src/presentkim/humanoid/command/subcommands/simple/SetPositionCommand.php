@@ -26,19 +26,15 @@ class SetPositionCommand extends SimpleSubCommand{
      */
     public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
-            if (!isset($args[0])) {
+            if (!isset($args[0]) || $args[0] === '*') {
                 $pos = $sender->asPosition();
-            } elseif (isset($args[0]) && !isset($args[1])) {
-                if ($args === '*') {
-                    $pos = $sender->asPosition();
+            } elseif (!isset($args[1])) {
+                $player = Server::getInstance()->getPlayerExact($args[0]);
+                if ($player === null) {
+                    $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid-player', $args[0]));
+                    return false;
                 } else {
-                    $player = Server::getInstance()->getPlayerExact($args[0]);
-                    if ($player === null) {
-                        $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid-player', $args[0]));
-                        return false;
-                    } else {
-                        $pos = $player->asPosition();
-                    }
+                    $pos = $player->asPosition();
                 }
             } elseif (isset($args[2])) {
                 $x = is_numeric($args[0]) ? (float) $args[0] : null;

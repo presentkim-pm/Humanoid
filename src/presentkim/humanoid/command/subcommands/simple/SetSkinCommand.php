@@ -25,20 +25,16 @@ class SetSkinCommand extends SimpleSubCommand{
      */
     public function onCommand(CommandSender $sender, array $args) : bool{
         if ($sender instanceof Player) {
-            if (isset($args[0])) {
-                if ($args[0] === '*') {
-                    $skin = $sender->getSkin();
-                } else {
-                    $player = Server::getInstance()->getPlayerExact($args[0]);
-                    if ($player === null) {
-                        $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid-player', $args[0]));
-                        return false;
-                    } else {
-                        $skin = $player->getSkin();
-                    }
-                }
-            } else {
+            if (!isset($args[0]) || $args[0] === '*') {
                 $skin = $sender->getSkin();
+            } else {
+                $player = Server::getInstance()->getPlayerExact($args[0]);
+                if ($player === null) {
+                    $sender->sendMessage(Plugin::$prefix . Translation::translate('command-generic-failure@invalid-player', $args[0]));
+                    return false;
+                } else {
+                    $skin = $player->getSkin();
+                }
             }
             PlayerAct::registerAct(new SetHumanoidSkinAct($sender, $skin));
             return true;
