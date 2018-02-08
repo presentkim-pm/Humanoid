@@ -142,6 +142,7 @@ class Humanoid extends Entity{
         $pk->metadata = $this->propertyManager->getAll();
         $player->dataPacket($pk);
 
+        $this->inventory->sendArmors($player);
         $this->sendSkin([$player]);
     }
 
