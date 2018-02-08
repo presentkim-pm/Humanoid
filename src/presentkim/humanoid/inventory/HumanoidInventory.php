@@ -26,14 +26,17 @@ class HumanoidInventory extends BaseInventory{
         parent::__construct();
     }
 
+    /** @return Humanoid */
     public function getHolder() : Humanoid{
         return $this->holder;
     }
 
+    /** @return string */
     public function getName() : string{
         return "HumanoidInventory";
     }
 
+    /** @return int */
     public function getDefaultSize() : int{
         return 5;
     }
@@ -63,26 +66,55 @@ class HumanoidInventory extends BaseInventory{
         return $this->getItem(self::HELDITEM);
     }
 
+    /**
+     * @param Item $item
+     *
+     * @return bool
+     */
     public function setHelmet(Item $item) : bool{
         return $this->setItem(self::HELMET, $item);
     }
 
+    /**
+     * @param Item $item
+     *
+     * @return bool
+     */
     public function setChestplate(Item $item) : bool{
         return $this->setItem(self::CHESTPLATE, $item);
     }
 
+    /**
+     * @param Item $item
+     *
+     * @return bool
+     */
     public function setLeggings(Item $item) : bool{
         return $this->setItem(self::LEGGINGS, $item);
     }
 
+    /**
+     * @param Item $item
+     *
+     * @return bool
+     */
     public function setBoots(Item $item) : bool{
         return $this->setItem(self::BOOTS, $item);
     }
 
+    /**
+     * @param Item $item
+     *
+     * @return bool
+     */
     public function setHeldItem(Item $item) : bool{
         return $this->setItem(self::HELDITEM, $item);
     }
 
+    /**
+     * @param int             $index
+     * @param Player|Player[] $target
+     */
     public function sendSlot(int $index, $target) : void{
         if ($index === self::HELDITEM) {
             $this->sendHeldItem($target);
@@ -91,6 +123,7 @@ class HumanoidInventory extends BaseInventory{
         }
     }
 
+    /** @param Player|Player[] $target */
     public function sendArmors($target) : void{
         if ($target instanceof Player) {
             $target = [$target];
@@ -107,6 +140,7 @@ class HumanoidInventory extends BaseInventory{
         }
     }
 
+    /** @param Player|Player[] $target */
     public function sendHeldItem($target) : void{
         if ($target instanceof Player) {
             $target = [$target];
