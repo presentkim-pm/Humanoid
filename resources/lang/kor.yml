@@ -49,6 +49,11 @@ command-humanoid-set-item: "item"
 command-humanoid-set-item@usage: "/humanoid Set Item [아이템id]"
 command-humanoid-set-item@aliases: ["i"]
 
+command-humanoid-set-armor: "armor"
+command-humanoid-set-armor@usage: "/humanoid Set Armor [아이템id]"
+command-humanoid-set-armor@failure: "{%0}는 갑옷이 아닙니다"
+command-humanoid-set-armor@aliases: ["a"]
+
 command-humanoid-set-skin: "skin"
 command-humanoid-set-skin@usage: "/humanoid Set Skin [플레이어명]"
 command-humanoid-set-skin@aliases: ["s"]
