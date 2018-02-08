@@ -28,7 +28,7 @@ class SetHumanoidItemAct extends PlayerAct implements ClickHumanoidAct{
     /** @param PlayerClickHumanoidEvent $event */
     public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
         $event->getHumanoid()->setHeldItem($this->item);
-        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-item@success'));
+        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set@success'));
 
         $event->setCancelled(true);
         $this->cancel();

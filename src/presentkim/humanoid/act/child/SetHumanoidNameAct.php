@@ -27,7 +27,7 @@ class SetHumanoidNameAct extends PlayerAct implements ClickHumanoidAct{
     /** @param PlayerClickHumanoidEvent $event */
     public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
         $event->getHumanoid()->setNameTag($this->name);
-        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-name@success', $this->name));
+        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set@success'));
 
         $event->setCancelled(true);
         $this->cancel();

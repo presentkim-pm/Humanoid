@@ -34,7 +34,7 @@ class SetHumanoidRotationAct extends PlayerAct implements ClickHumanoidAct{
         $this->yaw = $this->yaw ?? $this->player->yaw;
         $this->pitch = $this->pitch ?? $this->player->pitch;
         $event->getHumanoid()->setRotation($this->yaw, $this->pitch);
-        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-rotation@success', $this->yaw, $this->pitch));
+        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set@success'));
 
         $event->setCancelled(true);
         $this->cancel();

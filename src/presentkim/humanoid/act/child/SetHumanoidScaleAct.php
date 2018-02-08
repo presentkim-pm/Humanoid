@@ -27,7 +27,7 @@ class SetHumanoidScaleAct extends PlayerAct implements ClickHumanoidAct{
     /** @param PlayerClickHumanoidEvent $event */
     public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
         $event->getHumanoid()->setScale($this->scale * 0.01);
-        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-scale@success', $this->scale));
+        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set@success'));
 
         $event->setCancelled(true);
         $this->cancel();

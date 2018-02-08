@@ -30,7 +30,7 @@ class SetHumanoidSkinAct extends PlayerAct implements ClickHumanoidAct{
         $humanoid = $event->getHumanoid();
         $humanoidSkin = $humanoid->getSkin();
         $humanoid->setSkin(new Skin('humanoid', $this->skin->getSkinData(), $humanoidSkin->getCapeData(), $humanoidSkin->getGeometryName()));
-        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-skin@success'));
+        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set@success'));
 
         $event->setCancelled(true);
         $this->cancel();

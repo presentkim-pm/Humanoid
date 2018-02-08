@@ -2,20 +2,11 @@
 prefix: "[Humanoid] "
 
 humanoid-add@success: "휴머노이드가 생성되었습니다"
+humanoid-set@success: "휴머노이드의 데이터가 변경되었습니다"
 humanoid-remove@success: "휴머노이드가 제거되었습니다"
 humanoid-copy@success-copy: "휴머노이드를 붙여넣기할 블럭을 터치해주세요"
 humanoid-copy@success-paste: "휴머노이드가 복사되었습니다"
 humanoid-skinsteal@success: "휴머노이드의 스킨을 빼앗았습니다"
-
-humanoid-set-name@success: "휴머노이드의 이름이 {%0}로 설정되었습니다"
-humanoid-set-rotation@success: "휴머노이드의 방향이 {%0}:{%1}로 설정되었습니다"
-humanoid-set-item@success: "휴머노이드의 아이템이 변경되었습니다"
-humanoid-set-skin@success: "휴머노이드의 스킨이 변경되었습니다"
-humanoid-set-cape@success: "휴머노이드의 망토가 변경되었습니다"
-humanoid-set-geometry@success:  "휴머노이드의 geometry가 {%0}로 설정되었습니다"
-humanoid-set-sneak@success: "휴머노이드의 웅크리기가 변경되었습니다"
-humanoid-set-position@success: "휴머노이드의 위치가 변경되었습니다"
-humanoid-set-scale@success:  "휴머노이드의 크기가 {%0}로 설정되었습니다"
 
 command-generic-failure@in-game: "게임 내에서만 사용할 수 있습니다"
 command-generic-failure@permission: "이 명령을 사용할 수 있는 권한이 없습니다"
@@ -47,7 +38,7 @@ command-humanoid-set-list@item: " - {%1}"
 command-humanoid-set-list@aliases: ["l"]
 
 command-humanoid-set-name: "name"
-command-humanoid-set-name@usage: "/humanoid Set Name <이름>"
+command-humanoid-set-name@usage: "/humanoid Set Name [이름]"
 command-humanoid-set-name@aliases: ["n"]
 
 command-humanoid-set-rotation: "rotation"
@@ -55,7 +46,7 @@ command-humanoid-set-rotation@usage: "/humanoid Set Rotation <yaw> <pitch>"
 command-humanoid-set-rotation@aliases: ["r"]
 
 command-humanoid-set-item: "item"
-command-humanoid-set-item@usage: "/humanoid Set Item <아이템id>"
+command-humanoid-set-item@usage: "/humanoid Set Item [아이템id]"
 command-humanoid-set-item@aliases: ["i"]
 
 command-humanoid-set-skin: "skin"
@@ -67,7 +58,7 @@ command-humanoid-set-cape@usage: "/humanoid Set Cape [플레이어명]"
 command-humanoid-set-cape@aliases: ["c"]
 
 command-humanoid-set-geometry: "geometry"
-command-humanoid-set-geometry@usage: "/humanoid Set Geometry <geometry명>"
+command-humanoid-set-geometry@usage: "/humanoid Set Geometry [geometry명]"
 command-humanoid-set-geometry@aliases: ["g"]
 
 command-humanoid-set-sneak: "sneak"

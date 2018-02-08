@@ -28,7 +28,7 @@ class SetHumanoidPositionAct extends PlayerAct implements ClickHumanoidAct{
     /** @param PlayerClickHumanoidEvent $event */
     public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
         $event->getHumanoid()->teleport($this->pos);
-        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-position@success'));
+        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set@success'));
 
         $event->setCancelled(true);
         $this->cancel();

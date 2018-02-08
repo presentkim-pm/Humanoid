@@ -15,7 +15,7 @@ class ToggleHumanoidSneakAct extends PlayerAct implements ClickHumanoidAct{
     public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
         $humanoid = $event->getHumanoid();
         $humanoid->setSneaking(!$humanoid->isSneaking());
-        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set-sneak@success'));
+        $this->player->sendMessage(Plugin::$prefix . Translation::translate('humanoid-set@success'));
 
         $event->setCancelled(true);
         $this->cancel();
