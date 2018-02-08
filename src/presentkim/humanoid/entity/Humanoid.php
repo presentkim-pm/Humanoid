@@ -13,22 +13,22 @@ use pocketmine\nbt\tag\{
   CompoundTag, ByteTag, FloatTag, StringTag
 };
 use pocketmine\network\mcpe\protocol\{
-  AddPlayerPacket, MovePlayerPacket, MobEquipmentPacket, PlayerSkinPacket
+  AddPlayerPacket, MovePlayerPacket, PlayerSkinPacket
 };
-use pocketmine\network\mcpe\protocol\types\ContainerIds;
 use pocketmine\utils\UUID;
 use presentkim\geometryapi\GeometryAPI;
+use presentkim\humanoid\inventory\HumanoidInventory;
 
 class Humanoid extends Entity{
 
     /** @var UUID */
     protected $uuid;
 
-    /** @var Item */
-    protected $heldItem;
-
     /** @var Skin */
     protected $skin;
+
+    /** @var HumanoidInventory */
+    protected $inventory;
 
     /** @var float */
     public $width = 0.6;
@@ -47,7 +47,8 @@ class Humanoid extends Entity{
 
         $this->uuid = UUID::fromRandom();
 
-        $this->setHeldItem($this->namedtag->hasTag('HeldItem') ? Item::nbtDeserialize($this->namedtag->getCompoundTag('HeldItem')) : Item::get(Item::AIR));
+        $this->inventory = new HumanoidInventory($this);
+        $this->inventory->setHeldItem($this->namedtag->hasTag('HeldItem') ? Item::nbtDeserialize($this->namedtag->getCompoundTag('HeldItem')) : Item::get(Item::AIR));
 
         if ($this->namedtag->hasTag('Skin')) {
             $skinTag = $this->namedtag->getCompoundTag('Skin');
@@ -72,21 +73,9 @@ class Humanoid extends Entity{
         return $this->uuid;
     }
 
-    /** @return Item */
-    public function getHeldItem() : Item{
-        return clone $this->heldItem;
-    }
-
-    /** @param Item $heldItem */
-    public function setHeldItem(Item $heldItem) : void{
-        $this->heldItem = $heldItem;
-
-        $pk = new MobEquipmentPacket();
-        $pk->entityRuntimeId = $this->id;
-        $pk->item = $heldItem;
-        $pk->inventorySlot = $pk->hotbarSlot = 0;
-        $pk->windowId = ContainerIds::INVENTORY;
-        $this->server->broadcastPacket($this->getViewers(), $pk);
+    /** @return HumanoidInventory */
+    public function getInventory() : HumanoidInventory{
+        return $this->inventory;
     }
 
     /** @return Skin */
@@ -120,7 +109,7 @@ class Humanoid extends Entity{
     public function saveNBT() : void{
         parent::saveNBT();
 
-        $this->namedtag->setTag($this->heldItem->nbtSerialize(-1, 'HeldItem'));
+        $this->namedtag->setTag($this->inventory->getHeldItem()->nbtSerialize(-1, 'HeldItem'));
         $this->namedtag->setTag(new CompoundTag('Skin', [
           new StringTag('SkinData', $this->skin->getSkinData()),
           new StringTag('CapeData', $this->skin->getCapeData()),
@@ -144,7 +133,7 @@ class Humanoid extends Entity{
         $pk->motion = null;
         $pk->yaw = $this->yaw;
         $pk->pitch = $this->pitch;
-        $pk->item = $this->heldItem;
+        $pk->item = $this->inventory->getHeldItem();
         $pk->metadata = $this->propertyManager->getAll();
         $player->dataPacket($pk);
 
