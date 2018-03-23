@@ -18,11 +18,11 @@ class Humanoid extends PluginBase{
     /** @var string */
     public static $prefix = '';
 
-    /** @var self */
+    /** @var Humanoid */
     private static $instance = null;
 
-    /** @return self */
-    public static function getInstance() : self{
+    /** @return Humanoid */
+    public static function getInstance() : Humanoid{
         return self::$instance;
     }
 
