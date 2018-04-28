@@ -158,8 +158,7 @@ class Humanoid extends Entity{
      *
      * @return bool
      */
-    public function move(float $dx, float $dy, float $dz) : bool{
-        return false;
+    public function move(float $dx, float $dy, float $dz) : void{
     }
 
     /**
