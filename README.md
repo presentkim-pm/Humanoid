@@ -1,10 +1,7 @@
-[![Telegram](https://img.shields.io/badge/Telegram-PresentKim-blue.svg?logo=telegram)](https://t.me/PresentKim)
+# Humanoid [![license](https://img.shields.io/github/license/Blugin/Humanoid-PMMP.svg?label=License)](LICENSE)
 <img src="./assets/icon/index.svg" height="256" width="256">  
 
-[![License](https://img.shields.io/github/license/PMMPPlugin/Humanoid.svg?label=License)](LICENSE)
-[![Poggit](https://poggit.pmmp.io/ci.shield/PMMPPlugin/Humanoid/Humanoid)](https://poggit.pmmp.io/ci/PMMPPlugin/Humanoid)
-[![Release](https://img.shields.io/github/release/PMMPPlugin/Humanoid.svg?label=Release)](https://github.com/PMMPPlugin/Humanoid/releases/latest)
-[![Download](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/total.svg?label=Download)](https://github.com/PMMPPlugin/Humanoid/releases/latest)
+[![release](https://img.shields.io/github/release/Blugin/Humanoid-PMMP.svg?label=Release) ![download](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/total.svg?label=Download)](https://github.com/Blugin/Humanoid-PMMP/releases/latest)
 
 
 A plugin add humanoid entity for PocketMine-MP
@@ -64,23 +61,23 @@ ex)  `/humanoid Set List 2`
 
 
 ## ChangeLog
-### v1.0.0 [![Source](https://img.shields.io/badge/source-v1.0.0-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.0) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.0/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.0)
+### v1.0.0 [![Source](https://img.shields.io/badge/source-v1.0.0-blue.png?label=source)](https://github.com/Blugin/Humanoid-PMMP/tree/v1.0.0) [![Release](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/v1.0.0/total.png?label=download&colorB=1fadad)](https://github.com/Blugin/Humanoid-PMMP/releases/v1.0.0)
 - First release
   
   
 ---
-### v1.0.1 [![Source](https://img.shields.io/badge/source-v1.0.1-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.1) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.1/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.1)
+### v1.0.1 [![Source](https://img.shields.io/badge/source-v1.0.1-blue.png?label=source)](https://github.com/Blugin/Humanoid-PMMP/tree/v1.0.1) [![Release](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/v1.0.1/total.png?label=download&colorB=1fadad)](https://github.com/Blugin/Humanoid-PMMP/releases/v1.0.1)
 - \[Added\] Softdepend https://github.com/PMMPPlugin/GeometryAPI
 - \[Fixed\] Humanoid : get geometry data from GeometryAPI
   
   
 ---
-### v1.0.2 [![Source](https://img.shields.io/badge/source-v1.0.2-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.2) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.2/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.2)
+### v1.0.2 [![Source](https://img.shields.io/badge/source-v1.0.2-blue.png?label=source)](https://github.com/Blugin/Humanoid-PMMP/tree/v1.0.2) [![Release](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/v1.0.2/total.png?label=download&colorB=1fadad)](https://github.com/Blugin/Humanoid-PMMP/releases/v1.0.2)
 - \[Fixed\] Humanoid : load geometry data only entity construct
   
   
 ---
-### v1.0.3 [![Source](https://img.shields.io/badge/source-v1.0.3-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.3) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.3/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.3)
+### v1.0.3 [![Source](https://img.shields.io/badge/source-v1.0.3-blue.png?label=source)](https://github.com/Blugin/Humanoid-PMMP/tree/v1.0.3) [![Release](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/v1.0.3/total.png?label=download&colorB=1fadad)](https://github.com/Blugin/Humanoid-PMMP/releases/v1.0.3)
 - \[Added\] Add PluginCommand getter and setter
 - \[Added\] Add getters and setters to SubCommand
 - \[Fixed\] Add api 3.0.0-ALPHA11
@@ -89,13 +86,13 @@ ex)  `/humanoid Set List 2`
   
   
 ---
-### v1.0.4 [![Source](https://img.shields.io/badge/source-v1.0.4-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.4) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.4/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.4)
+### v1.0.4 [![Source](https://img.shields.io/badge/source-v1.0.4-blue.png?label=source)](https://github.com/Blugin/Humanoid-PMMP/tree/v1.0.4) [![Release](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/v1.0.4/total.png?label=download&colorB=1fadad)](https://github.com/Blugin/Humanoid-PMMP/releases/v1.0.4)
 - \[Added\] Add skin steal sub command
 - \[Fixed\] Save NBT before copy humanoid
   
   
 ---
-### v1.0.5 [![Source](https://img.shields.io/badge/source-v1.0.5-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.5) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.5/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.5)
+### v1.0.5 [![Source](https://img.shields.io/badge/source-v1.0.5-blue.png?label=source)](https://github.com/Blugin/Humanoid-PMMP/tree/v1.0.5) [![Release](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/v1.0.5/total.png?label=download&colorB=1fadad)](https://github.com/Blugin/Humanoid-PMMP/releases/v1.0.5)
 - \[Fixed\] SetHumanoidSkinAct : Only change skin data
 - \[Fixed\] SetHumanoidGeometryAct : Only change geometry name
 - \[Added\] Add set cape sub command
@@ -109,7 +106,7 @@ ex)  `/humanoid Set List 2`
   
   
 ---
-### v1.0.6 [![Source](https://img.shields.io/badge/source-v1.0.6-blue.png?label=source)](https://github.com/PMMPPlugin/Humanoid/tree/v1.0.6) [![Release](https://img.shields.io/github/downloads/PMMPPlugin/Humanoid/v1.0.6/total.png?label=download&colorB=1fadad)](https://github.com/PMMPPlugin/Humanoid/releases/v1.0.6)
+### v1.0.6 [![Source](https://img.shields.io/badge/source-v1.0.6-blue.png?label=source)](https://github.com/Blugin/Humanoid-PMMP/tree/v1.0.6) [![Release](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/v1.0.6/total.png?label=download&colorB=1fadad)](https://github.com/Blugin/Humanoid-PMMP/releases/v1.0.6)
 - \[Added\] Add humanoid.cmd.skinsteal permisson
 - \[Changed\] Sub command order
 
