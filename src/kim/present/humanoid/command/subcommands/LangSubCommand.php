@@ -1,12 +1,12 @@
 <?php
 
-namespace kim\presenthumanoid\command\subcommands;
+namespace kim\present\humanoid\command\subcommands;
 
-use kim\presenthumanoid\command\{
+use kim\present\humanoid\command\{
 	PoolCommand, SubCommand
 };
-use kim\presenthumanoid\Humanoid as Plugin;
-use kim\presenthumanoid\util\Translation;
+use kim\present\humanoid\Humanoid as Plugin;
+use kim\present\humanoid\util\Translation;
 use pocketmine\command\CommandSender;
 
 class LangSubCommand extends SubCommand{

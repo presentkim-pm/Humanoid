@@ -1,8 +1,8 @@
 <?php
 
-namespace kim\presenthumanoid\event;
+namespace kim\present\humanoid\event;
 
-use kim\presenthumanoid\entity\Humanoid;
+use kim\present\humanoid\entity\Humanoid;
 use pocketmine\event\Cancellable;
 use pocketmine\event\player\PlayerEvent;
 use pocketmine\network\mcpe\protocol\InventoryTransactionPacket;

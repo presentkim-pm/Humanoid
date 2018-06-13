@@ -1,9 +1,9 @@
 <?php
 
-namespace kim\presenthumanoid\command;
+namespace kim\present\humanoid\command;
 
-use kim\presenthumanoid\Humanoid as Plugin;
-use kim\presenthumanoid\util\Translation;
+use kim\present\humanoid\Humanoid as Plugin;
+use kim\present\humanoid\util\Translation;
 use pocketmine\command\{
 	Command, CommandExecutor, CommandSender, ConsoleCommandSender, PluginCommand
 };

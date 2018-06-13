@@ -1,8 +1,8 @@
 <?php
 
-namespace kim\presenthumanoid\act;
+namespace kim\present\humanoid\act;
 
-use kim\presenthumanoid\event\PlayerClickHumanoidEvent;
+use kim\present\humanoid\event\PlayerClickHumanoidEvent;
 
 interface ClickHumanoidAct{
 

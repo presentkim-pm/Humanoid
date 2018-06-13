@@ -1,13 +1,13 @@
 <?php
 
-namespace kim\presenthumanoid\act\child;
+namespace kim\present\humanoid\act\child;
 
-use kim\presenthumanoid\act\{
+use kim\present\humanoid\act\{
 	ClickHumanoidAct, PlayerAct
 };
-use kim\presenthumanoid\event\PlayerClickHumanoidEvent;
-use kim\presenthumanoid\Humanoid as Plugin;
-use kim\presenthumanoid\util\Translation;
+use kim\present\humanoid\event\PlayerClickHumanoidEvent;
+use kim\present\humanoid\Humanoid as Plugin;
+use kim\present\humanoid\util\Translation;
 use pocketmine\Player;
 
 class SetHumanoidScaleAct extends PlayerAct implements ClickHumanoidAct{

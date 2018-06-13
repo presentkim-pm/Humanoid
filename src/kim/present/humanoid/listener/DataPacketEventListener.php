@@ -1,10 +1,10 @@
 <?php
 
-namespace kim\presenthumanoid\listener;
+namespace kim\present\humanoid\listener;
 
-use kim\presenthumanoid\entity\Humanoid;
-use kim\presenthumanoid\event\PlayerClickHumanoidEvent;
-use kim\presenthumanoid\Humanoid as Plugin;
+use kim\present\humanoid\entity\Humanoid;
+use kim\present\humanoid\event\PlayerClickHumanoidEvent;
+use kim\present\humanoid\Humanoid as Plugin;
 use pocketmine\event\Listener;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\network\mcpe\protocol\InventoryTransactionPacket;

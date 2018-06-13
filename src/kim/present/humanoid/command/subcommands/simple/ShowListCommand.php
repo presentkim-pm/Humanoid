@@ -1,11 +1,11 @@
 <?php
 
-namespace kim\presenthumanoid\command\subcommands\simple;
+namespace kim\present\humanoid\command\subcommands\simple;
 
-use kim\presenthumanoid\command\SimpleSubCommand;
-use kim\presenthumanoid\command\subcommands\SetSubCommand;
-use kim\presenthumanoid\Humanoid as Plugin;
-use kim\presenthumanoid\util\{
+use kim\present\humanoid\command\SimpleSubCommand;
+use kim\present\humanoid\command\subcommands\SetSubCommand;
+use kim\present\humanoid\Humanoid as Plugin;
+use kim\present\humanoid\util\{
 	Translation, Utils
 };
 use pocketmine\command\CommandSender;

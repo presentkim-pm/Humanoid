@@ -1,9 +1,9 @@
 <?php
 
-namespace kim\presenthumanoid\entity;
+namespace kim\present\humanoid\entity;
 
 use kim\presentgeometryapi\GeometryAPI;
-use kim\presenthumanoid\inventory\HumanoidInventory;
+use kim\present\humanoid\inventory\HumanoidInventory;
 use pocketmine\entity\{
 	Entity, Skin
 };

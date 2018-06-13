@@ -1,14 +1,14 @@
 <?php
 
-namespace kim\presenthumanoid\command\subcommands;
+namespace kim\present\humanoid\command\subcommands;
 
-use kim\presenthumanoid\command\{
+use kim\present\humanoid\command\{
 	PoolCommand, SimpleSubCommand, SubCommand
 };
-use kim\presenthumanoid\command\subcommands\simple\{
+use kim\present\humanoid\command\subcommands\simple\{
 	SetArmorCommand, SetCapeCommand, SetGeometryCommand, SetItemCommand, SetNameCommand, SetPositionCommand, SetRotationCommand, SetScaleCommand, SetSkinCommand, SetSneakCommand, ShowListCommand
 };
-use kim\presenthumanoid\Humanoid as Plugin;
+use kim\present\humanoid\Humanoid as Plugin;
 use pocketmine\command\CommandSender;
 
 class SetSubCommand extends SubCommand{

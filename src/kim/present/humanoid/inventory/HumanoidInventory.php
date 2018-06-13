@@ -1,9 +1,9 @@
 <?php
 
-namespace kim\presenthumanoid\inventory;
+namespace kim\present\humanoid\inventory;
 
-use kim\presenthumanoid\entity\Humanoid;
-use kim\presenthumanoid\util\Utils;
+use kim\present\humanoid\entity\Humanoid;
+use kim\present\humanoid\util\Utils;
 use pocketmine\inventory\BaseInventory;
 use pocketmine\item\Item;
 use pocketmine\nbt\tag\CompoundTag;

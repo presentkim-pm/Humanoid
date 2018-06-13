@@ -1,6 +1,6 @@
 <?php
 
-namespace kim\presenthumanoid\act;
+namespace kim\present\humanoid\act;
 
 use pocketmine\event\player\PlayerInteractEvent;
 

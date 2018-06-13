@@ -1,15 +1,15 @@
 <?php
 
-namespace kim\presenthumanoid;
+namespace kim\present\humanoid;
 
-use kim\presenthumanoid\command\PoolCommand;
-use kim\presenthumanoid\command\subcommands\{
+use kim\present\humanoid\command\PoolCommand;
+use kim\present\humanoid\command\subcommands\{
 	AddSubCommand, CancelSubCommand, CopySubCommand, LangSubCommand, ReloadSubCommand, RemoveSubCommand, SetSubCommand, SkinStealSubCommand
 };
-use kim\presenthumanoid\entity\Humanoid as HumanoidEntity;
-use kim\presenthumanoid\listener\DataPacketEventListener;
-use kim\presenthumanoid\listener\PlayerEventListener;
-use kim\presenthumanoid\util\Translation;
+use kim\present\humanoid\entity\Humanoid as HumanoidEntity;
+use kim\present\humanoid\listener\DataPacketEventListener;
+use kim\present\humanoid\listener\PlayerEventListener;
+use kim\present\humanoid\util\Translation;
 use pocketmine\entity\Entity;
 use pocketmine\plugin\PluginBase;
 

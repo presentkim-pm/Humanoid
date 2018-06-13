@@ -1,6 +1,6 @@
 <?php
 
-namespace kim\presenthumanoid\util;
+namespace kim\present\humanoid\util;
 
 class Utils{
 

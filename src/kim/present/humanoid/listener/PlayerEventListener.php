@@ -1,12 +1,12 @@
 <?php
 
-namespace kim\presenthumanoid\listener;
+namespace kim\present\humanoid\listener;
 
-use kim\presenthumanoid\act\{
+use kim\present\humanoid\act\{
 	ClickHumanoidAct, InteractAct, PlayerAct
 };
-use kim\presenthumanoid\event\PlayerClickHumanoidEvent;
-use kim\presenthumanoid\Humanoid as Plugin;
+use kim\present\humanoid\event\PlayerClickHumanoidEvent;
+use kim\present\humanoid\Humanoid as Plugin;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 

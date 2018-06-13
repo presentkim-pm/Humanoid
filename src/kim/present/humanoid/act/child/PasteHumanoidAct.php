@@ -1,12 +1,12 @@
 <?php
 
-namespace kim\presenthumanoid\act\child;
+namespace kim\present\humanoid\act\child;
 
-use kim\presenthumanoid\act\{
+use kim\present\humanoid\act\{
 	InteractAct, PlayerAct
 };
-use kim\presenthumanoid\Humanoid as Plugin;
-use kim\presenthumanoid\util\Translation;
+use kim\present\humanoid\Humanoid as Plugin;
+use kim\present\humanoid\util\Translation;
 use pocketmine\entity\Entity;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\nbt\tag\{

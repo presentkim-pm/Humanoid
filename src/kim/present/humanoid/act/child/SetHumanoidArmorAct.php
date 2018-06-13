@@ -1,14 +1,14 @@
 <?php
 
-namespace kim\presenthumanoid\act\child;
+namespace kim\present\humanoid\act\child;
 
-use kim\presenthumanoid\act\{
+use kim\present\humanoid\act\{
 	ClickHumanoidAct, PlayerAct
 };
-use kim\presenthumanoid\event\PlayerClickHumanoidEvent;
-use kim\presenthumanoid\Humanoid as Plugin;
-use kim\presenthumanoid\inventory\HumanoidInventory;
-use kim\presenthumanoid\util\Translation;
+use kim\present\humanoid\event\PlayerClickHumanoidEvent;
+use kim\present\humanoid\Humanoid as Plugin;
+use kim\present\humanoid\inventory\HumanoidInventory;
+use kim\present\humanoid\util\Translation;
 use pocketmine\item\Item;
 use pocketmine\Player;
 

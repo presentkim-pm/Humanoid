@@ -1,8 +1,8 @@
 <?php
 
-namespace kim\presenthumanoid\util;
+namespace kim\present\humanoid\util;
 
-use kim\presenthumanoid\Humanoid as Plugin;
+use kim\present\humanoid\Humanoid as Plugin;
 
 class Translation{
 

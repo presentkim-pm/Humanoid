@@ -1,14 +1,14 @@
 <?php
 
-namespace kim\presenthumanoid\command\subcommands;
+namespace kim\present\humanoid\command\subcommands;
 
-use kim\presenthumanoid\act\child\AddHumanoidAct;
-use kim\presenthumanoid\act\PlayerAct;
-use kim\presenthumanoid\command\{
+use kim\present\humanoid\act\child\AddHumanoidAct;
+use kim\present\humanoid\act\PlayerAct;
+use kim\present\humanoid\command\{
 	PoolCommand, SubCommand
 };
-use kim\presenthumanoid\Humanoid as Plugin;
-use kim\presenthumanoid\util\Translation;
+use kim\present\humanoid\Humanoid as Plugin;
+use kim\present\humanoid\util\Translation;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
 

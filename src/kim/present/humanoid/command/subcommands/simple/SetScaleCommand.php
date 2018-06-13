@@ -1,12 +1,12 @@
 <?php
 
-namespace kim\presenthumanoid\command\subcommands\simple;
+namespace kim\present\humanoid\command\subcommands\simple;
 
-use kim\presenthumanoid\act\child\SetHumanoidScaleAct;
-use kim\presenthumanoid\act\PlayerAct;
-use kim\presenthumanoid\command\SimpleSubCommand;
-use kim\presenthumanoid\Humanoid as Plugin;
-use kim\presenthumanoid\util\{
+use kim\present\humanoid\act\child\SetHumanoidScaleAct;
+use kim\present\humanoid\act\PlayerAct;
+use kim\present\humanoid\command\SimpleSubCommand;
+use kim\present\humanoid\Humanoid as Plugin;
+use kim\present\humanoid\util\{
 	Translation, Utils
 };
 use pocketmine\command\CommandSender;
