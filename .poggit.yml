@@ -1,0 +1,11 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/PresentKim/Humanoid-PMMP
+
+branches:
+- master
+
+projects:
+  Humanoid:
+    #projectId: 1829
+    path: ""
+    icon: assets/icon/512x512.png
+...
