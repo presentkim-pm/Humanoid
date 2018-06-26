@@ -83,8 +83,6 @@ class Humanoid extends PluginBase{
 			$this->command->createSubCommand(RemoveSubCommand::class);
 			$this->command->createSubCommand(CopySubCommand::class);
 			$this->command->createSubCommand(CancelSubCommand::class);
-			$this->command->createSubCommand(LangSubCommand::class);
-			$this->command->createSubCommand(ReloadSubCommand::class);
 		}
 		$this->command->updateTranslation();
 		$this->command->updateSudCommandTranslation();

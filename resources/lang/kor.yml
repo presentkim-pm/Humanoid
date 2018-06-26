@@ -92,15 +92,4 @@ command-humanoid-cancel@usage: "/humanoid cancel"
 command-humanoid-cancel@success: "행동이 취소되었습니다"
 command-humanoid-cancel@failure: "취소할 행동이 없습니다"
 command-humanoid-cancel@aliases: ["c"]
-
-command-humanoid-lang: "lang"
-command-humanoid-lang@usage: "/humanoid Lang <언어명>"
-command-humanoid-lang@success: "{%0}언어 파일을 불러왔습니다"
-command-humanoid-lang@failure: "{%0}는 잘못된 언어명입니다"
-command-humanoid-lang@aliases: ["language"]
-
-command-humanoid-reload: "reload"
-command-humanoid-reload@usage: "/humanoid Reload"
-command-humanoid-reload@success: "모든 데이터를 불러왔습니다"
-command-humanoid-reload@aliases: ["rl"]
 ...

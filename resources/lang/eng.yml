@@ -92,15 +92,4 @@ command-humanoid-cancel@usage: "/humanoid cancel"
 command-humanoid-cancel@success: "Act was cancelled"
 command-humanoid-cancel@failure: "You don't have any act"
 command-humanoid-cancel@aliases: ["c"]
-
-command-humanoid-lang: "lang"
-command-humanoid-lang@usage: "/humanoid Lang <language prefix>"
-command-humanoid-lang@success: "{%0} language file was loaded"
-command-humanoid-lang@failure: "{%0} is invalid language prefix"
-command-humanoid-lang@aliases: ["language"]
-
-command-humanoid-reload: "reload"
-command-humanoid-reload@usage: "/humanoid Reload"
-command-humanoid-reload@success: "All data was reloaded"
-command-humanoid-reload@aliases: ["rl"]
 ...

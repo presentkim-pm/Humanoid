@@ -29,10 +29,4 @@ permissions:
       humanoid.cmd.cancel:
         description: Humanoid command - cancel
         default: op
-      humanoid.cmd.lang:
-        description: Humanoid command - lang
-        default: op
-      humanoid.cmd.reload:
-        description: Humanoid command - reload
-        default: op
 ...
