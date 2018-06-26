@@ -4,7 +4,7 @@ namespace kim\present\humanoid;
 
 use kim\present\humanoid\command\PoolCommand;
 use kim\present\humanoid\command\subcommands\{
-	AddSubCommand, CancelSubCommand, CopySubCommand, LangSubCommand, ReloadSubCommand, RemoveSubCommand, SetSubCommand, SkinStealSubCommand
+	AddSubCommand, CancelSubCommand, CopySubCommand, RemoveSubCommand, SetSubCommand
 };
 use kim\present\humanoid\entity\Humanoid as HumanoidEntity;
 use kim\present\humanoid\listener\DataPacketEventListener;
