@@ -9,7 +9,11 @@ use kim\present\humanoid\Humanoid as Plugin;
 use pocketmine\command\CommandSender;
 
 class ReloadSubCommand extends SubCommand{
-
+	/**
+	 * ReloadSubCommand constructor.
+	 *
+	 * @param PoolCommand $owner
+	 */
 	public function __construct(PoolCommand $owner){
 		parent::__construct($owner, 'reload');
 	}

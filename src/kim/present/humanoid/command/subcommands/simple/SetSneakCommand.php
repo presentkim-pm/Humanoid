@@ -11,7 +11,9 @@ use pocketmine\command\CommandSender;
 use pocketmine\Player;
 
 class SetSneakCommand extends SimpleSubCommand{
-
+	/**
+	 * SetSneakCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('sneak');
 	}

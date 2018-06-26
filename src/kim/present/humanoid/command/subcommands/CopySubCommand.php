@@ -13,7 +13,11 @@ use pocketmine\command\CommandSender;
 use pocketmine\Player;
 
 class CopySubCommand extends SubCommand{
-
+	/**
+	 * CopySubCommand constructor.
+	 *
+	 * @param PoolCommand $owner
+	 */
 	public function __construct(PoolCommand $owner){
 		parent::__construct($owner, 'copy');
 	}

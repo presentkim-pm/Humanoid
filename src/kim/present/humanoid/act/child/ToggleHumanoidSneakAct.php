@@ -10,8 +10,9 @@ use kim\present\humanoid\Humanoid as Plugin;
 use kim\present\humanoid\util\Translation;
 
 class ToggleHumanoidSneakAct extends PlayerAct implements ClickHumanoidAct{
-
-	/** @param PlayerClickHumanoidEvent $event */
+	/**
+	 * @param PlayerClickHumanoidEvent $event
+	 */
 	public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
 		$humanoid = $event->getHumanoid();
 		$humanoid->setSneaking(!$humanoid->isSneaking());

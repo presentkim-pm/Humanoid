@@ -11,7 +11,9 @@ use pocketmine\command\CommandSender;
 use pocketmine\Player;
 
 class SetNameCommand extends SimpleSubCommand{
-
+	/**
+	 * SetNameCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('name');
 	}

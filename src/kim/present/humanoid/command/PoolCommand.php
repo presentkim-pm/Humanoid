@@ -9,12 +9,19 @@ use pocketmine\command\{
 };
 
 class PoolCommand extends PluginCommand implements CommandExecutor{
-
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	public $uname;
-	/** @var SubCommand[] */
+
+	/**
+	 * @var SubCommand[]
+	 */
 	protected $subCommands = [];
-	/** @var \ReflectionProperty */
+
+	/**
+	 * @var \ReflectionProperty
+	 */
 	private $property = null;
 
 	/**
@@ -88,17 +95,23 @@ class PoolCommand extends PluginCommand implements CommandExecutor{
 		return true;
 	}
 
-	/** @return SubCommand[] */
+	/**
+	 * @return SubCommand[]
+	 */
 	public function getSubCommands() : array{
 		return $this->subCommands;
 	}
 
-	/** @param SubCommand[] $subCommands */
+	/**
+	 * @param SubCommand[] $subCommands
+	 */
 	public function setSubCommands(SubCommand ...$subCommands) : void{
 		$this->subCommands = $subCommands;
 	}
 
-	/** @param SubCommand::class $subCommandClass */
+	/**
+	 * @param SubCommand::class $subCommandClass
+	 */
 	public function createSubCommand($subCommandClass) : void{
 		$this->subCommands[] = new $subCommandClass($this);
 	}

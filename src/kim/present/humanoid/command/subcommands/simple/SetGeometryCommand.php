@@ -11,7 +11,9 @@ use pocketmine\command\CommandSender;
 use pocketmine\Player;
 
 class SetGeometryCommand extends SimpleSubCommand{
-
+	/**
+	 * SetGeometryCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('geometry');
 	}

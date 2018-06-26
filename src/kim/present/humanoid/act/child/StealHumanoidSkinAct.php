@@ -10,8 +10,9 @@ use kim\present\humanoid\Humanoid as Plugin;
 use kim\present\humanoid\util\Translation;
 
 class StealHumanoidSkinAct extends PlayerAct implements ClickHumanoidAct{
-
-	/** @param PlayerClickHumanoidEvent $event */
+	/**
+	 * @param PlayerClickHumanoidEvent $event
+	 */
 	public function onClickHumanoid(PlayerClickHumanoidEvent $event) : void{
 		$this->player->setSkin($event->getHumanoid()->getSkin());
 		$this->player->sendSkin();

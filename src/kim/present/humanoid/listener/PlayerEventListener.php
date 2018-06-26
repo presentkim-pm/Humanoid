@@ -11,10 +11,14 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 
 class PlayerEventListener implements Listener{
-
-	/** @var Plugin */
+	/**
+	 * @var Plugin
+	 */
 	private $owner = null;
 
+	/**
+	 * PlayerEventListener constructor.
+	 */
 	public function __construct(){
 		$this->owner = Plugin::getInstance();
 	}

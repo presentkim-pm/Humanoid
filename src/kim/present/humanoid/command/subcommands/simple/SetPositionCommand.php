@@ -13,7 +13,9 @@ use pocketmine\Player;
 use pocketmine\Server;
 
 class SetPositionCommand extends SimpleSubCommand{
-
+	/**
+	 * SetPositionCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('position');
 	}

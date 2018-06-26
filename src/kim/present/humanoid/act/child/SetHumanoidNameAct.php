@@ -11,8 +11,9 @@ use kim\present\humanoid\util\Translation;
 use pocketmine\Player;
 
 class SetHumanoidNameAct extends PlayerAct implements ClickHumanoidAct{
-
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	private $name;
 
 	/**

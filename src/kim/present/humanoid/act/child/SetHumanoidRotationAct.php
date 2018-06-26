@@ -11,11 +11,14 @@ use kim\present\humanoid\util\Translation;
 use pocketmine\Player;
 
 class SetHumanoidRotationAct extends PlayerAct implements ClickHumanoidAct{
-
-	/** @var int | null */
+	/**
+	 * @var int|null
+	 */
 	private $yaw;
 
-	/** @var int | null */
+	/**
+	 * @var int|null
+	 */
 	private $pitch;
 
 	/**

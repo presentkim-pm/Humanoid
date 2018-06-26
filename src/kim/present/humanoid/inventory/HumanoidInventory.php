@@ -14,7 +14,6 @@ use pocketmine\network\mcpe\protocol\types\ContainerIds;
 use pocketmine\Player;
 
 class HumanoidInventory extends BaseInventory{
-
 	public const HELMET = 0;
 	public const CHESTPLATE = 1;
 	public const LEGGINGS = 2;

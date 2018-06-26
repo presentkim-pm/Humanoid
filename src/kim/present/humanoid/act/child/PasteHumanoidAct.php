@@ -15,8 +15,9 @@ use pocketmine\nbt\tag\{
 use pocketmine\Player;
 
 class PasteHumanoidAct extends PlayerAct implements InteractAct{
-
-	/** @var CompoundTag */
+	/**
+	 * @var CompoundTag
+	 */
 	private $nbt;
 
 	/**
@@ -28,7 +29,9 @@ class PasteHumanoidAct extends PlayerAct implements InteractAct{
 		$this->nbt = $nbt;
 	}
 
-	/** @param PlayerInteractEvent $event */
+	/**
+	 * @param PlayerInteractEvent $event
+	 */
 	public function onInteract(PlayerInteractEvent $event) : void{
 		$pos = $event->getAction() === PlayerInteractEvent::RIGHT_CLICK_AIR ? $this->player->asPosition() : $pos = $event->getBlock();
 		$this->nbt->setTag(new ListTag("Pos", [

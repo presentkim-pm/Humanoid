@@ -12,7 +12,9 @@ use pocketmine\Player;
 use pocketmine\Server;
 
 class SetRotationCommand extends SimpleSubCommand{
-
+	/**
+	 * SetRotationCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('rotation');
 	}

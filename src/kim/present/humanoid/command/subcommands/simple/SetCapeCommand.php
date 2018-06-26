@@ -12,7 +12,9 @@ use pocketmine\Player;
 use pocketmine\Server;
 
 class SetCapeCommand extends SimpleSubCommand{
-
+	/**
+	 * SetCapeCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('cape');
 	}

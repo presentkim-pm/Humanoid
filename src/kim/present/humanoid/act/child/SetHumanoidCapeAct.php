@@ -12,8 +12,9 @@ use pocketmine\entity\Skin;
 use pocketmine\Player;
 
 class SetHumanoidCapeAct extends PlayerAct implements ClickHumanoidAct{
-
-	/** @var Skin | null */
+	/**
+	 * @var Skin|null
+	 */
 	private $skin;
 
 	/**

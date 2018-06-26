@@ -5,11 +5,14 @@ namespace kim\present\humanoid\util;
 use kim\present\humanoid\Humanoid as Plugin;
 
 class Translation{
-
-	/** @var string[string] */
+	/**
+	 * @var string[string]
+	 */
 	private static $lang = [];
 
-	/** @var string[string] */
+	/**
+	 * @var string[string]
+	 */
 	private static $default = [];
 
 	/**
@@ -74,7 +77,7 @@ class Translation{
 	/**
 	 * @param string $strId
 	 *
-	 * @return string[] | null
+	 * @return string[]|null
 	 */
 	public static function getArray(string $strId) : ?array{
 		if(isset(self::$lang[$strId])){

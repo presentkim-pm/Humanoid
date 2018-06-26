@@ -11,26 +11,39 @@ use pocketmine\Server;
 
 
 abstract class SubCommand{
-
-	/** @var PoolCommand */
+	/**
+	 * @var PoolCommand
+	 */
 	protected $owner;
 
-	/** @var Plugin */
+	/**
+	 * @var Plugin
+	 */
 	protected $plugin;
 
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	protected $strId;
 
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	protected $permission;
 
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	protected $label;
 
-	/** @var string[] */
+	/**
+	 * @var string[]
+	 */
 	protected $aliases;
 
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	protected $usage;
 
 	/**
@@ -107,32 +120,44 @@ abstract class SubCommand{
 		return strcasecmp($label, $this->label) === 0 || $this->aliases && Utils::in_arrayi($label, $this->aliases);
 	}
 
-	/** @return string */
+	/**
+	 * @return string
+	 */
 	public function getLabel() : string{
 		return $this->label;
 	}
 
-	/** @param string $label */
+	/**
+	 * @param string $label
+	 */
 	public function setLabel(string $label) : void{
 		$this->label = $label;
 	}
 
-	/**  @return string[] */
+	/**
+	 * @return string[]
+	 */
 	public function getAliases() : array{
 		return $this->aliases;
 	}
 
-	/** @param string[] $aliases */
+	/**
+	 * @param string[] $aliases
+	 */
 	public function setAliases(array $aliases) : void{
 		$this->aliases = $aliases;
 	}
 
-	/** @return string */
+	/**
+	 * @return string
+	 */
 	public function getUsage() : string{
 		return $this->usage;
 	}
 
-	/** @param string $usage */
+	/**
+	 * @param string $usage
+	 */
 	public function setUsage(string $usage) : void{
 		$this->usage = $usage;
 	}

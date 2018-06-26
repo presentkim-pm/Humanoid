@@ -11,8 +11,9 @@ use kim\present\humanoid\util\Translation;
 use pocketmine\Player;
 
 class SetHumanoidScaleAct extends PlayerAct implements ClickHumanoidAct{
-
-	/** @var int */
+	/**
+	 * @var int
+	 */
 	private $scale;
 
 	/**

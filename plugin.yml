@@ -1,41 +1,41 @@
 ---
-name:             Humanoid
-main:             kim\present\humanoid\Humanoid
-version:          1.0.6
-api:              [3.0.0, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.0-ALPHA12, 4.0.0]
-author:           PresentKim
-website:          https://github.com/PresentKim/Humanoid-PMMP
-description:      Add humanoid entity
-load:             STARTUP
-softdepend:       ['GeometryAPI']
+name: Humanoid
+main: kim\present\humanoid\Humanoid
+version: 1.0.6
+api: [3.0.0, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.0-ALPHA12, 4.0.0]
+author: PresentKim
+website: https://github.com/PresentKim/Humanoid-PMMP
+description: Add humanoid entity
+load: STARTUP
+softdepend: ['GeometryAPI']
 
 permissions:
   humanoid.cmd:
-    description:  Humanoid main command
-    default:      op
+    description: Humanoid main command
+    default: op
     children:
       humanoid.cmd.add:
-        description:  Humanoid command - add
-        default:      op
+        description: Humanoid command - add
+        default: op
       humanoid.cmd.set:
-        description:  Humanoid command - set
-        default:      op
+        description: Humanoid command - set
+        default: op
       humanoid.cmd.remove:
-        description:  Humanoid command - remove
-        default:      op
+        description: Humanoid command - remove
+        default: op
       humanoid.cmd.copy:
-        description:  Humanoid command - copy
-        default:      op
+        description: Humanoid command - copy
+        default: op
       humanoid.cmd.skinsteal:
-        description:  Humanoid command - skinsteal
-        default:      op
+        description: Humanoid command - skinsteal
+        default: op
       humanoid.cmd.cancel:
-        description:  Humanoid command - cancel
-        default:      op
+        description: Humanoid command - cancel
+        default: op
       humanoid.cmd.lang:
-        description:  Humanoid command - lang
-        default:      op
+        description: Humanoid command - lang
+        default: op
       humanoid.cmd.reload:
-        description:  Humanoid command - reload
-        default:      op
+        description: Humanoid command - reload
+        default: op
 ...

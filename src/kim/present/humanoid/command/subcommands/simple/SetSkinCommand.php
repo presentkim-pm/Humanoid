@@ -12,7 +12,9 @@ use pocketmine\Player;
 use pocketmine\Server;
 
 class SetSkinCommand extends SimpleSubCommand{
-
+	/**
+	 * SetSkinCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('skin');
 	}

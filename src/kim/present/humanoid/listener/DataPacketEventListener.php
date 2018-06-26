@@ -11,10 +11,14 @@ use pocketmine\network\mcpe\protocol\InventoryTransactionPacket;
 use pocketmine\Server;
 
 class DataPacketEventListener implements Listener{
-
-	/** @var Plugin */
+	/**
+	 * @var Plugin
+	 */
 	private $owner = null;
 
+	/**
+	 * DataPacketEventListener constructor.
+	 */
 	public function __construct(){
 		$this->owner = Plugin::getInstance();
 	}

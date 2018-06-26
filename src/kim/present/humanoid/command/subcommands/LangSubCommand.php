@@ -10,7 +10,11 @@ use kim\present\humanoid\util\Translation;
 use pocketmine\command\CommandSender;
 
 class LangSubCommand extends SubCommand{
-
+	/**
+	 * LangSubCommand constructor.
+	 *
+	 * @param PoolCommand $owner
+	 */
 	public function __construct(PoolCommand $owner){
 		parent::__construct($owner, 'lang');
 	}

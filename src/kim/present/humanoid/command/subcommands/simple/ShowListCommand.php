@@ -11,7 +11,9 @@ use kim\present\humanoid\util\{
 use pocketmine\command\CommandSender;
 
 class ShowListCommand extends SimpleSubCommand{
-
+	/**
+	 * ShowListCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('list');
 	}

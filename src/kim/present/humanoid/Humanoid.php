@@ -14,19 +14,25 @@ use pocketmine\entity\Entity;
 use pocketmine\plugin\PluginBase;
 
 class Humanoid extends PluginBase{
-
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	public static $prefix = '';
 
-	/** @var Humanoid */
+	/**
+	 * @var Humanoid
+	 */
 	private static $instance = null;
-	/** @var PoolCommand */
-	private $command;
 
 	/** @return Humanoid */
 	public static function getInstance() : Humanoid{
 		return self::$instance;
 	}
+
+	/**
+	 * @var PoolCommand
+	 */
+	private $command;
 
 	public function onLoad() : void{
 		if(self::$instance === null){

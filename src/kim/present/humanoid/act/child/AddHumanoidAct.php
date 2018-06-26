@@ -12,8 +12,9 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\Player;
 
 class AddHumanoidAct extends PlayerAct implements InteractAct{
-
-	/** @var string */
+	/**
+	 * @var string
+	 */
 	private $name;
 
 	/**
@@ -25,7 +26,9 @@ class AddHumanoidAct extends PlayerAct implements InteractAct{
 		$this->name = $name;
 	}
 
-	/** @param PlayerInteractEvent $event */
+	/**
+	 * @param PlayerInteractEvent $event
+	 */
 	public function onInteract(PlayerInteractEvent $event) : void{
 		if($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_AIR){
 			$nbt = Entity::createBaseNBT($this->player, null, $this->player->yaw, $this->player->pitch);

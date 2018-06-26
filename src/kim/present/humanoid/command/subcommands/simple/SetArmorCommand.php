@@ -13,7 +13,9 @@ use pocketmine\item\ItemFactory;
 use pocketmine\Player;
 
 class SetArmorCommand extends SimpleSubCommand{
-
+	/**
+	 * SetArmorCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('armor');
 	}

@@ -12,7 +12,9 @@ use pocketmine\item\ItemFactory;
 use pocketmine\Player;
 
 class SetItemCommand extends SimpleSubCommand{
-
+	/**
+	 * SetItemCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('item');
 	}

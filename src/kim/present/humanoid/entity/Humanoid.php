@@ -2,8 +2,8 @@
 
 namespace kim\present\humanoid\entity;
 
-use kim\presentgeometryapi\GeometryAPI;
 use kim\present\humanoid\inventory\HumanoidInventory;
+use kim\present\geometryapi\GeometryAPI;
 use pocketmine\entity\{
 	Entity, Skin
 };
@@ -20,33 +20,58 @@ use pocketmine\Player;
 use pocketmine\utils\UUID;
 
 class Humanoid extends Entity{
-
-	/** @var float */
+	/**
+	 * @var float
+	 */
 	public $width = 0.6;
-	/** @var float */
+
+	/**
+	 * @var float
+	 */
 	public $height = 1.8;
-	/** @var float */
+
+	/**
+	 * @var float
+	 */
 	public $eyeHeight = 1.62;
-	/** @var UUID */
+
+	/**
+	 * @var UUID
+	 */
 	protected $uuid;
-	/** @var Skin */
+
+	/**
+	 * @var Skin
+	 */
 	protected $skin;
-	/** @var HumanoidInventory */
+
+	/**
+	 * @var HumanoidInventory
+	 */
 	protected $inventory;
-	/** @var float */
+
+	/**
+	 * @var float
+	 */
 	protected $baseOffset = 1.62;
 
-	/** @return HumanoidInventory */
+	/**
+	 * @return HumanoidInventory
+	 */
 	public function getInventory() : HumanoidInventory{
 		return $this->inventory;
 	}
 
-	/** @return Skin */
+	/**
+	 * @return Skin
+	 */
 	public function getSkin() : Skin{
 		return $this->skin;
 	}
 
-	/** @param Skin $skin */
+	/**
+	 * @param Skin $skin
+	 */
 	public function setSkin(Skin $skin) : void{
 		if(!$skin->isValid()){
 			throw new \InvalidStateException('Specified skin is not valid, must be 8KiB or 16KiB');
@@ -74,7 +99,9 @@ class Humanoid extends Entity{
 		$this->namedtag->setTag(new FloatTag('Scale', $this->getScale()));
 	}
 
-	/** @param EntityDamageEvent $source */
+	/**
+	 * @param EntityDamageEvent $source
+	 */
 	public function attack(EntityDamageEvent $source) : void{
 		$source->setCancelled(true);
 	}
@@ -147,7 +174,9 @@ class Humanoid extends Entity{
 		$this->setScale($this->namedtag->hasTag('Scale') ? $this->namedtag->getFloat('Scale') : 1);
 	}
 
-	/** @param Player $player */
+	/**
+	 * @param Player $player
+	 */
 	protected function sendSpawnPacket(Player $player) : void{
 		if(!$this->skin->isValid()){
 			throw new \InvalidStateException((new \ReflectionClass($this))->getShortName() . ' must have a valid skin set');
@@ -169,12 +198,16 @@ class Humanoid extends Entity{
 		$this->sendSkin([$player]);
 	}
 
-	/** @return UUID */
+	/**
+	 * @return UUID
+	 */
 	public function getUniqueId() : UUID{
 		return $this->uuid;
 	}
 
-	/** @param Player[] | null $targets */
+	/**
+	 * @param Player[]|null $targets
+	 */
 	public function sendSkin(array $targets = null) : void{
 		$pk = new PlayerSkinPacket();
 		$pk->uuid = $this->getUniqueId();

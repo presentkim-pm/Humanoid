@@ -12,10 +12,16 @@ use kim\present\humanoid\Humanoid as Plugin;
 use pocketmine\command\CommandSender;
 
 class SetSubCommand extends SubCommand{
-
-	/** @var SimpleSubCommand[] */
+	/**
+	 * @var SimpleSubCommand[]
+	 */
 	protected static $subCommands = [];
 
+	/**
+	 * SetSubCommand constructor.
+	 *
+	 * @param PoolCommand $owner
+	 */
 	public function __construct(PoolCommand $owner){
 		parent::__construct($owner, 'set');
 		self::addSubCommand(new ShowListCommand());
@@ -31,17 +37,23 @@ class SetSubCommand extends SubCommand{
 		self::addSubCommand(new SetScaleCommand());
 	}
 
-	/** @param SimpleSubCommand $subCommand */
+	/**
+	 * @param SimpleSubCommand $subCommand
+	 */
 	public static function addSubCommand(SimpleSubCommand $subCommand) : void{
 		self::$subCommands[] = $subCommand;
 	}
 
-	/** @return SimpleSubCommand[] */
+	/**
+	 * @return SimpleSubCommand[]
+	 */
 	public static function getSubCommands() : array{
 		return self::$subCommands;
 	}
 
-	/** @param SimpleSubCommand[] $subCommands */
+	/**
+	 * @param SimpleSubCommand[] $subCommands
+	 */
 	public static function setSubCommands(array $subCommands) : void{
 		self::$subCommands = $subCommands;
 	}

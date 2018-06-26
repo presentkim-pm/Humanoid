@@ -14,7 +14,9 @@ use pocketmine\Player;
 use pocketmine\Server;
 
 class SetScaleCommand extends SimpleSubCommand{
-
+	/**
+	 * SetScaleCommand constructor.
+	 */
 	public function __construct(){
 		parent::__construct('scale');
 	}
