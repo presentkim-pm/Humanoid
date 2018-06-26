@@ -35,7 +35,7 @@ class Humanoid extends PluginBase{
 
 			Entity::registerEntity(HumanoidEntity::class, true, [
 				'Humanoid',
-				'blugin:humanoid',
+				'PresentKim:humanoid',
 			]);
 		}
 	}
