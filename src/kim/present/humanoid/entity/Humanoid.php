@@ -2,8 +2,8 @@
 
 namespace kim\present\humanoid\entity;
 
-use kim\present\humanoid\inventory\HumanoidInventory;
 use kim\present\geometryapi\GeometryAPI;
+use kim\present\humanoid\inventory\HumanoidInventory;
 use pocketmine\entity\{
 	Entity, Skin
 };

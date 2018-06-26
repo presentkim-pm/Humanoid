@@ -6,7 +6,6 @@ humanoid-set@success: "Humanoid's data was changed"
 humanoid-remove@success: "Humanoid was removed"
 humanoid-copy@success-copy: "Touch the block to paste humanoid"
 humanoid-copy@success-paste: "Humanoid was copied"
-humanoid-skinsteal@success: "Steal humanoid's skin"
 
 command-generic-failure@in-game: "Available in game only"
 command-generic-failure@permission: "You do not have permission to use this command"
@@ -104,9 +103,4 @@ command-humanoid-reload: "reload"
 command-humanoid-reload@usage: "/humanoid Reload"
 command-humanoid-reload@success: "All data was reloaded"
 command-humanoid-reload@aliases: ["rl"]
-
-command-humanoid-skinsteal: "skinsteal"
-command-humanoid-skinsteal@usage: "/humanoid SkinSteal"
-command-humanoid-skinsteal@success: "Touch the humanoid to steal skin"
-command-humanoid-skinsteal@aliases: ["ss"]
 ...

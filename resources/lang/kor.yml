@@ -6,7 +6,6 @@ humanoid-set@success: "휴머노이드의 데이터가 변경되었습니다"
 humanoid-remove@success: "휴머노이드가 제거되었습니다"
 humanoid-copy@success-copy: "휴머노이드를 붙여넣기할 블럭을 터치해주세요"
 humanoid-copy@success-paste: "휴머노이드가 복사되었습니다"
-humanoid-skinsteal@success: "휴머노이드의 스킨을 빼앗았습니다"
 
 command-generic-failure@in-game: "게임 내에서만 사용할 수 있습니다"
 command-generic-failure@permission: "이 명령을 사용할 수 있는 권한이 없습니다"
@@ -104,9 +103,4 @@ command-humanoid-reload: "reload"
 command-humanoid-reload@usage: "/humanoid Reload"
 command-humanoid-reload@success: "모든 데이터를 불러왔습니다"
 command-humanoid-reload@aliases: ["rl"]
-
-command-humanoid-skinsteal: "skinsteal"
-command-humanoid-skinsteal@usage: "/humanoid SkinSteal"
-command-humanoid-skinsteal@success: "스킨을 빼앗을 휴머노이드를 터치해주세요"
-command-humanoid-skinsteal@aliases: ["ss"]
 ...

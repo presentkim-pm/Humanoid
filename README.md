@@ -7,7 +7,7 @@
 A plugin add humanoid entity for PocketMine-MP
 
 ## Command
-Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | save | skinsteal>`
+Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | save>`
 
 | subcommand | arguments              | description                 |
 | ---------- | ---------------------- | --------------------------- |
@@ -16,7 +16,6 @@ Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | 
 | Remove     |                        | Remove humanoid             |
 | Copy       |                        | Copy humanoid               |
 | Cancel     |                        | Cancel act                  |
-| SkinSteal  |                        | Steal humanoid's skin       |
 | Lang       | \<language prefix\>    | Load default lang file      |
 | Reload     |                        | Reload all data             |
 
@@ -33,7 +32,6 @@ Main command : `/humanoid <add | set | remove | copy | cancel | lang | reload | 
 | humanoid.cmd.remove    | OP       | remove subcommand    |
 | humanoid.cmd.copy      | OP       | copy subcommand      |
 | humanoid.cmd.cancel    | OP       | cancel subcommand    |
-| humanoid.cmd.skinsteal | OP       | skinsteal subcommand |
 | humanoid.cmd.lang      | OP       | lang subcommand      |
 | humanoid.cmd.reload    | OP       | reload subcommand    |
 
