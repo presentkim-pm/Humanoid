@@ -47,12 +47,6 @@ class Humanoid extends PluginBase{
 	}
 
 	public function onEnable() : void{
-		$this->load();
-		$this->getServer()->getPluginManager()->registerEvents(new DataPacketEventListener(), $this);
-		$this->getServer()->getPluginManager()->registerEvents(new PlayerEventListener(), $this);
-	}
-
-	public function load() : void{
 		$dataFolder = $this->getDataFolder();
 		if(!file_exists($dataFolder)){
 			mkdir($dataFolder, 0777, true);
@@ -68,14 +62,7 @@ class Humanoid extends PluginBase{
 		}
 
 		self::$prefix = Translation::translate('prefix');
-		$this->reloadCommand();
 
-		foreach(SetSubCommand::getSubCommands() as $key => $value){
-			$value->updateTranslation();
-		}
-	}
-
-	public function reloadCommand() : void{
 		if($this->command == null){
 			$this->command = new PoolCommand($this, 'humanoid');
 			$this->command->createSubCommand(AddSubCommand::class);
@@ -90,6 +77,13 @@ class Humanoid extends PluginBase{
 			$this->getServer()->getCommandMap()->unregister($this->command);
 		}
 		$this->getServer()->getCommandMap()->register(strtolower($this->getName()), $this->command);
+
+		foreach(SetSubCommand::getSubCommands() as $key => $value){
+			$value->updateTranslation();
+		}
+
+		$this->getServer()->getPluginManager()->registerEvents(new DataPacketEventListener(), $this);
+		$this->getServer()->getPluginManager()->registerEvents(new PlayerEventListener(), $this);
 	}
 
 	/**
