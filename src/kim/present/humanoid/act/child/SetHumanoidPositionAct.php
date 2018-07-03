@@ -12,9 +12,7 @@ use pocketmine\level\Position;
 use pocketmine\Player;
 
 class SetHumanoidPositionAct extends PlayerAct implements ClickHumanoidAct{
-	/**
-	 * @var Position
-	 */
+	/** @var Position */
 	private $pos;
 
 	/**

@@ -15,9 +15,7 @@ use pocketmine\nbt\tag\{
 use pocketmine\Player;
 
 class PasteHumanoidAct extends PlayerAct implements InteractAct{
-	/**
-	 * @var CompoundTag
-	 */
+	/** @var CompoundTag */
 	private $nbt;
 
 	/**

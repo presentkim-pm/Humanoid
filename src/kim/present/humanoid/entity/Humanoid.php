@@ -20,39 +20,25 @@ use pocketmine\Player;
 use pocketmine\utils\UUID;
 
 class Humanoid extends Entity{
-	/**
-	 * @var float
-	 */
+	/** @var float */
 	public $width = 0.6;
 
-	/**
-	 * @var float
-	 */
+	/** @var float */
 	public $height = 1.8;
 
-	/**
-	 * @var float
-	 */
+	/** @var float */
 	public $eyeHeight = 1.62;
 
-	/**
-	 * @var UUID
-	 */
+	/** @var UUID */
 	protected $uuid;
 
-	/**
-	 * @var Skin
-	 */
+	/** @var Skin */
 	protected $skin;
 
-	/**
-	 * @var HumanoidInventory
-	 */
+	/** @var HumanoidInventory */
 	protected $inventory;
 
-	/**
-	 * @var float
-	 */
+	/** @var float */
 	protected $baseOffset = 1.62;
 
 	/**

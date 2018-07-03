@@ -12,9 +12,7 @@ use pocketmine\entity\Skin;
 use pocketmine\Player;
 
 class SetHumanoidGeometryAct extends PlayerAct implements ClickHumanoidAct{
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	private $geometryName;
 
 	/**

@@ -5,19 +5,13 @@ namespace kim\present\humanoid\act;
 use pocketmine\Player;
 
 abstract class PlayerAct{
-	/**
-	 * @var PlayerAct[]
-	 */
+	/** @var PlayerAct[] */
 	private static $acts = [];
 
-	/**
-	 * @var Player
-	 */
+	/** @var Player */
 	protected $player;
 
-	/**
-	 * @var int
-	 */
+	/** @var int */
 	protected $id;
 
 	/**

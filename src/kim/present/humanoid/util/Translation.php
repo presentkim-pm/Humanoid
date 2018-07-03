@@ -5,14 +5,10 @@ namespace kim\present\humanoid\util;
 use kim\present\humanoid\Humanoid as Plugin;
 
 class Translation{
-	/**
-	 * @var string[string]
-	 */
+	/** @var string[string] */
 	private static $lang = [];
 
-	/**
-	 * @var string[string]
-	 */
+	/** @var string[string] */
 	private static $default = [];
 
 	/**

@@ -12,9 +12,7 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\Player;
 
 class AddHumanoidAct extends PlayerAct implements InteractAct{
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	private $name;
 
 	/**

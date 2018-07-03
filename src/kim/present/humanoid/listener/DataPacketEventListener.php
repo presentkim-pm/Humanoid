@@ -11,9 +11,7 @@ use pocketmine\network\mcpe\protocol\InventoryTransactionPacket;
 use pocketmine\Server;
 
 class DataPacketEventListener implements Listener{
-	/**
-	 * @var Plugin
-	 */
+	/** @var Plugin */
 	private $owner = null;
 
 	/**

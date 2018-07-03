@@ -8,24 +8,16 @@ use kim\present\humanoid\util\{
 use pocketmine\command\CommandSender;
 
 abstract class SimpleSubCommand{
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	public $uname;
 
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	protected $label;
 
-	/**
-	 * @var string[]
-	 */
+	/** @var string[] */
 	protected $aliases;
 
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	protected $usage;
 
 	/**

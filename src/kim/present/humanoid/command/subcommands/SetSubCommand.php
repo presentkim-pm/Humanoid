@@ -12,9 +12,7 @@ use kim\present\humanoid\Humanoid as Plugin;
 use pocketmine\command\CommandSender;
 
 class SetSubCommand extends SubCommand{
-	/**
-	 * @var SimpleSubCommand[]
-	 */
+	/** @var SimpleSubCommand[] */
 	protected static $subCommands = [];
 
 	/**

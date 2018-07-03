@@ -12,9 +12,7 @@ use pocketmine\item\Item;
 use pocketmine\Player;
 
 class SetHumanoidItemAct extends PlayerAct implements ClickHumanoidAct{
-	/**
-	 * @var Item|null
-	 */
+	/** @var Item|null */
 	private $item;
 
 	/**

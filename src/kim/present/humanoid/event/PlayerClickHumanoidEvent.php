@@ -13,19 +13,13 @@ class PlayerClickHumanoidEvent extends PlayerEvent implements Cancellable{
 	public const LEFT_CLICK = InventoryTransactionPacket::USE_ITEM_ON_ENTITY_ACTION_ATTACK;
 	public const RIGHT_CLICK = InventoryTransactionPacket::USE_ITEM_ON_ENTITY_ACTION_INTERACT;
 
-	/**
-	 * @var HandlerList|null
-	 */
+	/** @var HandlerList|null */
 	public static $handlerList = null;
 
-	/**
-	 * @var Humanoid
-	 */
+	/** @var Humanoid */
 	protected $humanoid;
 
-	/**
-	 * @var int
-	 */
+	/** @var int */
 	protected $action;
 
 	/**

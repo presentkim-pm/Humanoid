@@ -14,14 +14,10 @@ use pocketmine\entity\Entity;
 use pocketmine\plugin\PluginBase;
 
 class Humanoid extends PluginBase{
-	/**
-	 * @var string
-	 */
+	/** @var string */
 	public static $prefix = '';
 
-	/**
-	 * @var Humanoid
-	 */
+	/** @var Humanoid */
 	private static $instance = null;
 
 	/** @return Humanoid */
@@ -29,9 +25,7 @@ class Humanoid extends PluginBase{
 		return self::$instance;
 	}
 
-	/**
-	 * @var PoolCommand
-	 */
+	/** @var PoolCommand */
 	private $command;
 
 	public function onLoad() : void{
