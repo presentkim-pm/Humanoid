@@ -28,6 +28,9 @@ class Humanoid extends PluginBase{
 	/** @var PoolCommand */
 	private $command;
 
+	/**
+	 * Called when the plugin is loaded, before calling onEnable()
+	 */
 	public function onLoad() : void{
 		if(self::$instance === null){
 			self::$instance = $this;
@@ -40,6 +43,9 @@ class Humanoid extends PluginBase{
 		}
 	}
 
+	/**
+	 * Called when the plugin is enabled
+	 */
 	public function onEnable() : void{
 		$dataFolder = $this->getDataFolder();
 		if(!file_exists($dataFolder)){
