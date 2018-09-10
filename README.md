@@ -1,7 +1,7 @@
-# Humanoid [![license](https://img.shields.io/github/license/PresentKim/Humanoid-PMMP.svg?label=License)](LICENSE)
+# Humanoid [![license](https://img.shields.io/github/license/Blugin/Humanoid-PMMP.svg?label=License)](LICENSE)
 <img src="./assets/icon/index.svg" height="256" width="256">  
 
-[![release](https://img.shields.io/github/release/PresentKim/Humanoid-PMMP.svg?label=Release) ![download](https://img.shields.io/github/downloads/PresentKim/Humanoid-PMMP/total.svg?label=Download)](https://github.com/PresentKim/Humanoid-PMMP/releases/latest)
+[![release](https://img.shields.io/github/release/Blugin/Humanoid-PMMP.svg?label=Release) ![download](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/total.svg?label=Download)](https://github.com/Blugin/Humanoid-PMMP/releases/latest)
 
 
 A plugin add humanoid entity for PocketMine-MP
