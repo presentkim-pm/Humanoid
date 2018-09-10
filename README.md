@@ -1,5 +1,5 @@
 # Humanoid [![license](https://img.shields.io/github/license/Blugin/Humanoid-PMMP.svg?label=License)](LICENSE)
-<img src="./assets/icon/index.svg" height="256" width="256">  
+<img src="https://rawgit.com/PresentKim/SVG-files/master/plugin-icons/humanoid.svg" height="256" width="256">  
 
 [![release](https://img.shields.io/github/release/Blugin/Humanoid-PMMP.svg?label=Release) ![download](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/total.svg?label=Download)](https://github.com/Blugin/Humanoid-PMMP/releases/latest)
 
