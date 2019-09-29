@@ -10,6 +10,11 @@ branches:
   only:
     - master
 
+# Skipping commits with particular message or from specific user
+skip_commits:
+  files:
+    - README.md
+
 # Maximum number of concurrent jobs for the project
 max_jobs: 1
 
