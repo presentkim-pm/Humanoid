@@ -2,7 +2,7 @@
 # Info of configure the PM-plugin #
 #---------------------------------#
 # @author  : PresentKim
-# @version : 1.0.0
+# @version : 1.1.0
 # @url     : https://github.com/organization/ExamplePlugin-AppVeyor/blob/master/appveyor.yml
 
 #---------------------------------#
@@ -39,6 +39,7 @@ clone_depth: 5
 # environment variables
 environment:
   APPVEYOR_BUILD_URL: "https://ci.appveyor.com/project/${APPVEYOR_ACCOUNT_NAME}/${APPVEYOR_PROJECT_NAME}/builds/${APPVEYOR_BUILD_ID}"
+  BUILD_SCRIPT_URL: "https://raw.githubusercontent.com/organization/ExamplePlugin-AppVeyor/master/build.php"
 
 # build cache to preserve files/folders between builds
 cache:
@@ -52,7 +53,7 @@ init:
 install:
   - wget -nc -P $HOME/cache/ https://jenkins.pmmp.io/job/PHP-7.3-Linux-x86_64/lastSuccessfulBuild/artifact/PHP_Linux-x86_64.tar.gz
   - tar -C ../ -xvf $HOME/cache/PHP_Linux-x86_64.tar.gz
-  - wget --cache=off --cookies=off https://gist.githubusercontent.com/PresentKim/b401f5d88d2ec7d9655afa8468658a9f/raw/build.php
+  - wget --cache=off --cookies=off ${BUILD_SCRIPT_URL}
 
 # to run your custom scripts instead of automatic MSBuild
 build_script:
