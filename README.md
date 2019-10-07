@@ -1,9 +1,12 @@
-# Humanoid [![license](https://img.shields.io/github/license/Blugin/Humanoid-PMMP.svg?label=License)](LICENSE)
-<img src="https://rawgit.com/PresentKim/SVG-files/master/plugin-icons/humanoid.svg" height="256" width="256">  
-
-[![release](https://img.shields.io/github/release/Blugin/Humanoid-PMMP.svg?label=Release) ![download](https://img.shields.io/github/downloads/Blugin/Humanoid-PMMP/total.svg?label=Download)](https://github.com/Blugin/Humanoid-PMMP/releases/latest) [![Build status](https://ci.appveyor.com/api/projects/status/o527umpos3igmfll?svg=true)](https://ci.appveyor.com/project/PresentKim/humanoid-pmmp)
-
-
+# <img src="https://rawgit.com/PresentKim/SVG-files/master/plugin-icons/humanoid.svg" height="50" width="50"> Humanoid  
+__A plugin for [PMMP](https://pmmp.io) :: Add humanoid entity!__  
+  
+[![license](https://img.shields.io/github/license/organization/Humanoid-PMMP.svg?label=License)](LICENSE)
+[![release](https://img.shields.io/github/release/organization/Humanoid-PMMP.svg?label=Release)](../../releases/latest)
+[![download](https://img.shields.io/github/downloads/organization/Humanoid-PMMP/total.svg?label=Download)](../../releases/latest)
+[![Build status](https://ci.appveyor.com/api/projects/status/xd18ryl4li9rc11m/branch/master?svg=true)](https://ci.appveyor.com/project/PresentKim/humanoid-pmmp/branch/master)
+  
+## What is this?   
 A plugin add humanoid entity for PocketMine-MP
 
 ## Command
