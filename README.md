@@ -1,9 +1,9 @@
 # <img src="https://rawgit.com/PresentKim/SVG-files/master/plugin-icons/humanoid.svg" height="50" width="50"> Humanoid  
 __A plugin for [PMMP](https://pmmp.io) :: Add humanoid entity!__  
   
-[![license](https://img.shields.io/github/license/organization/Humanoid-PMMP.svg?label=License)](LICENSE)
-[![release](https://img.shields.io/github/release/organization/Humanoid-PMMP.svg?label=Release)](../../releases/latest)
-[![download](https://img.shields.io/github/downloads/organization/Humanoid-PMMP/total.svg?label=Download)](../../releases/latest)
+[![license](https://img.shields.io/github/license/organization/Humanoid.svg?label=License)](https://github.com/organization/Humanoid/blob/master/LICENSE)
+[![release](https://img.shields.io/github/release/organization/Humanoid.svg?label=Release)](https://github.com/organization/Humanoid/releases/latest)
+[![download](https://img.shields.io/github/downloads/organization/Humanoid/total.svg?label=Download)](https://github.com/organization/Humanoid/releases/latest)
 [![Build status](https://ci.appveyor.com/api/projects/status/xd18ryl4li9rc11m/branch/master?svg=true)](https://ci.appveyor.com/project/PresentKim/humanoid-pmmp/branch/master)
   
 ## What is this?   
